@@ -1,9 +1,10 @@
-# Site settings
-title: Victor Igor|Sempre Aprender
-email: victor.0w3@hotmail.com
-description: Um blog sobre tudo que aprendo.
+--- 
+author: "Victor Igor"
 baseurl: /
-domain_name: 'http://victorvoid.github.io/'
-url:'http://victorvoid.github.io/'
-author:'Victor Igor'
+description: "Um blog sobre tudo que aprendo."
+domain_name: "http://victorvoid.github.io/"
+email: victor.0w3@hotmail.com
+lang: pt-br
 markdown: redcarpet
+title: "Victor Igor|Sempre Aprender"
+url: "https://victorvoid.github.io"
