@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div id="corpo">
+      <ul id="post-list">
+        {% for post in site.posts %}
+        <li>
+            <h1 class="post-title">
+                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </h1>
+            <h3 class="post-subtitle">{{post.subtitle}}</h3>
+            <div class="date">{{ post.date | date: "%b %-d, %Y" }}</div>
+        </li>
+        {% endfor %}
+      </ul>
+
+</div>
