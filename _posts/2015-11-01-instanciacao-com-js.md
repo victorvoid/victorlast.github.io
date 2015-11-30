@@ -661,9 +661,6 @@ Não podemos ficar criando variáveis globais, pois elas ficam livre ao longo do
 </td></tr>
 </table>
 
-
-
-
 ###Boas práticas: (⌒‿⌒)
 
 Em projetos grande um dos problemas que acontecem muito é o de comportamento, alguns por está conseguindo acessar variáveis que não deviam, vazando escopo, sempre feche o escopo, se organize e não fique criando variáveis globais.
