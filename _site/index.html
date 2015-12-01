@@ -8,12 +8,13 @@
 
   <title>Victor Igor|Sempre Aprender</title>
   <meta name="description" content="Um blog sobre tudo que aprendo.">
-  <link rel="canonical" href="http://yourdomain.com/">
+  <link rel="canonical" href="https://victorvoid.github.io/">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/css/stylesheet.css">
-  <link rel="stylesheet" href="/css/post-style.css">
-  <link rel="stylesheet" href="/css/syntax.css">
+
+  <link href="/css/stylesheet.css" rel="stylesheet">
+  <link href="/css/post-style.css" rel="stylesheet">
+  <link href="/css/syntax.css" rel="stylesheet">
+  <link href="/css/menu.css" rel="stylesheet">
   <!-- FONT -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
@@ -22,17 +23,28 @@
   <body>
 
     <header>
-    <nav>
-        <ul>
-          <li><a href="/index.html">Blog</a></li>
-          <li><a href="#" onclick="tags();">Tags</a></li>
-          <li><a href="#" onclick="quemsou();">Quem sou ?</a></li>
-        </ul>
-       <div id="mensagem">
-         <!--Mensagem:-->
-       </div>
-    </nav>
-</header>
+  <input type="checkbox" name="toggle" id="toggle" checked="checked" />
+  <label for="toggle"></label>
+
+  <div class="container">
+    <div id="mensagem">
+    </div>
+  </div>
+  
+  <div class="message">
+    <ul id="list-menu">
+      <li><a href="/index.html">Blog</a></li>
+      <li><a href="#" onclick="quemsou();">Quem sou ?</a></li>
+      <li><a href="#" onclick="tags();">Tags</a></li></li>
+    </ul>
+    <div class="share-header">
+      <a  href="http://www.facebook.com/VictorCalangu"><i class="fa fa-facebook"></i></a>
+      <a id="t" href="http://twitter.com/Vituzudo"><i class="fa fa-twitter"></i></a>
+      <a href="https://plus.google.com/u/0/+VictorIgor0w3"><i class="fa fa-google-plus"></i></a>
+      <a href="http://github.com/VictorVoid"><i class="fa fa-github"></i></a>
+  </div>
+  </div>
+</header>  
 
     <div class="page-content">
       <div class="wrapper">
@@ -65,10 +77,10 @@
 <footer class="footer-distributed">
 
 	<div class="footer-right">
-		<a href="http://www.facebook.com/VictorCalangu"><i class="fa fa-facebook"></i></a>
-		<a href="http://twitter.com/Vituzudo"><i class="fa fa-twitter"></i></a>
-		<a href="http://github.com/VictorVoid"><i class="fa fa-github"></i></a>
+		<a  href="http://www.facebook.com/VictorCalangu"><i class="fa fa-facebook"></i></a>
+		<a id="t" href="http://twitter.com/Vituzudo"><i class="fa fa-twitter"></i></a>
 		<a href="https://plus.google.com/u/0/+VictorIgor0w3"><i class="fa fa-google-plus"></i></a>
+		<a href="http://github.com/VictorVoid"><i class="fa fa-github"></i></a>
 	</div>
 	<div class="footer-left">
 		<p> Feito com muito <span id="coracao"> ♥</span> por Victor Igor.</p>

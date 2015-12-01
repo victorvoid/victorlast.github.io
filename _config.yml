@@ -1,10 +1,8 @@
---- 
 author: "Victor Igor"
 baseurl: ""
 description: "Um blog sobre tudo que aprendo."
 domain_name: "http://victorvoid.github.io/"
 email: victor.0w3@hotmail.com
 lang: pt-br
-markdown: redcarpet
 title: "Victor Igor|Sempre Aprender"
 url: "https://victorvoid.github.io"

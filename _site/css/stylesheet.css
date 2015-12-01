@@ -9,60 +9,13 @@
   margin: 0px;
 }
 header{
-      text-align: center;
-}
-/* Header */
-header > nav{
-  border-bottom: 1px solid #f3f3f3;
+  text-align: center;  
 }
 
-header > nav > ul{ /*Elemento filho.*/
-    list-style: none;
-}
-header > nav > ul > li{
-    display: inline-block;
-}
-header > nav > ul > li a{
-    font-size: 42px;
-    /*#34495E */
-    color: #34495E;
-    padding: 0.8em 0.5em;/*TOP, RIGHT*/
-    border-bottom: 4px solid transparent;
-    display: block;
-    font-family: 'Merriweather', sans-serif;
-    transition-duration: .2s;
-    text-decoration: none;
-}
-header > nav > ul > li a:hover{
-    border-bottom-color: #91B3A3;
-}
-/*Mensagens*/
-#mensagem {
-  font-size: 30px;
-  color: #4C4B4F;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-/* TAGS */
-#mensagem > ul{
-  list-style: none;
-}
-#mensagem > ul li{
-  display: inline;
-  margin: 20px;
-}
-#mensagem a{
-  font-family: 'Merriweather';
-  text-decoration: none;
-  color: #527394;
-}
-#mensagem a:hover{
-  border-bottom: 4px solid black;
-}
 /*Content*/
 #corpo{
       max-width: 1200px;
-      margin: 80px auto;
+      margin: 20px auto;
       line-height: 3em;
       text-align: left;
       position: relative;
@@ -107,20 +60,23 @@ header > nav > ul > li a:hover{
 }
 /***************FOOTER**************************/
 .footer-distributed{
-  background-color:#6C6C70;
+  background-color:#434346;
   box-sizing: border-box;
   width: 100%;
   text-align: left;
-  font: 'PT Sans Caption' 16px sans-serif;
+  font: 'PT Sans Caption' 13px sans-serif;
   color: white; 
-  padding:25px 50px;
+  padding:20px 50px;
   margin-top: 80px;
 }
 .footer-distributed a{
   margin-left: 5px;
+  color: white;
 }
+.footer-distributed #t{color: #89C9FA;}
+
 .footer-distributed a:hover{
-  color:#4E4F4E;
+  color:#C5C7C5;
 }
 .footer-left{
   text-align: center;
@@ -131,15 +87,17 @@ header > nav > ul > li a:hover{
   margin-top: 6px;
   max-width: 180px;
 }
-#coracao{
-  color:red;
+.footer-left p{
+  font-size: 17px;
 }
+#coracao{color:#FF7272;}
 @media (max-width: 600px) {
 
   .footer-distributed .footer-left,
   .footer-distributed .footer-right{
     text-align: center;
     margin-left: 0;
+    font-size: 10px;
   }
   .footer-distributed .footer-right{
     float: none;

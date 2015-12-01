@@ -1,5 +1,5 @@
 var div = document.getElementById('mensagem');
-var texto = "A cada dia que passa, eu percebo que não sei nada. =(";
+var texto = "A cada dia que passa, eu percebo que não sei nada. ಠ_ಠ'";
 var typer;	
 function escrever(str, el) {
 var char = str.split('').reverse();
@@ -13,7 +13,7 @@ escrever(texto, div);
 function quemsou(){
 	div.innerHTML = "";
 	clearInterval(typer);
-	var msgQuem = "Entusiasta em desenvolvimento Web e Mobile ♥ amo tecnologia e música instrumental, sou guitarrista e compositor.";
+	var msgQuem = "Entusiasta em desenvolvimento Web e Mobile ♥ amo tecnologia e música instrumental, sou guitarrista e compositor. ٩(•̮̮̃•̃)۶";
 	escrever(msgQuem, div);
 }
 function tags(){
