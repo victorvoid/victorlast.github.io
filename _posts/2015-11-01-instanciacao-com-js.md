@@ -411,6 +411,7 @@ Traduzindo closure, podemos dizer que é algo de encerramento, no sentido de gua
 </table>
 
 Mas cuidado, o <em>somador</em> não é uma closure, e sim o seu valor que retorna.
+
 <table class="highlighttable">
 <tr>
 	<td class="linenos" >
