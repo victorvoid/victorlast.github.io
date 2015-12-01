@@ -357,6 +357,7 @@ Agora cuidado, estamos usando uma funções anônima, com isso a declaração so
  10
  11
  12
+ 13
 </code></pre></div></td>
 <td class="code" >
 <div class="highlight" >
@@ -779,6 +780,9 @@ Um das coisas curiosas é que ele não verifica nossos argumentos para dar erro 
  4
  5
  6
+ 7
+ 8
+ 9
 </code></pre></div></td>
 <td class="code" >
 <div class="highlight" >
