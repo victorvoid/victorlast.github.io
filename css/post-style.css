@@ -33,6 +33,7 @@ h1{
 	border-left:  1px solid #ecf0f1;
 	border-top:  1px solid #ecf0f1;
 	padding: 5px;
+  max-width: 900px;
 	color: #7C7B7A;
 }
 p{
@@ -167,7 +168,10 @@ blockquote.trivia .cabecalho {
   .highlighttable{
     width: 331px;
   }
-
+  #post h3{
+    width: 331px;
+    padding:0;
+  }
   /* IMAGENS  */
   img#bart-reading{
     width: 331px;
