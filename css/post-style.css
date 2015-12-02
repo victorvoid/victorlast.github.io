@@ -164,6 +164,9 @@ blockquote.trivia .cabecalho {
   .highlight{
     font-size: 10px;
   }
+  .highlighttable{
+    width: 331px;
+  }
 
   /* IMAGENS  */
   img#bart-reading{

@@ -537,8 +537,8 @@ Note que ao chamar a tela, ele usa a variável <em>mensagem</em>, que está no e
   <span class="k">return</span><span class="p">{</span>
     <span class="p">incremente:</span><span class="k">function</span><span class="p">(){</span>
       <span class="p">cont++;</span>
-    <span class="c1">// apenas incrementa o valor passado por parametro</span>
-    <span class="c1">//lembre, ele está no escopo de fora</span>
+  <span class="c1">//incrementa o valor passado por parametro</span>
+  <span class="c1">//lembre, ele está no escopo de fora</span>
     <span class="p">},</span>
     <span class="p">get:</span><span class="k">function</span><span class="p">(){</span>
       <span class="k">return </span><span class="p">cont;</span><span class="c1">//pega o valor atual</span>
@@ -658,10 +658,9 @@ Não podemos ficar criando variáveis globais, pois elas ficam livre ao longo do
   <span class="k">if</span><span class="p">(saldo == 0){</span>
     <span class="p">console.log(</span><span class="s2">"Saldo: 0"</span><span class="p">);</span>
     <span class="k">return </span><span class="p">0;</span>
-  <span class="p">}</span><span class="k">else</span>
-    <span class="k">if</span><span class="p">(saldo - e &lt; 0){</span>
-      <span class="p">console.log(</span><span class="s2">"Saldo insuficiente para o saque"</span><span class="p">);</span>
-      <span class="k">return </span><span class="p">0;</span>
+  <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(saldo - e &lt; 0){</span>
+    <span class="p">console.log(</span><span class="s2">"Saldo insuficiente para o saque"</span><span class="p">);</span>
+    <span class="k">return </span><span class="p">0;</span>
     <span class="p">}</span>
     <span class="p">saldo</span><span class="o"> = </span><span class="p">saldo - e;</span>
     <span class="p">console.log(</span><span class="s2">"Novo saldo: "</span><span class="p">+saldo);</span>
@@ -960,6 +959,7 @@ Nesse exemplo sim ⬇ ele é chamado apenas depois da atribuição no n.
  7
  8
  9
+ 10
 </code></pre></div></td>
 <td class="code" >
 <div class="highlight" >
@@ -971,7 +971,8 @@ Nesse exemplo sim ⬇ ele é chamado apenas depois da atribuição no n.
   <span class="k">return</span><span class="p"> v;</span>
 <span class="p">};</span>
 <span class="p">n</span><span class="o"> = </span><span class="p">2</span>
-<span class="kd">var</span><span class="p"> valor</span><span class="o"> = </span><span class="p">getValue();</span><span class="c1">//perceba que já houve mudança</span>
+<span class="kd">var</span><span class="p"> valor</span><span class="o"> = </span><span class="p">getValue();</span>
+<span class="c1">//perceba que já houve mudança</span>
 <span class="p">console.log(valor);</span><span class="c1">//--> 2</span>
 </pre>
 </div>
