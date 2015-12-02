@@ -49,7 +49,7 @@ está disponível grátis, é muito bom.
 [CHON - Glow](http://chon.merchnow.com/products/195023/grow-cd)
 
 ##Série:
-<img src="{{ "/img/homer-hack.jpg"}}">
+<img src="{{ "/img/homer-hack.jpg"}}" id="homer-hack">
 
 Preciso sempre me motivar, e acho que todo mundo precisa, motivação é coisa séria, e pra ajudar nisso, adoro ver séries que motivam, não só séries como filmes e palestras, atualmente estou vendo Mr.Robot, e quem gosta de segurança da informação, não pode deixar de ver, indico.
 

@@ -149,7 +149,6 @@ blockquote.trivia .cabecalho {
 .citacao{
 	color: black;
 }
-
 /** MOBILE FONTS **/
 @media(max-width:480px) {
 	h1{
@@ -159,7 +158,7 @@ blockquote.trivia .cabecalho {
 		font-size: 1.3em;
 	}
 	#post{
-		width: 380px;
+		width: 360px;
 	}
   /*Table - code */
   .highlight{
@@ -168,6 +167,9 @@ blockquote.trivia .cabecalho {
 
   /* IMAGENS  */
   img#bart-reading{
-    width: 380;
+    width: 360px;
+  }
+  img#homer-hack{
+    width: 350px;
   }
 }
