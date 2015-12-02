@@ -9,7 +9,12 @@ layout: default
                 <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </h1>
             <h3 class="post-subtitle">{{post.subtitle}}</h3>
-            <div class="date">{{ post.date | date: "%b %-d, %Y" }}</div>
+            <div class="date">{{ post.date | date: "%-d %b, %Y" }}</div>
+            <div class="categories">
+                <ul>
+                    <li><a href="#">#{{post.categories}}</a></li>
+                </ul>
+            </div>
         </li>
         {% endfor %}
       </ul>

@@ -47,7 +47,11 @@ box-sizing: border-box;
   text-align:center;
   -webkit-font-smoothing: antialiased;
   cursor: pointer;
-  transition:all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
 }
 #toggle + label:after {
   content:"Menu" 

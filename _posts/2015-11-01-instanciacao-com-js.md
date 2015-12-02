@@ -2,7 +2,7 @@
 layout: post
 title:  "Instanciação com JavaScript"
 date:   2015-11-25 00:07:31 -0400
-categories: js-bemean
+categories: JSBeMean
 subtitle: Closure ? Hoisting ? Instanciação usando uma IIFE?
 ---
 #Instanciação com JavaScript  
