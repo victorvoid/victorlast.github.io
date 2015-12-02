@@ -167,9 +167,12 @@ blockquote.trivia .cabecalho {
 
   /* IMAGENS  */
   img#bart-reading{
-    width: 330px;
+    width: 335px;
   }
   img#homer-hack{
-    width: 330px;
+    width: 335px;
+  }
+  img#mr-robot-poster{
+    width: 335px;
   }
 }
