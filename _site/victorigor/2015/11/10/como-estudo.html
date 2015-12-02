@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Como estudo ?</title>
-  <meta name="description" content="Com o que estudo ?Cursos e livros online, a maioria grátis :D hehe, e claro não pode faltar, sempre com meu querido fone ♫.">
+  <meta name="description" content="Com o que eu estudo ?">
   <link rel="canonical" href="https://victorvoid.github.io/victorigor/2015/11/10/como-estudo.html">
 
 
@@ -14,26 +14,44 @@
   <link href="/css/menu.css" rel="stylesheet">
   <!-- FONT -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- DISQUS-->
+  <script id="dsq-count-scr" src="//victorvoid.disqus.com/count.js" async></script>
+    
 </head>
 
 
 <header>
-    <nav>
-        <ul>
-          <li><a href="/index.html">Blog</a></li>
-        </ul>
-       <div id="mensagem">
-         <!--Mensagem:-->
-       </div>
-    </nav>
-</header>
+  <input type="checkbox" name="toggle" id="toggle" checked="checked" />
+  <label for="toggle"></label>
+
+  <div class="container">
+    <div id="mensagem">
+    </div>
+  </div>
+  
+  <div class="message">
+    <ul id="list-menu">
+      <li><a href="/index.html">Blog</a></li>
+      <li><a href="#" onclick="quemsou();">Quem sou ?</a></li>
+      <li><a href="#" onclick="tags();">Tags</a></li></li>
+    </ul>
+    <div class="share-header">
+      <a  href="http://www.facebook.com/VictorCalangu"><i class="fa fa-facebook"></i></a>
+      <a id="t" href="http://twitter.com/Vituzudo"><i class="fa fa-twitter"></i></a>
+      <a href="https://plus.google.com/u/0/+VictorIgor0w3"><i class="fa fa-google-plus"></i></a>
+      <a href="http://github.com/VictorVoid"><i class="fa fa-github"></i></a>
+  </div>
+  </div>
+</header>  
 
   <div id="post">
   	<section>
-    	<h1 id="com-o-que-estudo-">Com o que estudo ?</h1>
+    	<h1 id="com-o-que-eu-estudo-">Com o que eu estudo ?</h1>
+<p><img src="/img/homer-pensando.gif" /></p>
+
 <p>Cursos e livros online, a maioria grátis :D hehe, e claro não pode faltar, sempre com meu querido fone ♫.</p>
 
-<h3 id="cursando">Cursando:</h3>
+<h3 id="cursando-atualmente">Cursando atualmente:</h3>
 
 <p><a href="http://dagora.net/be-mean/">BeMEAN(Mongodb, Express, Angular e Node)</a></p>
 
@@ -57,28 +75,36 @@ de vez em quando, quando não quero usar o sublime, ele ajuda muito em projetos 
 <a href="https://www.jetbrains.com/phpstorm/">PHPStorm</a></p>
 
 <h2 id="livro">Livro:</h2>
+<p><img src="/img/bart-reading.jpg" id="bart-reading" /></p>
+
 <p>O tempo às vezes não me ajuda, mas ainda quero concluir de ler o JavaScript Eloquente, JavaScript é uma linguagem que estou adorando, e esse livro além de
 está disponível grátis, é muito bom.</p>
 
 <p><a href="https://github.com/braziljs/eloquente-javascript">JavaScript Eloquente</a></p>
 
-<h2 id="lbum-preferido">Álbum preferido:</h2>
+<h2 id="msica---lbum-preferido">Música - Álbum preferido:</h2>
+<p><img src="/img/bart-listening.gif" /></p>
+
 <p>♪ Música para mim é esencial, não me vejo passar um dia inteiro sem escutar música, é estranho, passo muito tempo na frente do computador, e sempre com um fone. :p</p>
 
 <p><a href="http://chon.merchnow.com/products/195023/grow-cd">CHON - Glow</a></p>
 
 <h2 id="srie">Série:</h2>
+<p><img src="/img/homer-hack.jpg" /></p>
+
 <p>Preciso sempre me motivar, e acho que todo mundo precisa, motivação é coisa séria, e pra ajudar nisso, adoro ver séries que motivam, não só séries como filmes e palestras, atualmente estou vendo Mr.Robot, e quem gosta de segurança da informação, não pode deixar de ver, indico.</p>
 
 <p><a href="http://www.imdb.com/title/tt4158110/">Mr.Robot</a>:</p>
 
+<p><img src="/img/mr-robot-poster.jpg" /></p>
+
 <p>Follows a young computer programmer who suffers from social anxiety disorder and forms connections through hacking. He’s recruited by a mysterious anarchist, who calls himself Mr. Robot.</p>
 
-<p>OK! já tá sabendo demais… u_u</p>
+<p>OK! já tá sabendo demais. ಠ_ಠ</p>
 
     </section>
   </div>
-    
+
 <footer class="footer-distributed">
 
 	<div class="footer-right">
@@ -89,3 +115,4 @@ está disponível grátis, é muito bom.</p>
 		Jekyll & Fonts feat. Google Fonts
 	</div>
 </footer>
+<script src="/js/application-post.js"></script>

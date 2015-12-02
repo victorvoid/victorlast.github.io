@@ -90,6 +90,7 @@ A palavra reservada <span class="kd-s">var</span> especifica que a variável sej
  9
 10
 11
+12
 </code></pre></div></td>
 <td class="code" >
 <div class="highlight" >
@@ -103,7 +104,8 @@ A palavra reservada <span class="kd-s">var</span> especifica que a variável sej
   <span class="p">cachorro</span><span class="o">=</span><span class="s2">'spike'</span><span class="p">;</span>
   <span class="p">setNomeCachorro("calango");</span>
   <span class="p">modificaNome();</span>
-  <span class="p">console.log(cachorro);</span><span class="c1">//--> Calango JR.</span>
+  <span class="p">console.log(cachorro);</span>
+  <span class="c1">//--> Calango JR.</span>
 <span class="p">}</span>
 </pre>
 </div>
@@ -125,6 +127,7 @@ Repare que damos um nome de calango, mas a funcao <em>modificaNome( )</em> alter
  3
  4
  5
+ 6
 </code></pre></div></td>
 <td class="code" >
 <div class="highlight" >
@@ -133,7 +136,8 @@ Repare que damos um nome de calango, mas a funcao <em>modificaNome( )</em> alter
 <span class="kd">function</span> <span class="nx">imprimeCachorro(){</span>
   <span class="p">console.log(cachorro);</span>
 <span class="p">}</span>
-<span class="p">imprimeCachorro();</span><span class="c1">//--></span><span class="err">ReferenceError: a is not defined</span>
+<span class="p">imprimeCachorro();</span>
+<span class="c1">//</span><span class="err">ReferenceError: a is not defined</span>
 </pre>
 </div>
 </td></tr>
@@ -189,15 +193,17 @@ A lógica de muitas linguagens seria mostrar spike, pois já foi instanciada no 
  7
  8
  9
+ 10
 </code></pre></div></td>
 <td class="code" >
 <div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 5:</span>
-<span class="kd">var</span> <span class="p">cachorro;</span><span class="c1">//underfine - compilador elevando</span>
+<span class="kd">var</span> <span class="p">cachorro;</span>
+<span class="c1">//underfine -compilador elevando</span>
 <span class="p">cachorro</span> <span class="o">=</span> <span class="s2">'spike'</span>
 <span class="kd">function</span> <span class="nx">imprimeCachorro(){</span>
-  <span class="c1">//var cachorro; undefine  - compilador elevando</span>
+<span class="c1">//var cachorro; compilador elevando</span>
   <span class="p">console.log(cachorro);</span>
   <span class="p">cachorro</span><span class="o"> = </span><span class="s2">'spike'</span><span class="p">;</span>
 }</span>
@@ -276,20 +282,28 @@ Acontece que as duas funções <em>pegaValor( )</em> foram jogadas para o topo, 
  10
  11
  12
+ 13
+ 14
+ 15
+ 16
 </code></pre></div></td>
 <td class="code" >
 <div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 6:</span>
-<span class="kd">var</span> <span class="p">valor;</span> <span class="c1">//underfine - Elevada para o topo</span>
-<span class="kd">function</span> <span class="nx">getQualquerValor(){</span><span class="c1">//continua no topo</span>
-  <span class="kd">function</span> <span class="nx">pegaValor(){</span><span class="c1">//elevada para o topo</span>
+<span class="kd">var</span> <span class="p">valor;</span>
+<span class="c1">//underfine - Elevada para o topo</span>
+<span class="kd">function</span> <span class="nx">getQualquerValor(){</span>
+<span class="c1">//continua no topo</span>
+  <span class="kd">function</span> <span class="nx">pegaValor(){</span>
+  <span class="c1">//elevada para o topo</span>
     <span class="k">return</span> <span class="p">0;</span>
   <span class="p">}</span>
    <span class="kd">function</span> <span class="nx">pegaValor(){</span>
     <span class="k">return</span> <span class="p">1;</span>
   <span class="p">}</span>
-  <span class="k">return</span><span class="p"> pegaValor();</span><span class="c1">//prevalece a última</span>
+  <span class="k">return</span><span class="p"> pegaValor();</span>
+  <span class="c1">//prevalece a última</span>
 <span class="p">}</span>
 <span class="p">valor</span> <span class="o"> = </span><span class="p">getQualquerValor();</span> <span class="c1">//--> 1</span>
 </pre>
@@ -358,12 +372,14 @@ Agora cuidado, estamos usando uma funções anônima, com isso a declaração so
  11
  12
  13
+ 14
 </code></pre></div></td>
 <td class="code" >
 <div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 8:</span>
-<span class="kd">var</span> <span class="p">valor;</span><span class="c1">//underfine - elevada para o topo</span>
+<span class="kd">var</span> <span class="p">valor;</span>
+<span class="c1">//underfine - elevada para o topo</span>
 <span class="kd">function</span> <span class="nx">getQualquerValor(){</span>
   <span class="kd">var </span><span class="p">pegaValor</span><span class="0"> = </span><span class="kd">function(){</span>
     <span class="k">return</span> <span class="p">0;</span>
@@ -509,26 +525,30 @@ Note que ao chamar a tela, ele usa a variável <em>mensagem</em>, que está no e
  14
  15
  16
+ 17
+ 18
 </code></pre></div></td>
 <td class="code" >
 <div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 11:</span>
-<span class="k">function(){</span>
-  <span class="kd">var</span><span class="p"> conta </span><span class="o">= </span><span class="p">n;</span>
-  <span class="k">retun</span><span class="p">{</span>
-    <span class="k">increment</span><span class="p">:</span><span class="k"> function</span><span class="p"> (){</span>
-      <span class="p">cont++;</span><span class="c1">// apenas incrementa o valor passado por parametro, e lembre está no escopo de fora</span>
+<span class="k">function </span><span class="p">contar(n){</span>
+  <span class="kd">var</span><span class="p"> cont </span><span class="o">= </span><span class="p">n;</span>
+  <span class="k">return</span><span class="p">{</span>
+    <span class="p">incremente:</span><span class="k">function</span><span class="p">(){</span>
+      <span class="p">cont++;</span>
+    <span class="c1">// apenas incrementa o valor passado por parametro</span>
+    <span class="c1">//lembre, ele está no escopo de fora</span>
     <span class="p">},</span>
-    <span class="k">get</span><span class="p">:</span><span class="k">function</span><span class="p"> (){</span>
+    <span class="p">get:</span><span class="k">function</span><span class="p">(){</span>
       <span class="k">return </span><span class="p">cont;</span><span class="c1">//pega o valor atual</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
-<span class="kd">var </span><span class="p">contador</span><span class="o"> = </span><span class="p">conta(0);</span>
+<span class="kd">var </span><span class="p">contador</span><span class="o"> = </span><span class="p">contar(0);</span>
 <span class="p">contador.incremente();</span>
 <span class="p">contador.incremente();</span>
-<span class="p">contar.get();</span><span class="c1">//--> 2</span>
+<span class="p">console.log(contador.get());</span><span class="c1">//--> 2</span>
 </pre>
 </div>
 </td></tr>
@@ -780,9 +800,6 @@ Um das coisas curiosas é que ele não verifica nossos argumentos para dar erro 
  4
  5
  6
- 7
- 8
- 9
 </code></pre></div></td>
 <td class="code" >
 <div class="highlight" >
@@ -816,11 +833,14 @@ Sem problemas, vamos ver outro exemplo ٩(͡๏̯͡๏)۶
  4
  5
  6
+ 7
+ 8
+ 9
 </code></pre></div></td>
 <td class="code" >
 <div class="highlight" >
 <pre>
-<span class="c1">//Exemplo 17:</span>
+<span class="c1">//Exemplo 18:</span>
 <span class="k">function</span><span class="p"> multiplica(n1,n2){</span>
   <span class="k">return </span><span class="p">n1*n2;</span>
 <span class="p">}</span>
@@ -857,7 +877,7 @@ Variáveis globais é um enorme risco, onde pode ocorrer colisões de nomes e tr
 <td class="code" >
 <div class="highlight" >
 <pre>
-<span class="c1">//Exemplo 17:</span>
+<span class="c1">//Exemplo 19:</span>
 <span class="k">function</span><span class="p"> somar(n1,n2){</span>
   <span class="k">return </span><span class="p">n1+n2;</span>
 <span class="p">}</span>
@@ -888,7 +908,7 @@ Sem problemas, vamos ver outro exemplo ٩(͡๏̯͡๏)۶
 <td class="code" >
 <div class="highlight" >
 <pre>
-<span class="c1">//Exemplo 18:</span>
+<span class="c1">//Exemplo 20:</span>
 <span class="k">function</span><span class="p"> qualquer(){</span>
   <span class="kd">var</span><span class="p"> cavalo</span><span class="o"> = </span><span class="sc">'marrom'</span><span class="p">;</span>
 <span class="p">}</span>
@@ -908,13 +928,10 @@ Sem problemas, vamos ver outro exemplo ٩(͡๏̯͡๏)۶
  5
  6
  7
- 8
 </code></pre></div></td>
 <td class="code" >
 <div class="highlight" >
-<pre>
-<span class="c1">//Exemplo 19:</span>
-<span class="kd">var</span><span class="p"> n</span><span class="o"> = </span><span class="p">3;</span>
+<pre><span class="kd">var</span><span class="p"> n</span><span class="o"> = </span><span class="p">3;</span>
 <span class="p">getValor</span><span class="o"> = </span><span class="p">(</span><span class="k">function</span><span class="p">(){</span>
   <span class="k">return</span><span class="p"> e;</span>
 <span class="p">}(n));</span>
@@ -947,7 +964,7 @@ Nesse exemplo sim ⬇ ele é chamado apenas depois da atribuição no n.
 <td class="code" >
 <div class="highlight" >
 <pre>
-<span class="c1">//Exemplo 20:</span>
+<span class="c1">//melhorando o exemplo 20:</span>
 <span class="kd">var</span><span class="p"> n, getValue;</span>
 <span class="p">n</span><span class="o"> = </span><span class="p">1;</span>
 <span class="p">getValue</span><span class="o"> =</span><span class="k">function</span><span class="p">(){</span>

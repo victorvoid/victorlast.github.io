@@ -1,3 +1,8 @@
+/* desabilitando o checkbox para o menu ficar fechado*/
+(function desabilitamenu(){
+	document.getElementById("toggle").checked = false;
+})();
+
 var div = document.getElementById('mensagem');
 var texto = "A cada dia que passa, eu percebo que não sei nada. ಠ_ಠ'";
 var typer;	
@@ -9,7 +14,6 @@ var char = str.split('').reverse();
     el.innerHTML += next;
 }, 50);
 }
-escrever(texto, div);
 function quemsou(){
 	div.innerHTML = "";
 	clearInterval(typer);

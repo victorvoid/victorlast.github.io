@@ -3,14 +3,14 @@
 @import url("https://fonts.googleapis.com/css?family=PT+Sans+Caption");
 @import url('https://fonts.googleapis.com/css?family=Lora');
 /* Content post */
+
 #post{
-	width: 800px;
+max-width: 900px;
 	margin: 10px auto;
 	padding-top: 10px;
-	text-align: justify;
 	line-height: 1.5;
 	font-family: 'Lora', Sans;
-	font-size: 20px;
+	font-size: 1.3em;
 	color: #5F5F5F;
 }
 /* Configtexto */
@@ -21,8 +21,8 @@ h3{
 }
 h1, h2, h3, h4, h5, p {
 	margin: 1.2em 0 0.6em 0;
-    padding: 0;
-    font-family: 'PT Sans Caption';
+  padding: 0;
+  font-family: 'PT Sans Caption';
 }
 h1{
 	font-size: 2.3em;
@@ -53,7 +53,7 @@ a{
    	color:#2F2F2F;
     margin: 0;
     padding: 0;
-    font-size: 35px;
+    font-size: 30px;
     font-family: 'Lato';
 }
 a:hover {
@@ -149,9 +149,8 @@ blockquote.trivia .cabecalho {
 .citacao{
 	color: black;
 }
-
-/** PRE FOOTER **/
-@media(max-width:641px) {
+/** MOBILE FONTS **/
+@media(max-width:480px) {
 	h1{
 		font-size: 1.5em;
 	}
@@ -159,9 +158,15 @@ blockquote.trivia .cabecalho {
 		font-size: 1.3em;
 	}
 	#post{
-		width: 450px;
+		width: 380px;
 	}
-	p{
-		font-size: 20px;
-	}
+  /*Table - code */
+  .highlight{
+    font-size: 10px;
+  }
+
+  /* IMAGENS  */
+  img#bart-reading{
+    width: 380;
+  }
 }

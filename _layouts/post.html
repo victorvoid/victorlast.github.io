@@ -1,10 +1,15 @@
+---
+coments : true
+---
+
 {% include head.html %}
 
-{% include headerPost.html %}
+{% include header.html %}
 
   <div id="post">
   	<section>
     	{{ content }}
     </section>
   </div>
-    {% include footerPost.html %}
+{% include footerPost.html %}
+<script src="{{ "/js/application-post.js" | prepend: site.baseurl }}"></script>

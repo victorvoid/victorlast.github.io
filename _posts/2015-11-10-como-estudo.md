@@ -5,10 +5,12 @@ date:   2015-11-10 00:07:31 -0400
 categories: victorigor
 subtitle: Saiba as ferramentas que mais utilizo durante meu dia-a-dia.
 ---
-#Com o que estudo ?
+#Com o que eu estudo ?
+<img src="{{ "/img/homer-pensando.gif"}}">
+
 Cursos e livros online, a maioria grátis :D hehe, e claro não pode faltar, sempre com meu querido fone ♫.
 
-###Cursando:
+###Cursando atualmente:
 
 [BeMEAN(Mongodb, Express, Angular e Node)](http://dagora.net/be-mean/)
 
@@ -32,21 +34,29 @@ de vez em quando, quando não quero usar o sublime, ele ajuda muito em projetos 
 [PHPStorm](https://www.jetbrains.com/phpstorm/)
 
 ##Livro:
+<img src="{{ "/img/bart-reading.jpg"}}" id="bart-reading">
+
 O tempo às vezes não me ajuda, mas ainda quero concluir de ler o JavaScript Eloquente, JavaScript é uma linguagem que estou adorando, e esse livro além de
 está disponível grátis, é muito bom.
 
 [JavaScript Eloquente](https://github.com/braziljs/eloquente-javascript)
 
-##Álbum preferido:
+##Música - Álbum preferido:
+<img src="{{ "/img/bart-listening.gif"}}">
+
  ♪ Música para mim é esencial, não me vejo passar um dia inteiro sem escutar música, é estranho, passo muito tempo na frente do computador, e sempre com um fone. :p
 
 [CHON - Glow](http://chon.merchnow.com/products/195023/grow-cd)
 
 ##Série:
+<img src="{{ "/img/homer-hack.jpg"}}">
+
 Preciso sempre me motivar, e acho que todo mundo precisa, motivação é coisa séria, e pra ajudar nisso, adoro ver séries que motivam, não só séries como filmes e palestras, atualmente estou vendo Mr.Robot, e quem gosta de segurança da informação, não pode deixar de ver, indico.
 
 [Mr.Robot](http://www.imdb.com/title/tt4158110/): 
 
+<img src="{{ "/img/mr-robot-poster.jpg"}}">
+
 Follows a young computer programmer who suffers from social anxiety disorder and forms connections through hacking. He's recruited by a mysterious anarchist, who calls himself Mr. Robot.
 
-OK! já tá sabendo demais... u_u
+OK! já tá sabendo demais. ಠ_ಠ

@@ -12,7 +12,7 @@ header{
   text-align: center;  
 }
 
-/*Content*/
+/*Content init*/
 #corpo{
       max-width: 1200px;
       margin: 20px auto;
@@ -37,8 +37,7 @@ header{
     color: #BAB8B8;
 }
 .post-title{
-    margin: 0px 0px 0.2em;
-    
+    margin: 0px 0px 0.2em;  
     font-weight: bold;
 }
 /*#34495E */
@@ -86,9 +85,6 @@ header{
   float: right;
   margin-top: 6px;
   max-width: 180px;
-}
-.footer-left p{
-  font-size: 17px;
 }
 #coracao{color:#FF7272;}
 @media (max-width: 600px) {
