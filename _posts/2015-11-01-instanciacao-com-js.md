@@ -659,8 +659,8 @@ Não podemos ficar criando variáveis globais, pois elas ficam livre ao longo do
     <span class="p">console.log(</span><span class="s2">"Saldo: 0"</span><span class="p">);</span>
     <span class="k">return </span><span class="p">0;</span>
   <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(saldo - e &lt; 0){</span>
-    <span class="p">console.log(</span><span class="s2">"Saldo insuficiente para o saque"</span><span class="p">);</span>
-    <span class="k">return </span><span class="p">0;</span>
+ <span class="p">console.log(</span><span class="s2">"Saldo insuficiente para o saque"</span><span class="p">);</span>
+ <span class="k">return </span><span class="p">0;</span>
     <span class="p">}</span>
     <span class="p">saldo</span><span class="o"> = </span><span class="p">saldo - e;</span>
     <span class="p">console.log(</span><span class="s2">"Novo saldo: "</span><span class="p">+saldo);</span>
