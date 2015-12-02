@@ -55,7 +55,7 @@ Preciso sempre me motivar, e acho que todo mundo precisa, motivação é coisa s
 
 [Mr.Robot](http://www.imdb.com/title/tt4158110/): 
 
-<img src="{{ "/img/mr-robot-poster.jpg"}}">
+<img src="{{ "/img/mr-robot-poster.jpg"}}" id="mr-robot-poster">
 
 Follows a young computer programmer who suffers from social anxiety disorder and forms connections through hacking. He's recruited by a mysterious anarchist, who calls himself Mr. Robot.
 
