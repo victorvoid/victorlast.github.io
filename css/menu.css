@@ -119,6 +119,7 @@ transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
 @media (max-width: 600px) {
   .message {
     height: 250px;
+    background-size: 600px 320px;
     background-position: 320px;
   }
   #list-menu{
