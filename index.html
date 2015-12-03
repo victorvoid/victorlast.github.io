@@ -12,7 +12,7 @@ layout: default
             <div class="date">{{ post.date | date: "%-d %b, %Y" }}</div>
             <div class="categories">
                 <ul>
-                    <li><a href="#">#{{post.categories}}</a></li>
+                    <li><a href="/tags/#{{post.tags}}">#{{post.tags}}</a></li>
                 </ul>
             </div>
         </li>

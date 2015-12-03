@@ -2,7 +2,7 @@
 layout: post
 title:  "Como estudo ?"
 date:   2015-11-10 00:07:31 -0400
-categories: victorigor
+tags: victorigor
 subtitle: Saiba as ferramentas que mais utilizo durante meu dia-a-dia.
 ---
 #Com o que eu estudo ?

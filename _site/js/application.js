@@ -19,5 +19,5 @@ function quemsou(){
 function tags(){
 	div.innerHTML = "";
 	clearInterval(typer);
-	div.innerHTML = "<ul><li><a href='#'>#JSBeMean</a></li><li><a href='#'>#MongoBeMean</a></li><li><a href='#'>#AndroidUdemy</a></li><li><a href='#'> #PHP</a></li></ul>";
+	div.innerHTML = "<ul><li><a href='/tags/#jsbemean'>#jsbemean</a></li><li><a href='/tags/#mongobemean' >#mongobemean</a></li><li><a href='/tags/#androidUdemy'>#androidUdemy</a></li><li><a href='/tags/#php'> #PHP</a></li><li><a href='/tags/#victorigor'>#victorigor</a></li></ul>";
 }
