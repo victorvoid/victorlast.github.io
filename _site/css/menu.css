@@ -1,6 +1,8 @@
 /* CONTEUDO DO MENU */
 .message {
-background:#181818;
+background-image: url("/img/bg.jpg");
+background-size: 800px 420px;
+background-position: right; 
 color:#FFF;
 position: absolute;
 top: -250px;
@@ -113,11 +115,11 @@ transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
 .share-header{
   padding-top: 30px;  
 }
-
 /* MEDIA QUERIE */
 @media (max-width: 600px) {
   .message {
     height: 250px;
+    background-position: 280px;
   }
   #list-menu{
     margin-top: -40px;
@@ -128,4 +130,5 @@ transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
   .share-header a{
     font-size: 25px;
   }
+
 }
