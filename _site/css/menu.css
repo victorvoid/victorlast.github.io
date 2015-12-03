@@ -1,7 +1,7 @@
 /* CONTEUDO DO MENU */
 .message {
 background-image: url("/img/bg.jpg");
-background-size: 800px 420px;
+background-size: 800px 450px;
 background-position: right; 
 color:#FFF;
 position: absolute;
@@ -116,10 +116,11 @@ transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
   padding-top: 30px;  
 }
 /* MEDIA QUERIE */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .message {
     height: 250px;
-    background-position: 280px;
+    background-size: 600px 320px;
+    background-position: 320px;
   }
   #list-menu{
     margin-top: -40px;

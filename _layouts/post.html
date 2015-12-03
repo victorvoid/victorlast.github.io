@@ -11,5 +11,8 @@ coments : true
     	{{ content }}
     </section>
   </div>
+	<div id="comentarios">
+		{% include disqus.html %}
+	</div>
 {% include footerPost.html %}
 <script src="{{ "/js/application-post.js" | prepend: site.baseurl }}"></script>

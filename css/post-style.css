@@ -150,6 +150,11 @@ blockquote.trivia .cabecalho {
 .citacao{
 	color: black;
 }
+/* comentarios - disqus */
+#comentarios{
+  margin: auto;
+  max-width: 900px;
+}
 /** MOBILE FONTS **/
 @media(max-width:480px) {
 	h1{
