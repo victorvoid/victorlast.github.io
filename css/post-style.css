@@ -165,7 +165,9 @@ blockquote.trivia .cabecalho {
 	}
 	#post{
 		width: 360px;
+		zoom:1;
 	}
+   
   /*Table - code */
   .highlight{
     font-size: 10px;
