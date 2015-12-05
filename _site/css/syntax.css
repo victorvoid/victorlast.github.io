@@ -64,3 +64,5 @@
 .err-s { color: #a61717; background-color: #e3d2d2 } /* Error */
 .kd-s { color: #008800; font-weight: bold } /* Keyword.Declaration */
 .c1-s { color: #bdc3c7 } /* Comment.Single */
+.nc-s{ color: #bb0066; font-weight: bold }
+.nv-s{ color: #336699}
