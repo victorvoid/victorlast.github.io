@@ -165,15 +165,14 @@ blockquote.trivia .cabecalho {
 	}
 	#post{
 		width: 360px;
-		zoom:1;
 	}
    
   /*Table - code */
   .highlight{
-    font-size: 10px;
+    font-size: 9px;
   }
   .highlighttable{
-    width: 335px;
+    width: 330px;
   }
   #post h3{
     width: 335px;
