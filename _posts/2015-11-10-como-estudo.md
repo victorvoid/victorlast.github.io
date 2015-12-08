@@ -34,7 +34,7 @@ de vez em quando, quando não quero usar o sublime, ele ajuda muito em projetos 
 [PHPStorm](https://www.jetbrains.com/phpstorm/)
 
 ##Livro:
-<img src="{{ "/img/bart-reading.jpg"}}" id="bart-reading">
+<img src="{{ "/img/bart-reading.jpg"}}" class="img-responsive">
 
 O tempo às vezes não me ajuda, mas ainda quero concluir de ler o JavaScript Eloquente, JavaScript é uma linguagem que estou adorando, e esse livro além de
 está disponível grátis, é muito bom.
@@ -49,13 +49,13 @@ está disponível grátis, é muito bom.
 [CHON - Glow](http://chon.merchnow.com/products/195023/grow-cd)
 
 ##Série:
-<img src="{{ "/img/homer-hack.jpg"}}" id="homer-hack">
+<img src="{{ "/img/homer-hack.jpg"}}" class="img-responsive">
 
 Preciso sempre me motivar, e acho que todo mundo precisa, motivação é coisa séria, e pra ajudar nisso, adoro ver séries que motivam, não só séries como filmes e palestras, atualmente estou vendo Mr.Robot, e quem gosta de segurança da informação, não pode deixar de ver, indico.
 
 [Mr.Robot](http://www.imdb.com/title/tt4158110/): 
 
-<img src="{{ "/img/mr-robot-poster.jpg"}}" id="mr-robot-poster">
+<img src="{{ "/img/mr-robot-poster.jpg"}}" class="img-responsive">
 
 Follows a young computer programmer who suffers from social anxiety disorder and forms connections through hacking. He's recruited by a mysterious anarchist, who calls himself Mr. Robot.
 

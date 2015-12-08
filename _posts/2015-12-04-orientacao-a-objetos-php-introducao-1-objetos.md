@@ -10,7 +10,7 @@ subtitle: Saiba os princípios básicos de orientação a objetos com php e no q
 ####Victor Igor
 
 
-<img id= "tirinhapoo" src="{{ "/img/tirinha-orientacao-a-objetos.png"}}">
+<img class="img-responsive" src="{{ "/img/tirinha-orientacao-a-objetos.png"}}">
 
 ####fonte: [Vida de programador](http://vidadeprogramador.com.br/2012/04/02/php-orientado-a-objetos/)
 

@@ -1,10 +1,13 @@
 /* desabilitando o checkbox para o menu ficar fechado*/
-(function desabilitamenu(){
-	document.getElementById("toggle").checked = false;
-})();
+if (window.matchMedia("(max-width: 767px)").matches) {
+	(function desabilitamenu(){
+		document.getElementById("toggle").checked = false;
+	})();
+}
+
 
 var div = document.getElementById('mensagem');
-var texto = "A cada dia que passa, eu percebo que não sei nada. ಠ_ಠ'";
+var texto = "Vou aprendendo, vou compartilhando. (⌒‿⌒)";
 var typer;	
 function escrever(str, el) {
 var char = str.split('').reverse();
@@ -23,5 +26,5 @@ function quemsou(){
 function tags(){
 	div.innerHTML = "";
 	clearInterval(typer);
-	div.innerHTML = "<ul><li><a href='#'>#JSBeMean</a></li><li><a href='#'>#MongoBeMean</a></li><li><a href='#'>#AndroidUdemy</a></li><li><a href='#'> #PHP</a></li></ul>";
+	div.innerHTML = "<ul><li><a href='/tags/#jsbemean'>#jsbemean</a></li><li><a href='/tags/#mongobemean' >#mongobemean</a></li><li><a href='/tags/#androidUdemy'>#androidUdemy</a></li><li><a href='/tags/#php'> #php</a></li><li><a href='/tags/#victorigor'>#victorigor</a></li></ul>";
 }

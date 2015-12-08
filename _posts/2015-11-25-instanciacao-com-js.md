@@ -1,92 +1,46 @@
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+---
+layout: post
+title:  "Instanciação com JavaScript"
+date:   2015-11-25 00:07:31 -0400
+tags: [jsbemean]
+subtitle: Closure ? Hoisting ? Instanciação usando uma IIFE?
+---
+#Instanciação com JavaScript  
 
-  <title>Instanciação com JavaScript</title>
-  <meta name="description" content="Instanciação com JavaScript">
-  <link rel="canonical" href="https://victorvoid.github.io/2015/11/25/instanciacao-com-js.html">
+####Victor Igor
 
+Primeiro de tudo, você deve está se perguntando, *"qual o objetivo desse post ?
+Ensinar declarar uma variável no JavaScript ? Vou aprender alguma coisa ? Vai ser importante para mim ?*"
 
-  <link href="/css/stylesheet.css" rel="stylesheet">
-  <link href="/css/post-style.css" rel="stylesheet">
-  <link href="/css/syntax.css" rel="stylesheet">
-  <link href="/css/menu.css" rel="stylesheet">
-  <link href="/css/tags.css" rel="stylesheet">  
-  <!-- FONT -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- DISQUS-->
-  <script id="dsq-count-scr" src="//victorvoid.disqus.com/count.js" async></script>
-    
-</head>
+##Resumo
 
-
-<header>
-  <input type="checkbox" name="toggle" id="toggle" checked="checked" />
-  <label for="toggle"></label>
-
-  <div class="container">
-
-    <div id="mensagem">
-    </div>
-  </div>
-  
-  <div class="message">
-    <ul id="list-menu">
-      <li><a href="/index.html">Blog</a></li>
-      <li><a href="#" onclick="quemsou();">Quem sou ?</a></li>
-      <li><a href="#" onclick="tags();">Tags</a></li></li>
-    </ul>
-    <div class="share-header">
-      <a  href="http://www.facebook.com/VictorCalangu"><i class="fa fa-facebook"></i></a>
-      <a id="t" href="http://twitter.com/Vituzudo"><i class="fa fa-twitter"></i></a>
-      <a href="https://plus.google.com/u/0/+VictorIgor0w3"><i class="fa fa-google-plus"></i></a>
-      <a href="http://github.com/VictorVoid"><i class="fa fa-github"></i></a>
-
-  </div>
-  </div>
-</header>  
-
-  <div id="post">
-  	<section>
-    	<h1 id="instanciao-com-javascript">Instanciação com JavaScript</h1>
-
-<h4 id="victor-igor">Victor Igor</h4>
-
-<p>Primeiro de tudo, você deve está se perguntando, <em>“qual o objetivo desse post ?
-Ensinar declarar uma variável no JavaScript ? Vou aprender alguma coisa ? Vai ser importante para mim ?</em>”</p>
-
-<h2 id="resumo">Resumo</h2>
-
-<p>O objetivo não é ensinar a declarar uma variável ou lhe encher de teorias (também não tem como fugir totalmente delas).
-Se você realmente quer saber como funciona <strong>JavaScript</strong>, e quer ter uma opinião para defender-la, pra isso não há nada
+O objetivo não é ensinar a declarar uma variável ou lhe encher de teorias (também não tem como fugir totalmente delas).
+Se você realmente quer saber como funciona **JavaScript**, e quer ter uma opinião para defender-la, pra isso não há nada
 mais importante que ficar sabendo a fundo o assunto, não é ? Portanto veremos alguns conceitos que muitas 
-vezes não sabemos, por acontecer <em>‘escondido’</em>.</p>
+vezes não sabemos, por acontecer *'escondido'*. 
 
-<ol>
-  <li>O que é ?</li>
-  <li>Como usa ?</li>
-  <li>Como funciona ?</li>
-</ol>
+1. O que é ?
+2. Como usa ?
+3. Como funciona ?
 
-<p>Hoisting, Closures, Variáveis globais, Variável por parâmetro e instanciação usando uma IIFE, com JavaScript.</p>
+Hoisting, Closures, Variáveis globais, Variável por parâmetro e instanciação usando uma IIFE, com JavaScript.
 
-<h2 id="palavras-chaves">Palavras chaves:</h2>
+##Palavras chaves:
 
-<p>hosting, closures, variáveis, javascript, instancia, escopo</p>
+hosting, closures, variáveis, javascript, instancia, escopo
 
-<h2 id="hoisting">Hoisting</h2>
+##Hoisting
 
-<p>Não precisa ser um gênio para entender. Muitos que não sabem seu significado pode está pensando 
-<em>“Nossa, deve ser algo difícil!”</em>, mas na verdade precisa mais de atenção, a linguagem usa e você não tá percebendo, porém pode causar bastante confusão se não souber da sua existência, por ter comportamentos <em>‘ocultos’</em>. Então o que significa <strong>Hoisting</strong> ? Traduzindo para português, seria <em>‘elevação’</em>, e isso tem todo sentido no JavaScript. 
+Não precisa ser um gênio para entender. Muitos que não sabem seu significado pode está pensando 
+*"Nossa, deve ser algo difícil!"*, mas na verdade precisa mais de atenção, a linguagem usa e você não tá percebendo, porém pode causar bastante confusão se não souber da sua existência, por ter comportamentos *'ocultos'*. Então o que significa **Hoisting** ? Traduzindo para português, seria *'elevação'*, e isso tem todo sentido no JavaScript. 
 Antes de mostrar um exemplo com hoisting, é importante entender como funciona a declaração de uma variável no 
-javascript.</p>
+javascript.
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -97,19 +51,19 @@ javascript.</p>
  9
 10
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">// Exemplo 1:</span>
 <span class="kd">function</span> <span class="nx">getNome(){</span>
   <span class="kd">var</span> <span class="p">nome = </span><span class="s2">"victor"</span><span class="p">;</span>
   <span class="k">return</span> <span class="p">nome;</span>
-<span class="p">}</span><span class="c1">//--&gt; victor</span>
+<span class="p">}</span><span class="c1">//--> victor</span>
 
 <span class="kd">function</span> <span class="nx">getCachorroNome(){</span>
   <span class="kd">var</span> <span class="p">nome = </span><span class="s2">"Calango JR."</span><span class="p">;</span>
   <span class="k">return</span> <span class="p">nome;</span>
-<span class="p">}</span><span class="c1">//--&gt; Calango JR.</span>
+<span class="p">}</span><span class="c1">//--> Calango JR.</span>
 </pre>
 </div>
 </td></tr>
@@ -120,11 +74,12 @@ javascript.</p>
 A palavra reservada <span class="kd-s">var</span> especifica que a variável seja do escopo atual, com isso, usando a variável nome em outras funcoes não irá atrapalhar, pois ela apenas faz parte do seu escopo.</p>
 </blockquote>
 
+
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -137,8 +92,8 @@ A palavra reservada <span class="kd-s">var</span> especifica que a variável sej
 11
 12
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 2:</span>
 <span class="kd">var</span> <span class="p">cachorro;</span>
@@ -150,7 +105,7 @@ A palavra reservada <span class="kd-s">var</span> especifica que a variável sej
   <span class="p">setNomeCachorro("calango");</span>
   <span class="p">modificaNome();</span>
   <span class="p">console.log(cachorro);</span>
-  <span class="c1">//--&gt; Calango JR.</span>
+  <span class="c1">//--> Calango JR.</span>
 <span class="p">}</span>
 </pre>
 </div>
@@ -162,19 +117,20 @@ A palavra reservada <span class="kd-s">var</span> especifica que a variável sej
 Repare que damos um nome de calango, mas a funcao <em>modificaNome( )</em> altera o nome da variável, isso acontece por ela ser uma variável global, um conceito importante que ainda veremos melhor.</p>
 </blockquote>
 
+
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
  5
  6
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 3:</span>
 <span class="kd">function</span> <span class="nx">imprimeCachorro(){</span>
@@ -187,13 +143,14 @@ Repare que damos um nome de calango, mas a funcao <em>modificaNome( )</em> alter
 </td></tr>
 </table>
 
-<p>O erro acontece pois não declaramos nenhum cachorro, então vamos lá =)</p>
+O erro acontece pois não declaramos nenhum cachorro, então vamos lá =)
+
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -201,8 +158,8 @@ Repare que damos um nome de calango, mas a funcao <em>modificaNome( )</em> alter
  6
  7
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 4:</span>
 <span class="kd">var</span> <span class="p">cachorro;</span>
@@ -210,23 +167,24 @@ Repare que damos um nome de calango, mas a funcao <em>modificaNome( )</em> alter
   <span class="p">console.log(cachorro);</span>
   <span class="p">cachorro</span><span class="o">=</span><span class="s2">'spike'</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="p">imprimeCachorro();</span><span class="c1">//--&gt;</span><span class="err">underfine</span>
+<span class="p">imprimeCachorro();</span><span class="c1">//--></span><span class="err">underfine</span>
 </pre>
 </div>
 </td></tr>
 </table>
 
-<p>Retorna <span class="err-s">underfine</span> por ter uma variável no seu escopo <em>imprimeCachorro( )</em> declarada, porém não instanciada. Você pode tá se perguntando ‘Como não foi instanciada se dentro da função o cachorro recebe <em>spike</em> ?’</p>
+Retorna <span class="err-s">underfine</span> por ter uma variável no seu escopo <em>imprimeCachorro( )</em> declarada, porém não instanciada. Você pode tá se perguntando 'Como não foi instanciada se dentro da função o cachorro recebe <em>spike</em> ?'
 
-<p>A lógica de muitas linguagens seria mostrar spike, pois já foi instanciada no topo. Taí um dos porquês que você precisa estudar a linguagem como funciona e não apenas sua sintaxe, JavaScript diferente de algumas linguagens, tem seus comportamentos diferenciado, e se você já estudou C, vai perceber que a sua ação é diferente. E é aí amiguinho que a mágica acontece, a variávei foi ‘hoisteada’, elevada para o topo. Isso acontece pois o compilador na verdade, declara todas as variáveis, logo que seu código começa a ser compilado.</p>
+A lógica de muitas linguagens seria mostrar spike, pois já foi instanciada no topo. Taí um dos porquês que você precisa estudar a linguagem como funciona e não apenas sua sintaxe, JavaScript diferente de algumas linguagens, tem seus comportamentos diferenciado, e se você já estudou C, vai perceber que a sua ação é diferente. E é aí amiguinho que a mágica acontece, a variávei foi 'hoisteada', elevada para o topo. Isso acontece pois o compilador na verdade, declara todas as variáveis, logo que seu código começa a ser compilado.
 
-<h3 id="como-acontece-">Como acontece? ⬇</h3>
+###Como acontece? ⬇
+
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -237,8 +195,8 @@ Repare que damos um nome de calango, mas a funcao <em>modificaNome( )</em> alter
  9
  10
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 5:</span>
 <span class="kd">var</span> <span class="p">cachorro;</span>
@@ -248,8 +206,8 @@ Repare que damos um nome de calango, mas a funcao <em>modificaNome( )</em> alter
 <span class="c1">//var cachorro; compilador elevando</span>
   <span class="p">console.log(cachorro);</span>
   <span class="p">cachorro</span><span class="o"> = </span><span class="s2">'spike'</span><span class="p">;</span>
-}
-<span class="p">ImprimeCachorro();</span><span class="c1">//--&gt;underfine</span>
+}</span>
+<span class="p">ImprimeCachorro();</span><span class="c1">//-->underfine</span>
 </pre>
 </div>
 </td></tr>
@@ -260,15 +218,15 @@ Repare que damos um nome de calango, mas a funcao <em>modificaNome( )</em> alter
 Logo depois ele executará a funcao <em>imprimeCachorro( )</em>, e entao ele pula as declarações e começa a executar o <em>console.log(cachorro)</em>, porém não houve nenhuma atribuição ao cachorro dentro do <em>imprimeCachorro( )</em>, já que foi declarada e hoisteada, e com isso ele continuou com o valor <em>underfine</em> e imprimiu.</p>
 </blockquote>
 
-<p>Com isso, já sabemos o que significa o underfine quando aparecer.</p>
+Com isso, já sabemos o que significa o underfine quando aparecer.
 
-<h3 id="a-mesma-coisa-pode-ser-aplicada-para-uma-funo">A mesma coisa pode ser aplicada para uma função.</h3>
+###A mesma coisa pode ser aplicada para uma função.
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -281,8 +239,8 @@ Logo depois ele executará a funcao <em>imprimeCachorro( )</em>, e entao ele pul
  11
  12
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 6:</span>
 <span class="kd">function</span> <span class="nx">getQualquerValor(){</span>
@@ -295,7 +253,7 @@ Logo depois ele executará a funcao <em>imprimeCachorro( )</em>, e entao ele pul
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="kd">var</span> <span class="p">valor</span> <span class="o"> = </span><span class="p">getQualquerValor();</span>
-<span class="p">console.log(valor);</span><span class="c1">//--&gt; 1</span>
+<span class="p">console.log(valor);</span><span class="c1">//--> 1</span>
 </pre>
 </div>
 </td></tr>
@@ -306,13 +264,13 @@ Logo depois ele executará a funcao <em>imprimeCachorro( )</em>, e entao ele pul
 Acontece que as duas funções <em>pegaValor( )</em> foram jogadas para o topo, e em seguida é retornada a última <em>pegaValor( )</em>, pois ela sobrescreve a primeira.</p>
 </blockquote>
 
-<h3 id="como-acontece--">Como acontece ? ⬇</h3>
+###Como acontece ? ⬇
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -329,8 +287,8 @@ Acontece que as duas funções <em>pegaValor( )</em> foram jogadas para o topo, 
  15
  16
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 6:</span>
 <span class="kd">var</span> <span class="p">valor;</span>
@@ -347,19 +305,19 @@ Acontece que as duas funções <em>pegaValor( )</em> foram jogadas para o topo, 
   <span class="k">return</span><span class="p"> pegaValor();</span>
   <span class="c1">//prevalece a última</span>
 <span class="p">}</span>
-<span class="p">valor</span> <span class="o"> = </span><span class="p">getQualquerValor();</span> <span class="c1">//--&gt; 1</span>
+<span class="p">valor</span> <span class="o"> = </span><span class="p">getQualquerValor();</span> <span class="c1">//--> 1</span>
 </pre>
 </div>
 </td></tr>
 </table>
 
-<h3 id="e-agora--vai-ser-o-mesmo-resultado-">E agora ? Vai ser o mesmo resultado ?</h3>
+###E agora ? Vai ser o mesmo resultado ?
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -372,8 +330,8 @@ Acontece que as duas funções <em>pegaValor( )</em> foram jogadas para o topo, 
  11
  12
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 7:</span>
 <span class="kd">function</span> <span class="nx">getQualquerValor(){</span>
@@ -386,21 +344,22 @@ Acontece que as duas funções <em>pegaValor( )</em> foram jogadas para o topo, 
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="kd">var</span> <span class="p">valor</span> <span class="o"> = </span><span class="p">getQualquerValor();</span>
-<span class="p">console.log(valor);</span><span class="c1">//--&gt; 0</span>
+<span class="p">console.log(valor);</span><span class="c1">//--> 0</span>
 </pre>
 </div>
 </td></tr>
 </table>
 
-<p>Agora cuidado, estamos usando uma funções anônima, com isso a declaração sobe e as funções (atribuição) continuam no mesmo lugar, e assim prevalecendo sempre a de cima.</p>
+Agora cuidado, estamos usando uma funções anônima, com isso a declaração sobe e as funções (atribuição) continuam no mesmo lugar, e assim prevalecendo sempre a de cima.
 
-<h3 id="como-acontece---1">Como acontece ? ⬇</h3>
+###Como acontece ? ⬇
+
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -415,8 +374,8 @@ Acontece que as duas funções <em>pegaValor( )</em> foram jogadas para o topo, 
  13
  14
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 8:</span>
 <span class="kd">var</span> <span class="p">valor;</span>
@@ -431,31 +390,31 @@ Acontece que as duas funções <em>pegaValor( )</em> foram jogadas para o topo, 
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="p">valor</span> <span class="o"> = </span><span class="p">getQualquerValor();</span>
-<span class="p">console.log(valor);</span><span class="c1">//--&gt; 0</span>
+<span class="p">console.log(valor);</span><span class="c1">//--> 0</span>
 </pre>
 </div>
 </td></tr>
 </table>
 
-<h2 id="closures">Closures</h2>
+##Closures
 
-<p>Traduzindo closure, podemos dizer que é algo de encerramento, no sentido de guardar, pôr em um lugar fechado. JavaScript não é a única a usar essa poderosa técnica, ela veio das linguagens funcionais, mas que acabou difundindo e implementado em outras linguagens como C#.</p>
+Traduzindo closure, podemos dizer que é algo de encerramento, no sentido de guardar, pôr em um lugar fechado. JavaScript não é a única a usar essa poderosa técnica, ela veio das linguagens funcionais, mas que acabou difundindo e implementado em outras linguagens como C#.
 
-<h3 id="um-exemplo-comum-">Um exemplo comum ⬇</h3>
+### Um exemplo comum ⬇
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
  5
  6
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 9:</span>
 <span class="kd">function </span><span class="p">somador(n1){</span>
@@ -468,34 +427,34 @@ Acontece que as duas funções <em>pegaValor( )</em> foram jogadas para o topo, 
 </td></tr>
 </table>
 
-<p>Mas cuidado, o <em>somador</em> não é uma closure, e sim o seu valor que retorna.</p>
+Mas cuidado, o <em>somador</em> não é uma closure, e sim o seu valor que retorna.
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="kd-s">var </span><span>closureSoma2</span><span class="o"> = </span>somador(2);
 <span class="kd-s">var </span><span>total </span><span class="o"> = </span><span class="p">closureSoma2(5);</span>
-<span>console.log(total);</span><span class="c1-s">//--&gt; 7</span>
+<span>console.log(total);</span><span class="c1-s">//--> 7</span>
 </pre>
 </div>
 </td></tr>
 </table>
 
-<h3 id="outro-exemplo-">Outro exemplo ಠ_ಠ</h3>
+###Outro exemplo ಠ_ಠ  
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -504,8 +463,8 @@ Acontece que as duas funções <em>pegaValor( )</em> foram jogadas para o topo, 
  7
  8
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 10:</span>
 <span class="k">function</span><span class="p"> mostrarMensagem(){</span>
@@ -527,30 +486,30 @@ Note que ao chamar a tela, ele usa a variável <em>mensagem</em>, que está no e
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="kd-s">var </span><span>closureSoma2</span><span class="o"> = </span>somador(2);
 <span class="kd-s">var </span><span>total </span><span class="o"> = </span><span class="p">closureSoma2(5);</span>
-<span>console.log(total);</span><span class="c1-s">//--&gt; 7</span>
+<span>console.log(total);</span><span class="c1-s">//--> 7</span>
 </pre>
 </div>
 </td></tr>
 </table>
 
-<h3 id="mais-outro-exemplo-e-se-reclamar-vem-mais-outro-">Mais outro exemplo, e se reclamar vem mais outro ლ(ಠ▃ಠლ)</h3>
+###Mais outro exemplo, e se reclamar vem mais outro ლ(ಠ▃ಠლ)
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -569,8 +528,8 @@ Note que ao chamar a tela, ele usa a variável <em>mensagem</em>, que está no e
  17
  18
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 11:</span>
 <span class="k">function </span><span class="p">contar(n){</span>
@@ -589,21 +548,22 @@ Note que ao chamar a tela, ele usa a variável <em>mensagem</em>, que está no e
 <span class="kd">var </span><span class="p">contador</span><span class="o"> = </span><span class="p">contar(0);</span>
 <span class="p">contador.incremente();</span>
 <span class="p">contador.incremente();</span>
-<span class="p">console.log(contador.get());</span><span class="c1">//--&gt; 2</span>
+<span class="p">console.log(contador.get());</span><span class="c1">//--> 2</span>
 </pre>
 </div>
 </td></tr>
 </table>
 
-<h3 id="na-prtica-">Na prática ⬇</h3>
+###Na prática ⬇
 
-<p>Primeiro vamos imaginar que precisamos saber quantas vezes o usuário está clicando no botão. Se você entendeu mesmo, não vai querer usar uma variável global pra sair contando, isso só vai te trazer prejuízo na frente.</p>
+Primeiro vamos imaginar que precisamos saber quantas vezes o usuário está clicando no botão. Se você entendeu mesmo, não vai querer usar uma variável global pra sair contando, isso só vai te trazer prejuízo na frente.
+
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -621,8 +581,8 @@ Note que ao chamar a tela, ele usa a variável <em>mensagem</em>, que está no e
  16
  17
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 12:</span>
 <span class="kd">var</span><span class="p"> butao</span><span class="o"> = </span><span class="p">document.getElementById(</span><span class="s2">'button'</span><span class="p">);</span>
@@ -649,16 +609,16 @@ Note que ao chamar a tela, ele usa a variável <em>mensagem</em>, que está no e
 <blockquote class="highlight-paragraph pull-in">
 	<p class="citacao">"Todos os seres humanos têm três vidas: a pública, a privada, e a secreta."</p>
 	Gabriel García Márquez
-</blockquote>
-<p><br /></p>
+</blockquote><br>
 
-<p>Não podemos ficar criando variáveis globais, pois elas ficam livre ao longo do código e provavelmente pode-se modificar e trazer dor de cabeça. Através de closure, podemos deixar ela escondida, ou seja, privada. Precisamos usar encapsulamento, um conceito das linguagens orientada a objetos, ora mas JavaScript é orientada a objetos ? NÃO. Porém, todavia, JS é linda, podemos criar um mecanismo de privar uma variável usando closure, e se você prestar bem atenção, não vai ter nenhuma dúvida. Vamos criar um exemplo clássico, um banco onde posso depositar e sacar, claro que quero meu dinheiro privado.</p>
+Não podemos ficar criando variáveis globais, pois elas ficam livre ao longo do código e provavelmente pode-se modificar e trazer dor de cabeça. Através de closure, podemos deixar ela escondida, ou seja, privada. Precisamos usar encapsulamento, um conceito das linguagens orientada a objetos, ora mas JavaScript é orientada a objetos ? NÃO. Porém, todavia, JS é linda, podemos criar um mecanismo de privar uma variável usando closure, e se você prestar bem atenção, não vai ter nenhuma dúvida. Vamos criar um exemplo clássico, um banco onde posso depositar e sacar, claro que quero meu dinheiro privado.
+
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -687,8 +647,8 @@ Note que ao chamar a tela, ele usa a variável <em>mensagem</em>, que está no e
  27
  28
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 13:</span>
 <span class="k">function</span><span class="p"> banco(){</span>
@@ -722,21 +682,24 @@ Note que ao chamar a tela, ele usa a variável <em>mensagem</em>, que está no e
 </td></tr>
 </table>
 
-<h3 id="boas-prticas-">Boas práticas: (⌒‿⌒)</h3>
 
-<p>Em projetos grande um dos problemas que acontecem muito é o de comportamento, alguns por está conseguindo acessar variáveis que não deviam, vazando escopo, sempre feche o escopo, se organize e não fique criando variáveis globais.</p>
 
-<h2 id="variveis-globais">Variáveis Globais</h2>
 
-<p>Falamos bastante sobre não criar variáveis globais, e que isso pode lhe trazer dores de cabeça lá na frente, mas por quê ? Elas podem ser acessadas por qualquer escopo, e possibilitando as chances de você modificar ou usar o mesmo nome.</p>
+###Boas práticas: (⌒‿⌒)
 
-<p>1.</p>
+Em projetos grande um dos problemas que acontecem muito é o de comportamento, alguns por está conseguindo acessar variáveis que não deviam, vazando escopo, sempre feche o escopo, se organize e não fique criando variáveis globais.
+
+##Variáveis Globais
+
+Falamos bastante sobre não criar variáveis globais, e que isso pode lhe trazer dores de cabeça lá na frente, mas por quê ? Elas podem ser acessadas por qualquer escopo, e possibilitando as chances de você modificar ou usar o mesmo nome.
+
+1.
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -744,8 +707,8 @@ Note que ao chamar a tela, ele usa a variável <em>mensagem</em>, que está no e
  6
  7
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 14:</span>
 <span class="kd">var </span><span class="p">mensagem</span><span class="o"> = </span><span class="sc">'sou global'</span><span class="p">;</span>
@@ -758,13 +721,13 @@ Note que ao chamar a tela, ele usa a variável <em>mensagem</em>, que está no e
 </div>
 </td></tr>
 </table>
-<p>2.</p>
+2.
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -772,8 +735,8 @@ Note que ao chamar a tela, ele usa a variável <em>mensagem</em>, que está no e
  6
  7
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 15:</span>
 <span class="kd">var </span><span class="p">mensagem</span><span class="o"> = </span><span class="sc">'sou global'</span><span class="p">;</span>
@@ -787,20 +750,21 @@ Note que ao chamar a tela, ele usa a variável <em>mensagem</em>, que está no e
 </td></tr>
 </table>
 
+
 <blockquote class="trivia">
 <p><strong class="cabecalho">Exemplo 14/15</strong>
 Na exemplo 2 a função <em>alteraMensagem</em>, não foi criado nenhuma variável, apenas atribuição, por isso ela modificou, diferente do exemplo 1, onde tem uma palavra reservada <span class="kd-s">var</span>, onde indica uma declaração no escopo atual.</p>
 </blockquote>
 
-<h2 id="variveis-por-parmetro">Variáveis por parâmetro</h2>
+##Variáveis por parâmetro
 
-<p>É comum demais passarmos parâmetros pela nossas funções, porém no JavaScript não precisamos especificar que tipo de dados vamos receber.</p>
+É comum demais passarmos parâmetros pela nossas funções, porém no JavaScript não precisamos especificar que tipo de dados vamos receber.
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -808,8 +772,8 @@ Na exemplo 2 a função <em>alteraMensagem</em>, não foi criado nenhuma variáv
  6
  7
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 16:</span>
 <span class="kd">var </span><span class="p">canguru</span><span class="o"> = </span><span class="p">1</span><span class="p">;</span>
@@ -817,52 +781,52 @@ Na exemplo 2 a função <em>alteraMensagem</em>, não foi criado nenhuma variáv
   <span class="p"> canguru</span><span class="o"> += </span><span class="p">e;</span>
 <span class="p">}</span>
 <span class="p">pular(4);</span>
-<span class="p">console.log(canguru);</span><span class="c1">//--&gt; 5</span>
+<span class="p">console.log(canguru);</span><span class="c1">//--> 5</span>
 </pre>
 </div>
 </td></tr>
 </table>
 
-<p>Um das coisas curiosas é que ele não verifica nossos argumentos para dar erro de sintaxe. Como por exemplo:⬇</p>
+Um das coisas curiosas é que ele não verifica nossos argumentos para dar erro de sintaxe. Como por exemplo:⬇
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
  5
  6
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 17:</span>
 <span class="k">function</span><span class="p"> somar(n1,n2){</span>
   <span class="k">return </span><span class="p">n1+n2;</span>
 <span class="p">}</span>
 <span class="kd">var</span><span class="p"> resultado</span><span class="o"> = </span><span class="p">somar(1);</span>
-<span class="p">console.log(canguru);</span><span class="c1">//--&gt; NaN</span>
+<span class="p">console.log(canguru);</span><span class="c1">//--> NaN</span>
 </pre>
 </div>
 </td></tr>
 </table>
 
-<h3 id="mas-por-qu-">Mas por quê ?</h3>
+###Mas por quê ?
 
-<p>Simples, como não foi passado por parâmetro, ela é setada como underfined, e você não pode querer somar um número com <span class="err-s">underfined</span>.</p>
+Simples, como não foi passado por parâmetro, ela é setada como underfined, e você não pode querer somar um número com <span class="err-s">underfined</span>.
 
-<h3 id="e-quando-existe-mais-parmetros-do-que-o-esperado-">E quando existe mais parâmetros do que o esperado ?</h3>
+###E quando existe mais parâmetros do que o esperado ?
 
-<p>Sem problemas, vamos ver outro exemplo ٩(͡๏̯͡๏)۶</p>
+Sem problemas, vamos ver outro exemplo ٩(͡๏̯͡๏)۶
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -872,8 +836,8 @@ Na exemplo 2 a função <em>alteraMensagem</em>, não foi criado nenhuma variáv
  8
  9
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 18:</span>
 <span class="k">function</span><span class="p"> multiplica(n1,n2){</span>
@@ -883,65 +847,65 @@ Na exemplo 2 a função <em>alteraMensagem</em>, não foi criado nenhuma variáv
 <span class="kd">var</span><span class="p"> num2</span><span class="o"> = </span><span class="p">10;</span>
 <span class="kd">var</span><span class="p"> num3</span><span class="o"> = </span><span class="p">6;</span>
 <span class="kd">var</span><span class="p"> total</span><span class="o"> = </span><span class="p">multiplica(num1, num2, num3);</span>
-<span class="p">console.log(total);</span><span class="c1">//--&gt; 50</span>
+<span class="p">console.log(total);</span><span class="c1">//--> 50</span>
 </pre>
 </div>
 </td></tr>
 </table>
-<p>Preciso nem explicar o que houve. (ړײ</p>
+Preciso nem explicar o que houve. (ړײ
 
-<h2 id="instanciao-usando-uma-iife">Instanciação usando uma IIFE</h2>
+##Instanciação usando uma IIFE
 
-<p>IIFE é comumente chamado de “fechamento” ou envoltório.</p>
+IIFE é comumente chamado de "fechamento" ou envoltório.
 
-<h3 id="por-que-usar-isso-">Por que usar isso ?</h3>
+###Por que usar isso ?
 
-<p>Variáveis globais é um enorme risco, onde pode ocorrer colisões de nomes e trazendo grandes consequências e possívelmente um dos problemas mais difícieis de detectar. Com JavaScript é apenas uma questão de adequação, você declara dentro de um escopo local para que ela não fique jogada no escopo global, e claro, nunca esquecer da palavra-chave var, pois sem ela, a variável é global.</p>
+Variáveis globais é um enorme risco, onde pode ocorrer colisões de nomes e trazendo grandes consequências e possívelmente um dos problemas mais difícieis de detectar. Com JavaScript é apenas uma questão de adequação, você declara dentro de um escopo local para que ela não fique jogada no escopo global, e claro, nunca esquecer da palavra-chave var, pois sem ela, a variável é global.
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
  5
  6
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 19:</span>
 <span class="k">function</span><span class="p"> somar(n1,n2){</span>
   <span class="k">return </span><span class="p">n1+n2;</span>
 <span class="p">}</span>
 <span class="kd">var</span><span class="p"> resultado</span><span class="o"> = </span><span class="p">somar(1);</span>
-<span class="p">console.log(canguru);</span><span class="c1">//--&gt; NaN</span>
+<span class="p">console.log(canguru);</span><span class="c1">//--> NaN</span>
 </pre>
 </div>
 </td></tr>
 </table>
 
-<h3 id="mas-por-qu--1">Mas por quê ?</h3>
+###Mas por quê ?
 
-<p>Simples, como não foi passado por parâmetro, ela é setada como underfined, e você não pode querer somar um número com <span class="err-s">underfined</span>.</p>
+Simples, como não foi passado por parâmetro, ela é setada como underfined, e você não pode querer somar um número com <span class="err-s">underfined</span>.
 
-<h3 id="e-quando-existe-mais-parmetros-do-que-o-esperado--1">E quando existe mais parâmetros do que o esperado ?</h3>
+###E quando existe mais parâmetros do que o esperado ?
 
-<p>Sem problemas, vamos ver outro exemplo ٩(͡๏̯͡๏)۶</p>
+Sem problemas, vamos ver outro exemplo ٩(͡๏̯͡๏)۶
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 20:</span>
 <span class="k">function</span><span class="p"> qualquer(){</span>
@@ -954,9 +918,9 @@ Na exemplo 2 a função <em>alteraMensagem</em>, não foi criado nenhuma variáv
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -964,29 +928,29 @@ Na exemplo 2 a função <em>alteraMensagem</em>, não foi criado nenhuma variáv
  6
  7
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre><span class="kd">var</span><span class="p"> n</span><span class="o"> = </span><span class="p">3;</span>
 <span class="p">getValor</span><span class="o"> = </span><span class="p">(</span><span class="k">function</span><span class="p">(){</span>
   <span class="k">return</span><span class="p"> e;</span>
 <span class="p">}(n));</span>
 <span class="p">n</span><span class="o"> = </span><span class="p">4</span>
 <span class="kd">var</span><span class="p"> valor</span><span class="o"> = </span><span class="p">getValue();</span>
-<span class="p">console.log(valor);</span><span class="c1">//--&gt; 3</span>
+<span class="p">console.log(valor);</span><span class="c1">//--> 3</span>
 </pre>
 </div>
 </td></tr>
 </table>
 
-<p>Cuidado ao pensar que seja 4, ele chama logo preservando o contexto e retornando o argumento.</p>
+Cuidado ao pensar que seja 4, ele chama logo preservando o contexto e retornando o argumento.
 
-<p>Nesse exemplo sim ⬇ ele é chamado apenas depois da atribuição no n.</p>
+Nesse exemplo sim ⬇ ele é chamado apenas depois da atribuição no n.
 
 <table class="highlighttable">
 <tr>
-	<td class="linenos">
+	<td class="linenos" >
 	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js"> 1
+	<pre><code class="language-js" data-lang="js" > 1
  2
  3
  4
@@ -997,8 +961,8 @@ Na exemplo 2 a função <em>alteraMensagem</em>, não foi criado nenhuma variáv
  9
  10
 </code></pre></div></td>
-<td class="code">
-<div class="highlight">
+<td class="code" >
+<div class="highlight" >
 <pre>
 <span class="c1">//melhorando o exemplo 20:</span>
 <span class="kd">var</span><span class="p"> n, getValue;</span>
@@ -1009,54 +973,18 @@ Na exemplo 2 a função <em>alteraMensagem</em>, não foi criado nenhuma variáv
 <span class="p">n</span><span class="o"> = </span><span class="p">2</span>
 <span class="kd">var</span><span class="p"> valor</span><span class="o"> = </span><span class="p">getValue();</span>
 <span class="c1">//perceba que já houve mudança</span>
-<span class="p">console.log(valor);</span><span class="c1">//--&gt; 2</span>
+<span class="p">console.log(valor);</span><span class="c1">//--> 2</span>
 </pre>
 </div>
 </td></tr>
 </table>
 
-<h2 id="concluso">Conclusão</h2>
-<p>Dessa forma aprendemos vários conceitos, todos eles são importantes, e alguns possuem até livros específicos como o de Closure: The Definitive Guide, então nunca descarte de sempre estudar.</p>
+##Conclusão
+Dessa forma aprendemos vários conceitos, todos eles são importantes, e alguns possuem até livros específicos como o de Closure: The Definitive Guide, então nunca descarte de sempre estudar.
 
-<h2 id="bibliografia">Bibliografia</h2>
+##Bibliografia
 
-<ul>
-  <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures">Mozilla - Closures</a></li>
-  <li><a href="http://www.w3schools.com/js/js_function_invocation.asp">W3School - Function Invocation</a></li>
-  <li><a href="https://github.com/braziljs/eloquente-javascript">Eloquente - JavaScript</a></li>
-  <li><a href="http://ejohn.org/apps/learn/">Learning Advanced JS</a></li>
-</ul>
-
-    </section>
-  </div>
-	<div id="comentarios">
-		<div id="disqus_thread"></div>
-
-<script>
-var disqus_config = function () {
-this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-
-s.src = '//victorvoid.disqus.com/embed.js';
-
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-	</div>
-
-<footer class="footer-distributed">
-
-	<div class="footer-right">
-		<a href="/index.html"><i class="fa fa-home fa-lg"></i></a>
-	</div>
-	<div class="footer-left">
-		<p> Feito com muito <span id="coracao"> ♥</span> por Victor Igor.</p>
-		Jekyll & Fonts feat. Google Fonts
-	</div>
-</footer>
-<script src="/js/application-post.js"></script>
+- [Mozilla - Closures](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures)
+- [W3School - Function Invocation](http://www.w3schools.com/js/js_function_invocation.asp)
+- [Eloquente - JavaScript](https://github.com/braziljs/eloquente-javascript)
+- [Learning Advanced JS](http://ejohn.org/apps/learn/)

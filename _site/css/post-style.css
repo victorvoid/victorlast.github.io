@@ -155,6 +155,11 @@ blockquote.trivia .cabecalho {
   margin: auto;
   max-width: 900px;
 }
+.bd{
+  background-color: #E2E2E1;
+  color: #5A5A5A;
+  padding: 5px 20px;
+}
 /** MOBILE FONTS **/
 @media(max-width:480px) {
 	h1{
@@ -166,28 +171,24 @@ blockquote.trivia .cabecalho {
 	#post{
 		width: 360px;
 	}
+   
   /*Table - code */
   .highlight{
-    font-size: 10px;
+    font-size: 7px;
   }
   .highlighttable{
-    width: 335px;
+    width: 330px;
   }
   #post h3{
     width: 335px;
     padding:0;
   }
   /* IMAGENS  */
-  img#bart-reading{
-    width: 331px;
+  .img-responsive{
+    max-width: 100%;
+    height: auto;
   }
-  img#homer-hack{
-    width: 331px;
-  }
-  img#mr-robot-poster{
-    width: 331px;
-  }
-  img#tirinhapoo{
-    width: 331px;
+  pre{
+    font-size: 10px;
   }
 }
