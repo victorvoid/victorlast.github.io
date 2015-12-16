@@ -145,10 +145,8 @@ transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
     display: inline-block;
   }
   #list-menu{
-    margin-left: -50px;
-  }
-  #list-menu{
     margin-top: -40px;
+    text-align: center;
   }
   #list-menu li a{
     padding: 10px;
