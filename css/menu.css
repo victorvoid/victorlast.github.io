@@ -1,7 +1,8 @@
 /* CONTEUDO DO MENU */
 .message {
-background-size: cover;
-
+background-image: url("/img/bg6.jpg");   
+background-size: cover;  
+background-position: center -230px;
 color:#FFF;
 position: absolute;
 top: -250px;
