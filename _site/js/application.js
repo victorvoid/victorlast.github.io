@@ -1,5 +1,5 @@
 var div = document.getElementById('mensagem');
-var texto = "Vou aprendendo, vou compartilhando. (⌒‿⌒)";
+var texto = "Vou aprendendo, vou compartilhando. (⌒ ⌒)";
 var typer;	
 function escrever(str, el) {
 var char = str.split('').reverse();

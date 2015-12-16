@@ -120,4 +120,7 @@ header{
   .footer-distributed a{
     font-size: 40px;
   }
+  .post-title a{
+    font-size: 35px;
+  }
 }
