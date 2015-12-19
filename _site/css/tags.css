@@ -28,8 +28,6 @@
 .tags ul li a:hover{
 	color: #083D54;
 }
-
-
 @media (max-width: 480px) {
 	.entry-date{
 		font-size: 14px;

@@ -20,14 +20,20 @@ box-sizing: border-box;
 #list-menu li{
   display: inline;
 }
-/* lIST links */
-.message a {
+/* Menu lista */
+.message li a{
   color:#FFF;
   padding: 0px 20px;
 }
-
-/* BOTAO CONFIG */
-
+/* Social network header*/
+.share-header{
+  padding-top: 30px;  
+}
+.share-header a{
+  color: #FFF;
+  padding: 0px 20px;
+}
+/* Botao fechar e mostrar menu */
 #toggle {
   text-align: center;
   position:absolute;
@@ -36,7 +42,6 @@ box-sizing: border-box;
   left:-100%;
   top:-100%;
 }
-
 #toggle + label {
   position:absolute;
   cursor:pointer;
@@ -63,10 +68,10 @@ label {
   margin-left: -65px;
   display: none;
 }
-/*BTN ALINHANDO NO MEIO, -50 POR CAUSA DE SEU TAMANHO*/
 
+/*BTN ALINHANDO NO MEIO, -50 POR CAUSA DE SEU TAMANHO*/
 .container {
-transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
   padding-left: 62px;
   padding-top: 70px;
   padding-bottom: 40px;
@@ -97,6 +102,7 @@ transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
   margin-left: -50px;
   text-align: center;
 }
+
 /* TAGS */
 #mensagem > ul{
   list-style: none;
@@ -113,44 +119,24 @@ transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
 #mensagem a:hover{
   border-bottom: 4px solid black;
 }
-/*REDES SOCIAIS NO HEADER*/
-.share-header{
-  padding-top: 30px;  
-}
-/* video*/
-#vid{
-  position: absolute;
-  min-width: 115%;
-  min-height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.bg-video{
-  position: relative;
-}
-#top{
-  position:relative;
-}
-/* MEDIA QUERIE */
+
+/* MEDIA QUERIES */
 @media (max-width: 767px) {
   .message {
     background-size: 700px 700px;
     height: 220px;
-   /* background-position-y: -200px;
-    background-position-x: -150px; */
     background-position: center -200px;
+  }
+  #list-menu{
+    margin-top: -40px;
+  }
+  #list-menu li a{
+    padding: 10px;
+    font-size: 25px;
   }
   /* Ativando botao de menu */
   label {
     display: inline-block;
-  }
-  #list-menu{
-    margin-top: -40px;
-    text-align: center;
-  }
-  #list-menu li a{
-    padding: 10px;
   }
   .share-header a{
     font-size: 30px;

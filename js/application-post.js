@@ -4,18 +4,16 @@ if (window.matchMedia("(max-width: 767px)").matches) {
 		document.getElementById("toggle").checked = false;
 	})();
 }
-
-
 var div = document.getElementById('mensagem');
 var texto = "Vou aprendendo, vou compartilhando. (⌒‿⌒)";
 var typer;	
 function escrever(str, el) {
 var char = str.split('').reverse();
- 	typer = setInterval(function () {
-    if (!char.length) return clearInterval(typer);
-    var next = char.pop();
-    el.innerHTML += next;
-}, 50);
+	typer = setInterval(function () {
+	    if (!char.length) return clearInterval(typer);
+	    var next = char.pop();
+	    el.innerHTML += next;
+	}, 50);
 }
 function quemsou(){
 	div.innerHTML = "";
