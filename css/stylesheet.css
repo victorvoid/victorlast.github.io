@@ -118,6 +118,7 @@ header{
     text-align: center;
     margin-left: 0;
     font-size: 15px;
+    padding: 0px;
   }
   .footer-distributed .footer-right{
     float: none;
