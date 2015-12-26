@@ -114,7 +114,7 @@ A palavra reservada <span class="kd-s">var</span> especifica que a variável sej
 
 <blockquote class="trivia">
 <p><strong class="cabecalho">Exemplo 2</strong>
-Repare que damos um nome de calango, mas a funcao <em>modificaNome( )</em> altera o nome da variável, isso acontece por ela ser uma variável global, um conceito importante que ainda veremos melhor.</p>
+Repare que damos um nome de calango, mas a funcao <span class="kd-s">modificaNome( )</span> altera o nome da variável, isso acontece por ela ser uma variável global, um conceito importante que ainda veremos melhor.</p>
 </blockquote>
 
 
@@ -162,10 +162,10 @@ O erro acontece pois não declaramos nenhum cachorro, então vamos lá =)
 <div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 4:</span>
-<span class="kd">var</span> <span class="p">cachorro;</span>
+<span class="kd">var</span> <span class="p">cachorro </span><span class="o">=</span><span class="s2">'dog'</span><span class="p">;</span>
 <span class="kd">function</span> <span class="nx">imprimeCachorro(){</span>
   <span class="p">console.log(cachorro);</span>
-  <span class="p">cachorro</span><span class="o">=</span><span class="s2">'spike'</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="p">cachorro</span><span class="o">=</span><span class="s2">'spike'</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="p">imprimeCachorro();</span><span class="c1">//--></span><span class="err">underfine</span>
 </pre>
@@ -173,9 +173,9 @@ O erro acontece pois não declaramos nenhum cachorro, então vamos lá =)
 </td></tr>
 </table>
 
-Retorna <span class="err-s">underfine</span> por ter uma variável no seu escopo <em>imprimeCachorro( )</em> declarada, porém não instanciada. Você pode tá se perguntando 'Como não foi instanciada se dentro da função o cachorro recebe <em>spike</em> ?'
+Retorna <span class="err-s">underfine</span> por ter uma variável no seu escopo <span class="kd-s">imprimeCachorro( )</span> declarada, porém não instanciada. Você pode tá se perguntando 'Como não foi instanciada se antes da função eu defino o cachorro recebendo <em>dog</em> e dentro da função defino cachorro recebendo <em>spike</em> ?
 
-A lógica de muitas linguagens seria mostrar spike, pois já foi instanciada no topo. Taí um dos porquês que você precisa estudar a linguagem como funciona e não apenas sua sintaxe, JavaScript diferente de algumas linguagens, tem seus comportamentos diferenciado, e se você já estudou C, vai perceber que a sua ação é diferente. E é aí amiguinho que a mágica acontece, a variávei foi 'hoisteada', elevada para o topo. Isso acontece pois o compilador na verdade, declara todas as variáveis, logo que seu código começa a ser compilado.
+A lógica de muitas linguagens seria mostrar 'dog', pois já foi instanciada no topo. Taí um dos porquês que você precisa estudar a linguagem como funciona e não apenas sua sintaxe, JavaScript diferente de algumas linguagens, tem seus comportamentos diferenciado, e se você já estudou C, vai perceber que a sua ação é diferente. E é aí amiguinho que a mágica acontece, a variávei foi 'hoisteada', elevada para o topo. Isso acontece pois o compilador na verdade, declara todas as variáveis, logo que seu código começa a ser compilado.
 
 ###Como acontece? ⬇
 
@@ -215,7 +215,7 @@ A lógica de muitas linguagens seria mostrar spike, pois já foi instanciada no 
 
 <blockquote class="trivia">
 <p><strong class="cabecalho">Exemplo 5</strong>
-Logo depois ele executará a funcao <em>imprimeCachorro( )</em>, e entao ele pula as declarações e começa a executar o <em>console.log(cachorro)</em>, porém não houve nenhuma atribuição ao cachorro dentro do <em>imprimeCachorro( )</em>, já que foi declarada e hoisteada, e com isso ele continuou com o valor <em>underfine</em> e imprimiu.</p>
+Logo depois ele executará a funcao <span class="kd-s">imprimeCachorro( )</span>, e entao ele pula as declarações e começa a executar o <em>console.log(cachorro)</em>, porém não houve nenhuma atribuição ao cachorro dentro do <span class="kd-s">imprimeCachorro( )</span>, já que foi declarada e hoisteada, e com isso ele continuou com o valor <em>underfine</em> e imprimiu.</p>
 </blockquote>
 
 Com isso, já sabemos o que significa o underfine quando aparecer.
@@ -261,7 +261,7 @@ Com isso, já sabemos o que significa o underfine quando aparecer.
 
 <blockquote class="trivia">
 <p><strong class="cabecalho">Exemplo 6</strong>
-Acontece que as duas funções <em>pegaValor( )</em> foram jogadas para o topo, e em seguida é retornada a última <em>pegaValor( )</em>, pois ela sobrescreve a primeira.</p>
+Acontece que as duas funções <span class="kd-s">pegaValor( )</span> foram jogadas para o topo, e em seguida é retornada a última <span class="kd-s">pegaValor( )</span>, pois ela sobrescreve a primeira.</p>
 </blockquote>
 
 ###Como acontece ? ⬇
@@ -481,7 +481,7 @@ Mas cuidado, o <em>somador</em> não é uma closure, e sim o seu valor que retor
 
 <blockquote class="trivia">
 <p><strong class="cabecalho">Exemplo 10</strong>
-Note que ao chamar a tela, ele usa a variável <em>mensagem</em>, que está no escopo <em>mostrarMensagem( )</em>, a função de dentro (inner), vai ter o acesso as variaveis da funcao de fora (outer).</p>
+Note que ao chamar a tela, ele usa a variável <em>mensagem</em>, que está no escopo <span class="kd-s">mostrarMensagem( )</span>, a função de dentro (inner), vai ter o acesso as variaveis da funcao de fora (outer).</p>
 </blockquote>
 
 <table class="highlighttable">
