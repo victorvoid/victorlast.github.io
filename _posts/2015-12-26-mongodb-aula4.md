@@ -1,12 +1,11 @@
 ---
 layout: post
-title:  "MongoDB - Atualizando e removendo #4.1 #4.2"
+title:  "MongoDB - Atualizando e remo&shy;ven&shy;do dados #4.1 #4.2"
 date:   2015-12-26 00:06:31 -0400
 tags: mongobemean
 subtitle: Conceitos vistos na aula 4.1 e 4.2 no bemean, atualizando e removendo objetos, operadores de array, operadores de buscas em arrays, operadores de negação... 
 ---
-#Atualizando e removendo
-(,")
+#Atualizando e Remo&shy;ven&shy;do da&shy;dos
 
 ##UPDATE
 
@@ -203,12 +202,14 @@ Informe 1 (<span class="nf-s">true</span>) nos campos desejável, assim removend
   <td class="linenos" >
   <div class="linenodiv">
   <pre><code class="language-js" data-lang="js" > 1
+
  2
 </code></pre></div></td>
 <td class="code" >
 <div class="highlight">
 <pre>
-&gt; var mod = {$inc:{attack:1}} <span class="c1"> //-1 para decrementar</span>
+&gt; var mod = {$inc:{attack:1}} 
+<span class="c1"> //-1 para decrementar</span>
 &gt; db.pokemons.update(query,mod)
 </pre>
 </div>
@@ -337,6 +338,9 @@ Nos documentos também temos arrays, e se agora queremos também trabalhar com e
   <td class="linenos" >
   <div class="linenodiv">
   <pre><code class="language-js" data-lang="js" > 1
+
+
+
  2
  3
  4
@@ -344,7 +348,10 @@ Nos documentos também temos arrays, e se agora queremos também trabalhar com e
 <td class="code" >
 <div class="highlight">
 <pre>
-&gt; var attacks = [ "choque do trovão","ataque rapido"]
+&gt; var attacks = [ 
+               "choque do trovão",
+               "ataque rapido"
+                ]
 &gt; var mod = {$pullAll: {moves: attacks}}
 &gt; db.pokemons.update(query,mod)
 &gt; db.pokemons.find(query)
@@ -756,6 +763,8 @@ E então vai retornar os diversos objetos que não tem o tipo grama. Bem simples
 <blockquote class="trivia">
 <p><strong class="cabecalho">Info 3</strong>
 <span class="err-s">Cuidado</span> ele não aceita <strong>REGEX</strong>. sVocê não pode passar uma regex usando esse operador, ocorrerá em um erro.
+</p>
+</blockquote>
 <table class="highlighttable">
 <tr>
   <td class="linenos" >
@@ -770,8 +779,6 @@ E então vai retornar os diversos objetos que não tem o tipo grama. Bem simples
 </div>
 </td></tr>
 </table>
-</p>
-</blockquote>
 
 <strong>$not</strong>: retorna todos os objetos que não tenha determinada <del>coisa</del> atribuição.
 
