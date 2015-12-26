@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "MongoDB - Atualizando e remo&shy;ven&shy;do dados #4.1 #4.2"
+title:  "MongoDB - Atua&shy;lizan&shy;do e remo&shy;ven&shy;do dados #4.1 #4.2"
 date:   2015-12-26 00:06:31 -0400
 tags: mongobemean
 subtitle: Conceitos vistos na aula 4.1 e 4.2 no bemean, atualizando e removendo objetos, operadores de array, operadores de buscas em arrays, operadores de negação... 
