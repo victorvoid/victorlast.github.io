@@ -162,7 +162,7 @@ O erro acontece pois não declaramos nenhum cachorro, então vamos lá =)
 <div class="highlight" >
 <pre>
 <span class="c1">//Exemplo 4:</span>
-<span class="kd">var</span> <span class="p">cachorro </span><span class="o">=</span><span class="s2">'dog'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="p">cachorro </span><span class="o">=</span> <span class="s2">'dog'</span><span class="p">;</span>
 <span class="kd">function</span> <span class="nx">imprimeCachorro(){</span>
   <span class="p">console.log(cachorro);</span>
   <span class="kd">var</span> <span class="p">cachorro</span><span class="o">=</span><span class="s2">'spike'</span><span class="p">;</span>
@@ -201,7 +201,7 @@ A lógica de muitas linguagens seria mostrar 'dog', pois já foi instanciada no 
 <span class="c1">//Exemplo 5:</span>
 <span class="kd">var</span> <span class="p">cachorro;</span>
 <span class="c1">//underfine -compilador elevando</span>
-<span class="p">cachorro</span> <span class="o">=</span> <span class="s2">'spike'</span>
+<span class="p">cachorro</span> <span class="o">=</span> <span class="s2">'dog'</span>
 <span class="kd">function</span> <span class="nx">imprimeCachorro(){</span>
 <span class="c1">//var cachorro; compilador elevando</span>
   <span class="p">console.log(cachorro);</span>
