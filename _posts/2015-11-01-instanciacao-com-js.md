@@ -173,7 +173,7 @@ O erro acontece pois não declaramos nenhum cachorro, então vamos lá =)
 </td></tr>
 </table>
 
-Retorna <span class="err-s">underfine</span> por ter uma variável no seu escopo <span class="kd-s">imprimeCachorro( )</span> declarada, porém não instanciada. Você pode tá se perguntando 'Como não foi instanciada se antes da função eu defino o cachorro recebendo <em>dog</em> e dentro da função defino cachorro recebendo <em>spike</em> ?
+Retorna <span class="err-s">underfine</span> por ter uma variável no seu escopo <span class="kd-s">imprimeCachorro( )</span> declarada, porém não instanciada. Você pode tá se perguntando 'Como não foi instanciada se antes da função eu defino o cachorro recebendo <em>dog</em> e dentro da função defino cachorro recebendo <em>spike</em> ?'
 
 A lógica de muitas linguagens seria mostrar 'dog', pois já foi instanciada no topo. Taí um dos porquês que você precisa estudar a linguagem como funciona e não apenas sua sintaxe, JavaScript diferente de algumas linguagens, tem seus comportamentos diferenciado, e se você já estudou C, vai perceber que a sua ação é diferente. E é aí amiguinho que a mágica acontece, a variávei foi 'hoisteada', elevada para o topo. Isso acontece pois o compilador na verdade, declara todas as variáveis, logo que seu código começa a ser compilado.
 
