@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "O que é MEAN stack ?"
+title:  "MEAN - Full-Stack JavaScript ?"
 date:   2015-12-03 00:12:31 -0400
 tags: jsbemean
 subtitle: Criar grandes sistemas apenas com JavaScript ? Sério ?
@@ -9,21 +9,26 @@ subtitle: Criar grandes sistemas apenas com JavaScript ? Sério ?
 
 <img src="{{ "/img/jackie-chan.jpg"}}">
 
-MEAN é um conjunto de 4 tecnologias, e todas elas usam JavaScript. 
+MEAN é uma abreviação de 4 tecnologias, e todas elas usam JavaScript. 
 
-###Significando respectivamente:
+##Significando respectivamente:
 
-<b>M</b> - MongoDB: Uma nova idéia de banco de dados que traz um conceito chamado banco de dados orientado a documentos, é noSQL e usa JavaScript. <del>Agora me diz, por que não usar ? jsss</del> ლ(ಠ▃ಠლ) 
+<b>M</b> - MongoDB: é um banco de dados orientado a documentos, é noSQL e usa JavaScript. <del>Agora me diz, por que não usar ? js</del> ლ(ಠ▃ಠლ) 
 
 <b>E</b> - Express: É um framework web pra nodeJS, ele faz controle de rotas para construir páginas e multipáginas, e até aplicações híbridas.
 
-<b>A</b> - Angular: É um framework JS mantido pelo google que permite extender o html ao máximo, e auxilia na execução de single-page application, e ainda podendo contruir app sobre o padrão model-view-controller(MVC) com o objetivo de aumentar aplicativos que podem ser acessados por um navegador web.
+<b>A</b> - Angular: É um framework JS que permite extender o html ao máximo, e auxilia na execução de single-page application, e ainda podendo contruir app sobre o padrão model-view-controller(MVC) com o objetivo de aumentar aplicativos que podem ser acessados por um navegador web. <del>É um jQuery melhorado :p</del>
 
 <b>N</b> - NodeJS: É uma plataforma de desenvolvimento, não uma linguagem de programação, é um ambiente de desenvolvimento contruido usando a tecnologia do Google V8 que compila JS no lado servidor. <del>Resumidamente, o node pega o js, joga no servidor e executa.</del>٩(-̮̮̃-̃)۶
 
-JavaScript nos últimos anos deixou de ser uma toy language e ganhou bastante forças, sendo uma das linguagens mais usadas.
+JavaScript nos últimos anos vem se popularizando cada vez mais e ganhou bastante forças, sendo uma das linguagens mais usadas.
 Se todas essas tecnologias usam JavaScript, tem algo melhor que criar um sistema
 completo com uma linguagem apenas ?
+
+Veja essa lista de projetos, aplicações e companias que usam o Node:
+[aqui](https://github.com/nodejs/node-v0.x-archive/wiki/Projects%2C-Applications%2C-and-Companies-Using-Node)
+
+O mundo de startup tá muito forte, e raramente usam JAVA/.NET, grande parte delas estão usando javascript, ah e tem muitas empresas grandes que também estão usando, como a Netflix, LinkedIn, Skype, Walmart, e muitas outras usam Node, não pense duas vezes para querer aprender essa stack, pois JavaScript está em todo lugar. =)
 
 ##Por onde começar ? 
 
