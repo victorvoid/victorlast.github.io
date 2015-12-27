@@ -6,7 +6,7 @@ tags: mongobemean
 subtitle: Conceitos vistos na aula 4.1 e 4.2 no bemean, atualizando e removendo objetos, operadores de array, operadores de buscas em arrays, operadores de negação... 
 ---
 #Atualizando e Remo&shy;ven&shy;do da&shy;dos
-
+<img src="https://camo.githubusercontent.com/f1329f8746e4b4bbea6979ca658e66941931c5f6/68747470733a2f2f636c6475702e636f6d2f4356765578365573776f2e676966">
 ##UPDATE
 
 No MongoDB não existe só uma forma de atualizar o documento, uma das formas já vimos [neste post](http://victorvoid.github.io/2015/12/07/mongodb-aula-1-2-3-be-mean.html), que foi fazendo uma busca usando o <span class="nf-s">findOne( )</span>, e através do resultado modificamos e usamos a função <span class="nf-s">save( )</span>, porém esse caminho é grande, perceba que precisamos fazer a busca, salvar na variável, e modificar para depois salvar.
