@@ -6,7 +6,7 @@ tags: mongobemean
 subtitle: Conceitos vistos na aula 4.1 e 4.2 no bemean, atualizando e removendo objetos, operadores de array, operadores de buscas em arrays, operadores de negação... 
 ---
 #Atualizando e Remo&shy;ven&shy;do da&shy;dos
-<img src="https://camo.githubusercontent.com/f1329f8746e4b4bbea6979ca658e66941931c5f6/68747470733a2f2f636c6475702e636f6d2f4356765578365573776f2e676966">
+<img src="https://camo.githubusercontent.com/f1329f8746e4b4bbea6979ca658e66941931c5f6/68747470733a2f2f636c6475702e636f6d2f4356765578365573776f2e676966" class="img-responsive">
 
 ##UPDATE
 
