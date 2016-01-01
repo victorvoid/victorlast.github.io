@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "MongoDB - Aggregate e Groups #5"
-date:   2015-12-26 00:14:31 -0400
+date:   2015-01-01 00:14:31 -0400
 tags: mongobemean
 subtitle: Conceitos vistos na aula 05 no bemean, descobrindo a quantidade de elementos, limitando, ordenando e distinguindo valores de uma collection, agrupando...
 ---
