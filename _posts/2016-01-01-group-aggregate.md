@@ -7,6 +7,7 @@ subtitle: Conceitos vistos na aula 05 no bemean, descobrindo a quantidade de ele
 ---
 
 # MongoDB - Aggregate e Groups
+
 Antes de fatos aprendermos sobre Agreggate e Groups, vamos ver alguns tópicos importantes.
 Para seguir os primeiros exemplos vamos usar a collection <span class="nc-s">restaurantes</span>
 use o [restaurantes.json](https://raw.githubusercontent.com/Webschool-io/be-mean-instagram/master/Apostila/module-mongodb/src/data/restaurantes.json) para importar.【ツ】<br> 
@@ -335,8 +336,20 @@ Resultado:
 </pre>
 
 ##Agrupamento 
+<img src="{{ "/img/elements-2.png"}}" class="img-responsive">
 
-Podemos agrupar cada tipo de pokemons e poder mandar contar quantos pokemons tem aquele valor por exemplo.
+Podemos agrupar cada tipo de pokemons e poder mandar contar quantos pokemons tem aquele valor por exemplo, tudo isso usando a função <span class="nf-s">group( )</span>.
+
+O <strong>group</strong> tem no total 6 propriedades que podemos utilizar, vamos usar algumas delas para nossos exemplos.
+
+1. key
+2. reduce
+3. initial
+4. keyf
+5. cond
+6. finalize
+
+Vamos ver algumas delas! (͡๏̯͡๏)۶
 
 <table class="highlighttable">
 <tr>
@@ -530,8 +543,27 @@ Resultado:
 Usamos o <span class="kd-s">finalize</span> para sabermos a média de <span class="sx-s">attacks</span> e <span class="sx-s">defenses</span>, pra isso ao final de tudo pegamos a soma deles e dividimos pela quantidade. Simples não é? ( ͡°﻿ ͜ʖ ͡°)</p>
 </blockquote>
 
-
 ##Aggregate
+Temos 3 abordagens para agregações, cada uma com sua característica e propósitos para cada situação, veremos a <em>aggregation pipeline.</em>
+
+####Aggregation Pipeline ? 
+<img src="{{ "/img/jackie-chan.jpg"}}" class="img-responsive">
+
+Ele é basicamente um framework para executar uma série de transformações de dados em um documento. Existe 10 tipos de transformações que podem ser utilizados.
+
+1. [$geoNear](https://docs.mongodb.org/v3.0/reference/operator/aggregation/geoNear/)
+2. [$match](https://docs.mongodb.org/v3.0/reference/operator/aggregation/match/) 
+3. [$project](https://docs.mongodb.org/v3.0/reference/operator/aggregation/project/)
+4. [$redact](https://docs.mongodb.org/manual/reference/operator/aggregation/redact/) 
+5. [$unwind](https://docs.mongodb.org/v3.0/reference/operator/aggregation/unwind/)
+6. [$group](https://docs.mongodb.org/manual/reference/operator/aggregation/group/) 
+7. [$limit](https://docs.mongodb.org/manual/reference/operator/aggregation/limit/)
+8. [$skip](https://docs.mongodb.org/v3.0/reference/operator/aggregation/skip/) 
+9. [$sort](https://docs.mongodb.org/manual/reference/operator/aggregation/sort/)
+10. [$out](https://docs.mongodb.org/v3.0/reference/operator/aggregation/out/)
+
+
+Vamos ver alguns deles para nossos exemplos. =) <br>
 Similar ao <strong>group</strong>, podemos fazer a mesma coisa em menor tamanho de linhas. Basicamente tudo que fazemos com o group, podemos fazer com o <strong>aggregate</strong>.
 <table class="highlighttable">
 <tr>
@@ -588,7 +620,20 @@ Resultado:
 Você vai ver que deu o mesmo valor do <em>exemplo 1</em>
 
 ###Entendendo o exemplo 3
-No <em>aggregate</em> tenho uma propriedade chamada <span class="nf-s">$group</span>, e todas as funções do <em>aggregate</em> começa com o<strong> $.</strong> O <strong>_id</strong> serve para definir o agrupamento, por exemplo se eu quisesse agrupar por <em>data</em> ou <em>tempo</em>, mas como nesse exemplo não vai precisar separar nada, fica vazio. Usei a função <span class="nf-s">$avg</span> para trazer a média da coluna <span class="sx-s">defense</span> e <span class="sx-s">attack</span>, a <span class="nf-s">$sum</span> foi para trazer o somatório de cada, é importante destacar que ao definir a coluna precisamos colocar o <strong>$</strong> no início para informar o mongo que ela é uma coluna.
+No <em>aggregate</em> tenho uma propriedade chamada <span class="nf-s">$group</span>, aliás todas as funções do <em>aggregate</em> começa com o<strong> $</strong>. O <strong>_id</strong> serve para definir o agrupamento, por exemplo se eu quisesse agrupar por <em>data</em> ou <em>tempo</em>, mas como nesse exemplo não vamos precisar separar nada, fica vazio. Usei a função <span class="nf-s">$avg</span> para trazer a média da coluna <span class="sx-s">defense</span> e <span class="sx-s">attack</span>, a <span class="nf-s">$sum</span> foi para trazer o somatório de cada, é importante destacar que ao definir a coluna precisamos colocar o <strong>$</strong> no início para informar o mongo que ela é uma coluna.
+
+Você deve ter reparado na facilidade que deu usando esses operadores <strong>$sum</strong> e <strong>$svg</strong> não é ? Pois bem, eles são operadores acumuladores, temos 10 no total que salva sua vida. ٩(-̮̮̃•̃)۶
+
+1. [$sum](https://docs.mongodb.org/manual/reference/operator/aggregation/sum/)
+2. [$avg](https://docs.mongodb.org/manual/reference/operator/aggregation/avg/)
+3. [$first](https://docs.mongodb.org/manual/reference/operator/aggregation/first/#grp._S_first)
+4. [$last](https://docs.mongodb.org/manual/reference/operator/aggregation/last/)
+5. [$max](https://docs.mongodb.org/manual/reference/operator/aggregation/max/)
+6. [$min](https://docs.mongodb.org/manual/reference/operator/aggregation/min/)
+7. [$push](https://docs.mongodb.org/manual/reference/operator/aggregation/push/)
+8. [$addToSet](https://docs.mongodb.org/manual/reference/operator/aggregation/addToSet/)
+9. [$stdDevPop](https://docs.mongodb.org/manual/reference/operator/aggregation/stdDevPop/)
+10. [$stdDevSamp](https://docs.mongodb.org/manual/reference/operator/aggregation/stdDevSamp/)
 
 Como no outro exemplo fiz uma condição, no <em>aggregate</em> também podemos.
 <table class="highlighttable">
@@ -648,5 +693,5 @@ Resultado:
   <span class="sx-s">"ok"</span>: 1
 }
 </pre>
-
+ 
 <strong>Group</strong> e <strong>Aggregate</strong> são conceitos muitos importantes e usados. Na [documentação](https://docs.mongodb.org/manual/) você pode encontrar mais exemplos.

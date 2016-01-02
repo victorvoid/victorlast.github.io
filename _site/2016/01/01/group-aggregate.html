@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>MongoDB - Aggregate e Groups #5</title>
-  <meta name="description" content="MongoDB - Aggregate e GroupsAntes de fatos aprendermos sobre Agreggate e Groups, vamos ver alguns tópicos importantes.Para seguir os primeiros exemplos vamos...">
+  <meta name="description" content="MongoDB - Aggregate e Groups">
   <link rel="canonical" href="https://victorvoid.github.io/2016/01/01/group-aggregate.html">
 
 
@@ -49,6 +49,7 @@
   <div id="post">
   	<section>
     	<h1 id="mongodb---aggregate-e-groups">MongoDB - Aggregate e Groups</h1>
+
 <p>Antes de fatos aprendermos sobre Agreggate e Groups, vamos ver alguns tópicos importantes.
 Para seguir os primeiros exemplos vamos usar a collection <span class="nc-s">restaurantes</span>
 use o <a href="https://raw.githubusercontent.com/Webschool-io/be-mean-instagram/master/Apostila/module-mongodb/src/data/restaurantes.json">restaurantes.json</a> para importar.【ツ】<br /></p>
@@ -376,8 +377,22 @@ HEYY!!! Lembre, se estamos usando JavaScript, podemos usar a função <span clas
 </pre>
 
 <h2 id="agrupamento">Agrupamento</h2>
+<p><img src="/img/elements-2.png" class="img-responsive" /></p>
 
-<p>Podemos agrupar cada tipo de pokemons e poder mandar contar quantos pokemons tem aquele valor por exemplo.</p>
+<p>Podemos agrupar cada tipo de pokemons e poder mandar contar quantos pokemons tem aquele valor por exemplo, tudo isso usando a função <span class="nf-s">group( )</span>.</p>
+
+<p>O <strong>group</strong> tem no total 6 propriedades que podemos utilizar, vamos usar algumas delas para nossos exemplos.</p>
+
+<ol>
+  <li>key</li>
+  <li>reduce</li>
+  <li>initial</li>
+  <li>keyf</li>
+  <li>cond</li>
+  <li>finalize</li>
+</ol>
+
+<p>Vamos ver algumas delas! (͡๏̯͡๏)۶</p>
 
 <table class="highlighttable">
 <tr>
@@ -571,7 +586,28 @@ Usamos o <span class="kd-s">finalize</span> para sabermos a média de <span clas
 </blockquote>
 
 <h2 id="aggregate">Aggregate</h2>
-<p>Similar ao <strong>group</strong>, podemos fazer a mesma coisa em menor tamanho de linhas. Basicamente tudo que fazemos com o group, podemos fazer com o <strong>aggregate</strong>.</p>
+<p>Temos 3 abordagens para agregações, cada uma com sua característica e propósitos para cada situação, veremos a <em>aggregation pipeline.</em></p>
+
+<h4 id="aggregation-pipeline-">Aggregation Pipeline ?</h4>
+<p><img src="/img/jackie-chan.jpg" class="img-responsive" /></p>
+
+<p>Ele é basicamente um framework para executar uma série de transformações de dados em um documento. Existe 10 tipos de transformações que podem ser utilizados.</p>
+
+<ol>
+  <li><a href="https://docs.mongodb.org/v3.0/reference/operator/aggregation/geoNear/">$geoNear</a></li>
+  <li><a href="https://docs.mongodb.org/v3.0/reference/operator/aggregation/match/">$match</a></li>
+  <li><a href="https://docs.mongodb.org/v3.0/reference/operator/aggregation/project/">$project</a></li>
+  <li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation/redact/">$redact</a></li>
+  <li><a href="https://docs.mongodb.org/v3.0/reference/operator/aggregation/unwind/">$unwind</a></li>
+  <li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation/group/">$group</a></li>
+  <li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation/limit/">$limit</a></li>
+  <li><a href="https://docs.mongodb.org/v3.0/reference/operator/aggregation/skip/">$skip</a></li>
+  <li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation/sort/">$sort</a></li>
+  <li><a href="https://docs.mongodb.org/v3.0/reference/operator/aggregation/out/">$out</a></li>
+</ol>
+
+<p>Vamos ver alguns deles para nossos exemplos. =) <br />
+Similar ao <strong>group</strong>, podemos fazer a mesma coisa em menor tamanho de linhas. Basicamente tudo que fazemos com o group, podemos fazer com o <strong>aggregate</strong>.</p>
 <table class="highlighttable">
 <tr>
   <td class="linenos">
@@ -627,7 +663,22 @@ db.pokemons.aggregate({
 <p>Você vai ver que deu o mesmo valor do <em>exemplo 1</em></p>
 
 <h3 id="entendendo-o-exemplo-3">Entendendo o exemplo 3</h3>
-<p>No <em>aggregate</em> tenho uma propriedade chamada <span class="nf-s">$group</span>, e todas as funções do <em>aggregate</em> começa com o<strong> $.</strong> O <strong>_id</strong> serve para definir o agrupamento, por exemplo se eu quisesse agrupar por <em>data</em> ou <em>tempo</em>, mas como nesse exemplo não vai precisar separar nada, fica vazio. Usei a função <span class="nf-s">$avg</span> para trazer a média da coluna <span class="sx-s">defense</span> e <span class="sx-s">attack</span>, a <span class="nf-s">$sum</span> foi para trazer o somatório de cada, é importante destacar que ao definir a coluna precisamos colocar o <strong>$</strong> no início para informar o mongo que ela é uma coluna.</p>
+<p>No <em>aggregate</em> tenho uma propriedade chamada <span class="nf-s">$group</span>, aliás todas as funções do <em>aggregate</em> começa com o<strong> $</strong>. O <strong>_id</strong> serve para definir o agrupamento, por exemplo se eu quisesse agrupar por <em>data</em> ou <em>tempo</em>, mas como nesse exemplo não vamos precisar separar nada, fica vazio. Usei a função <span class="nf-s">$avg</span> para trazer a média da coluna <span class="sx-s">defense</span> e <span class="sx-s">attack</span>, a <span class="nf-s">$sum</span> foi para trazer o somatório de cada, é importante destacar que ao definir a coluna precisamos colocar o <strong>$</strong> no início para informar o mongo que ela é uma coluna.</p>
+
+<p>Você deve ter reparado na facilidade que deu usando esses operadores <strong>$sum</strong> e <strong>$svg</strong> não é ? Pois bem, eles são operadores acumuladores, temos 10 no total que salva sua vida. ٩(-̮̮̃•̃)۶</p>
+
+<ol>
+  <li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation/sum/">$sum</a></li>
+  <li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation/avg/">$avg</a></li>
+  <li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation/first/#grp._S_first">$first</a></li>
+  <li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation/last/">$last</a></li>
+  <li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation/max/">$max</a></li>
+  <li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation/min/">$min</a></li>
+  <li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation/push/">$push</a></li>
+  <li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation/addToSet/">$addToSet</a></li>
+  <li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation/stdDevPop/">$stdDevPop</a></li>
+  <li><a href="https://docs.mongodb.org/manual/reference/operator/aggregation/stdDevSamp/">$stdDevSamp</a></li>
+</ol>
 
 <p>Como no outro exemplo fiz uma condição, no <em>aggregate</em> também podemos.</p>
 <table class="highlighttable">
