@@ -3,8 +3,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>MongoDB - Atualizando e removendo #4.1 #4.2</title>
-  <meta name="description" content="Atualizando e removendo(,”)">
+  <title>MongoDB - Atua&shy;lizan&shy;do e remo&shy;ven&shy;do dados #4.1 #4.2</title>
+  <meta name="description" content="Atualizando e Remo­ven­do da­dos">
   <link rel="canonical" href="https://victorvoid.github.io/2015/12/26/mongodb-aula4.html">
 
 
@@ -48,8 +48,8 @@
 
   <div id="post">
   	<section>
-    	<h1 id="atualizando-e-removendo">Atualizando e removendo</h1>
-<p>(,”)</p>
+    	<h1 id="atualizando-e-remoshyvenshydo-dashydos">Atualizando e Remo­ven­do da­dos</h1>
+<p><img src="https://camo.githubusercontent.com/f1329f8746e4b4bbea6979ca658e66941931c5f6/68747470733a2f2f636c6475702e636f6d2f4356765578365573776f2e676966" class="img-responsive" /></p>
 
 <h2 id="update">UPDATE</h2>
 
@@ -246,12 +246,14 @@ Informe 1 (<span class="nf-s">true</span>) nos campos desejável, assim removend
   <td class="linenos">
   <div class="linenodiv">
   <pre><code class="language-js" data-lang="js"> 1
+
  2
 </code></pre></div></td>
 <td class="code">
 <div class="highlight">
 <pre>
-&gt; var mod = {$inc:{attack:1}} <span class="c1"> //-1 para decrementar</span>
+&gt; var mod = {$inc:{attack:1}} 
+<span class="c1"> //-1 para decrementar</span>
 &gt; db.pokemons.update(query,mod)
 </pre>
 </div>
@@ -380,6 +382,9 @@ Informe 1 (<span class="nf-s">true</span>) nos campos desejável, assim removend
   <td class="linenos">
   <div class="linenodiv">
   <pre><code class="language-js" data-lang="js"> 1
+
+
+
  2
  3
  4
@@ -387,7 +392,10 @@ Informe 1 (<span class="nf-s">true</span>) nos campos desejável, assim removend
 <td class="code">
 <div class="highlight">
 <pre>
-&gt; var attacks = [ "choque do trovão","ataque rapido"]
+&gt; var attacks = [ 
+               "choque do trovão",
+               "ataque rapido"
+                ]
 &gt; var mod = {$pullAll: {moves: attacks}}
 &gt; db.pokemons.update(query,mod)
 &gt; db.pokemons.find(query)
@@ -804,6 +812,8 @@ Vai retornar todos os objetos que não tem no seu array moves o valor ‘folha n
 <blockquote class="trivia">
 <p><strong class="cabecalho">Info 3</strong>
 <span class="err-s">Cuidado</span> ele não aceita <strong>REGEX</strong>. sVocê não pode passar uma regex usando esse operador, ocorrerá em um erro.
+</p>
+</blockquote>
 <table class="highlighttable">
 <tr>
   <td class="linenos">
@@ -818,8 +828,6 @@ Vai retornar todos os objetos que não tem no seu array moves o valor ‘folha n
 </div>
 </td></tr>
 </table>
-</p>
-</blockquote>
 
 <p><strong>$not</strong>: retorna todos os objetos que não tenha determinada <del>coisa</del> atribuição.</p>
 
