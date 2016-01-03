@@ -36,7 +36,7 @@ Nós temos muita sorte de não precisar fazer o gerenciamento de memória manual
 <pre>
 <span class="c1">//Exemplo 1:</span>
 <span class="kd">var</span><span class="p"> latido </span><span class="o">=</span> <span class="s2">'auau'</span><span class="p">;</span>
-<span class="p">console.<span class="nf-s">log</span>(cachorro);</span>
+<span class="p">console.<span class="nf-s">log</span>(latido);</span>
 <span class="c1">/*obs: não usa mais a variável 'latido' */</span>
 </pre>
 </div>
@@ -66,7 +66,7 @@ Como faço manualmente ?
 <pre>
 <span class="c1">//Exemplo 2:</span>
 <span class="kd">var</span><span class="p"> latido </span><span class="o">=</span> <span class="s2">'auau'</span><span class="p">;</span>
-<span class="p">console.<span class="nf-s">log</span>(cachorro);</span>
+<span class="p">console.<span class="nf-s">log</span>(latido);</span>
 <span class="p">latido</span> <span class="o">= </span><span class="nc-s">null</span><span class="p">;</span>
 </pre>
 </div>
