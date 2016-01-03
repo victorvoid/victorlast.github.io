@@ -162,6 +162,11 @@ blockquote.trivia .cabecalho {
   color: #5A5A5A;
   padding: 5px 20px;
 }
+  /* IMAGENS  */
+  .img-responsive{
+    max-width: 100%;
+    height: auto;
+  }
 /** MOBILE FONTS **/
 @media(max-width:480px) {
 	h1{
@@ -185,11 +190,7 @@ blockquote.trivia .cabecalho {
     width: 335px;
     padding:0;
   }
-  /* IMAGENS  */
-  .img-responsive{
-    max-width: 100%;
-    height: auto;
-  }
+
   pre{
     font-size: 10px;
   }
