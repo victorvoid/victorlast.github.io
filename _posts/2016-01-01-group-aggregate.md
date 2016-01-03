@@ -207,7 +207,8 @@ Porém se quiser fazer o contrário, use a função <span class="nf-s">reverse( 
 <td class="code" >
 <div class="highlight">
 <pre>
-&gt; db.restaurantes.distinct('borough').sort().reverse()
+&gt; db.restaurantes.distinct('borough').sort()
+ .reverse()
 </pre>
 </div>
 </td></tr>
