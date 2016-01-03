@@ -15,7 +15,7 @@ Garbage collector é um conceito muito antigo na história da computação, inve
 Ao longo do algoritmo você faz uso de um espaço da memória, mas nem sempre utiliza até o final, e se você deixa um objeto em um espaço de memória que nem tá mais utilizando, isso acaba virando um lixo, e apenas ocupando espaço no seu sistema e deixando menos performático. Para resolver isso, limpamos aquele espaço apenas liberando a memória de lá.
 
 Na linguagem **C** por exemplo, por termos muitos usos de ponteiros e alocação de memória, sempre precisamos liberar quando não precisamos mais dela. Uma lista encadeada por exemplo, quando removemos algo da lista, não é apenas fazer com o que o apontador do anterior aponte para o próximo do que deseja remover, precisamos também usar a função **free** para liberar aquele espaço no endereço.
-**Tudo manualmente fazendo o uso das funções malloc e free**.
+**Tudo manualmente, fazendo o uso das funções malloc e free**.
 
 ## Como funciona o Garbage Collector no JavaScript ?
 
