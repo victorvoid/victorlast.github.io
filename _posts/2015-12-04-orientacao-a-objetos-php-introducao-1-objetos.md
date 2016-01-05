@@ -3,6 +3,8 @@ layout: post
 title:  "Orientação a objetos com PHP #1 - Objetos e Classes"
 date:   2015-12-04 00:12:31 -0400
 tags: php
+categories:
+- Aprendendo PHP OO
 subtitle: Saiba os princípios básicos de orientação a objetos com php e no que ele pode te ajudar.
 ---
 #Programação Orientada a Objetos com PHP
@@ -10,15 +12,14 @@ subtitle: Saiba os princípios básicos de orientação a objetos com php e no q
 ####Victor Igor
 
 
-<img class="img-responsive" src="{{ "/img/tirinha-orientacao-a-objetos.png"}}">
+<img class="img-responsive" src="{{ "/assets/img/memes/tirinha-orientacao-a-objetos.png"}}">
 
 ####fonte: [Vida de programador](http://vidadeprogramador.com.br/2012/04/02/php-orientado-a-objetos/)
 
 ###Resumo
-Não fiz essa série para provar que orientação a objetos é o melhor paradigma para utilizar em seus projetos ou forçar que você deva usar, mas que
-você deveria conhecer, aliás ele pode resolver algum de seu determinado problema. =)
+Não estou fazendo essa série para ensinar a fundo a orientação a objetos, e sim como usar o php na orientação a objetos. =)
 
-####Criei uma série abordando os seguintes tópicos:
+####Criei a série abordando os seguintes tópicos:
 
 1. Introdução/Classes e objetos
 2. Herança
@@ -65,245 +66,117 @@ Para criamos uma classe precisamos de alguns pré requisitos:
 3. Não é aconselhável usar um underline e sim separando através da caixa alta e começando sempre com uma letra maiúscula, por exemplo: `MinhaClasse`.
 4. Precisamos de uma extensão para que a arquitetura identifique que o arquivo é uma classe, ela é: `.class.php` exemplo: `MinhaClasse.class.php`.
 5. O nome da classe tem que ser o mesmo do arquivo.
-<table class="highlighttable">
-<tr>
-	<td class="linenos" >
-	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js" > 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
- 10
- 11
- 12
- 13
- 14
- 15
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-<span class="c1">//Exemplo 1:</span>
-<span class="kd">&lt;?php</span>
-<span class="kd">class</span> <span class="nc">MinhaClasse</span><span class="p">{</span> 
-<span class="c1">//A palavra reservada class para informar o escopo.</span>
-  <span class="kd">var </span><span class="nv">$Classe;</span>
-  <span class="kd">var </span><span class="nv">$Funcao;</span>
-  <span class="kd">function</span><span class="nf"> getClasse</span><span class="p">(</span><span class="nv">$Classe, $Funcao</span><span class="p">){</span>
-  <span class="c1">////método - dando auxílio para nossas variáveis</span>
-    <span class="kd">echo </span><span class="p">"</span><span class="s1">A classe {$Classe} serve para {$Funcao}.</span><span class="p">";</span>
-  <span class="p">}</span>
-  <span class="kd">function </span><span class="nf">verClasse</span><span class="p">(){</span>
-    <span class="kd">print_r</span><span class="p">(</span><span class="nv">$this</span><span class="p">);</span>
-    <span class="c1">//$this serve pra referenciar a própria classe.</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight php %}
+//Exemplo 1:
+<?php
+class MinhaClasse{ 
+//A palavra reservada class para informar o escopo.
+  var $Classe;
+  var $Funcao;
+  function getClasse($Classe, $Funcao){
+  ////método - dando auxílio para nossas variáveis
+    echo "A classe {$Classe} serve para {$Funcao}.";
+  }
+  function verClasse(){
+    print_r($this);
+    //$this serve pra referenciar a própria classe.
+  }
+}
+{% endhighlight %}
+
 Arquivo usando a classe:
-<table class="highlighttable">
-<tr>
-	<td class="linenos" >
-	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js" > 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
- 10
- 11
- 12
- 13
- 14
- 15
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-<span class="c1">//exemplo 2 usando Exemplo 1</span>
-<span class="kd">&lt;?php</span>
-  <span class="kd">require</span><span class="p">('</span><span class="s1">class/MinhaClasse.class.php</span><span class="p">');</span>
-  <span class="c1">//incorporando em nosso arquivo</span>
-  <span class="nv">$teste</span> <span class="o">=</span> <span class="kd">new </span><span class="nc">MinhaClasse</span><span class="p">();</span>
-  <span class="nv">$teste</span><span class="p">-></span><span class="nf">getClasse</span><span class="p">('</span><span class="s1">de cachorro</span><span class="p">', '</span><span class="s1">mostrar</span><span class="p">');</span>
-  <span class="c1">//--> A classe de cachorro serve para mostrar.</span>
-  <span class="nv">$teste</span><span class="p">-></span><span class="nf">verClasse</span><span class="p">();</span>
-  <span class="c1">/*^mostra os valores dos atributos todos vazio.</span>
-  <span class="c1">pois não salvamos o valor na variável</span>
-  <span class="c1">salvando: */</span>
-  <span class="nv">$teste</span><span class="p">-></span><span class="nv">Classe</span> <span class="o">= </span><span class="p">'</span><span class="s1">de cachorro</span><span class="p">';</span>
-  <span class="nv">$teste</span><span class="p">-></span><span class="nv">Funcao</span><span class="o"> = </span><span class="p">'</span><span class="s1">mostrar</span><span class="p">';</span>
-  <span class="nv">$teste</span><span class="p">-></span><span class="nf">verClasse</span><span class="p">();</span>
-  <span class="c1">//^agora mostra os valores adicionados.</span>
-</pre>
-</div>
-</td></tr>
-</table>
-<blockquote class="trivia">
+{% highlight php%}
+//exemplo 2 usando Exemplo 1
+<?php
+  require('class/MinhaClasse.class.php');
+  //incorporando em nosso arquivo
+  $teste = new MinhaClasse();
+  $teste->getClasse('de cachorro', 'mostrar');
+  //--> A classe de cachorro serve para mostrar.
+  $teste->verClasse();
+  /*^mostra os valores dos atributos todos vazio.
+  pois não salvamos o valor na variável
+  salvando: */
+  $teste->Classe = 'de cachorro';
+  $teste->Funcao = 'mostrar';
+  $teste->verClasse();
+  //^agora mostra os valores adicionados.
+{% endhighlight %}
+
+<blockquote>
 <p><strong class="cabecalho">Exemplo 2</strong>
-O operador <span class="kd-s">new</span> tranforma a variável em um objeto (nesse caso um objeto da <span class="nc-s">MinhaClasse</span>). Aliás o <span class="nv-s">$teste</span> = <span class="kd-s">new</span> <span class="nc-s">MinhaClasse</span>;também pode ser instanciado sem o uso do ( ).</p>
+O operador <span class="kd-s">new</span> tranforma a variável em um objeto (nesse caso um objeto da <span class="nc-s">MinhaClasse</span>). Aliás o <span class="nv-s">$teste</span> = <span class="kd-s">new</span> <span class="nc-s">MinhaClasse</span>também pode ser instanciado sem o uso do ( ).</p>
 </blockquote>
+
 Arquivo usando a classe:
 
 Existe métodos que são automáticamente executados quando se usa o `new`, são eles:
-<table class="highlighttable">
-<tr>
-	<td class="linenos" >
-	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js" > 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
- 10
- 11
- 12
- 13
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre><span class="c1">//Exemplo 3:</span>
-<span class="kd">&lt;?php</span>
-<span class="c1">/*Criando um construtor, método chamado assim </span>
-<span class="c1">que estanciar um objeto*/</span>
-  <span class="kd">function</span><span class="nf"> __construct</span><span class="p">(</span><span class="nv">$Nome, $Idade</span><span class="p">){</span>
-    <span class="nv">$this</span><span class="p">-></span><span class="nv">Nome</span><span class="o"> = </span><span class="p"> (</span><span class="kd">string</span><span class="p">)</span> <span class="nv">$Nome</span><span class="p">;</span>
-    <span class="nv">$this</span><span class="p">-></span><span class="nv">Idade</span><span class="o"> = </span><span class="p"> (</span><span class="kd">string</span><span class="p">)</span> <span class="nv">$Idade</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="c1">/*Outro metodo que é executado sozinho assim  </span>
-   <span class="c1">que não usar mais o objeto.*/</span>
-  <span class="kd">function</span><span class="nf"> __destruct</span><span class="p">(</span><span class="nv">$Nome, $Idade</span><span class="p">){</span>
-    <span class="kd">echo</span><span class="p">'</span><span class="s1">O objeto foi destruido !</span><span class="p">';</span>
-  <span class="p">}</span>
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight php %}
+//Exemplo 3:
+<?php
+/*Criando um construtor, método chamado assim 
+que estanciar um objeto*/
+  function __construct($Nome, $Idade){
+    $this->Nome =  (string) $Nome;
+    $this->Idade =  (string) $Idade;
+  }
+  /*Outro metodo que é executado sozinho assim  
+   que não usar mais o objeto.*/
+  function __destruct($Nome, $Idade){
+    echo'O objeto foi destruido !';
+  }
+{% endhighlight %}
 
 ###Como posso usar esses conceitos a meu favor na criação de um sistema ?
 
 <del>Te vira! </del>As vezes utilizamos muitas query para consultarmos nosso banco em várias partes do site, e nessas diversas vezes acabamos repetindo pedaços da mesma query. Sabemos que POO é abstração de dados. Para resolver é fácil, vamos fazer o uso de replica clonagem, aproveitando características de um objeto.
 
-<table class="highlighttable">
-<tr>
-	<td class="linenos" >
-	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js" > 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
- 10
- 11
- 12
- 13
- 14
- 15
- 16
- 17
- 18
- 19
- 20
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-<span class="c1">//Exemplo 4:</span>
-<span class="kd">&lt;?php</span>
-<span class="kd">class</span> <span class="nc">ReplicaClonagem</span><span class="p">{</span> 
-  <span class="kd">function</span><span class="nf"> __construct</span><span class="p">(</span><span class="nv">$Tabela, $Termos, $addQuery</span><span class="p">){</span>
-    <span class="nv">$this</span><span class="p">-></span><span class="nv">Tabela</span><span class="o">   = </span><span class="nv">$Tabela</span><span class="p">;</span>
-    <span class="nv">$this</span><span class="p">-></span><span class="nv">Termos</span><span class="o">   = </span><span class="nv">$Termos</span><span class="p">;</span>
-    <span class="nv">$this</span><span class="p">-></span><span class="nv">addQuery</span><span class="o"> = </span><span class="nv">$addQuery</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kd">function</span><span class="nf"> setTabela</span><span class="p">(</span><span class="nv">$Tabela</span><span class="p">){</span>
-     <span class="nv">$this</span><span class="p">-></span><span class="nv">Tabela</span><span class="o">   = </span><span class="nv">$Tabela</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kd">function</span><span class="nf"> setTermos</span><span class="p">(</span><span class="nv">$Termos</span><span class="p">){</span>
-     <span class="nv">$this</span><span class="p">-></span><span class="nv">Termos</span><span class="o">  = </span><span class="nv">$Termos</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kd">function</span><span class="nf"> Ler</span><span class="p">()</span><span class="p">{</span>
-     <span class="nv">$this</span><span class="p">-></span><span class="nv">Query</span><span class="o">=</span><span class="p">"</span><span class="s1">select * from {$this->Tabela}</span>
-        <span class="s1">where{$this->Termos} {$this->addQuery}</span><span class="p">";</span>
-     <span class="kd">echo</span> <span class="nv">$this</span><span class="p">-></span><span class="nv">Query</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight php %}
+//Exemplo 4:
+<?php
+class ReplicaClonagem{ 
+  function __construct($Tabela, $Termos, $addQuery){
+    $this->Tabela   = $Tabela;
+    $this->Termos   = $Termos;
+    $this->addQuery = $addQuery;
+  }
+  function setTabela($Tabela){
+     $this->Tabela   = $Tabela;
+  }
+  function setTermos($Termos){
+     $this->Termos  = $Termos;
+  }
+  function Ler(){
+     $this->Query="select * from {$this->Tabela}
+        where{$this->Termos} {$this->addQuery}";
+     echo $this->Query;
+  }
+}
+{% endhighlight %}
 
 Usando a classe `ReplicaClonagem`:
 
-<table class="highlighttable">
-<tr>
-	<td class="linenos" >
-	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js" > 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
- 10
- 11
- 12
- 13
- 14
- 15
- 16
- 17
- 18
- 19
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-<span class="c1">//Exemplo 5 usando o Exemplo 4:</span>
-<span class="kd">&lt;?php</span>
-  <span class="kd">require</span><span class="p">('</span><span class="s1">class/ReplicaClonagem.class.php</span><span class="p">');</span>
-  <span class="nv">$readNoticia</span><span class="o"> = </span><span class="kd">new </span><span class="nc">ReplicaClonagem</span><span class="p">("</span><span class="s1">posts</span><span class="p">",</span>
-  <span class="p">"</span><span class="s1">categoria = 'esporte'</span><span class="p">", "</span><span class="s1">order by data desc</span><span class="p">");</span>
-  <span class="nv">$readNoticia</span><span class="p">-></span><span class="nf">Ler</span><span class="p">();</span>
-  <span class="c1">/*select * from posts where categoria = 'esporte'</span>
-    <span class="c1">order by data desc*/</span>
-  <span class="nv">$readJogos</span><span class="o"> = </span><span class="nv">$readNoticia</span><span class="p">;</span><span class="c1">//mesmo objeto</span>
-  <span class="nv">$readJogos</span><span class="p">-></span><span class="nf">setTermos</span><span class="p">("</span><span class="s1">categoria='jogos'</span><span class="p">");</span>
-  <span class="nv">$readJogos</span><span class="p">-></span><span class="nf">Ler</span><span class="p">();</span>
-  <span class="c1">/*select * from posts where categoria = 'jogos'</span>
-   <span class="c1"> order by data desc*/</span>
-  <span class="nv">$readComentario</span><span class="o"> = </span><span class="kd">clone</span><span class="p">("</span><span class="s1">comentario</span><span class="p">");</span>
-   <span class="c1">//criando outro objeto, evita conflitos</span>
-  <span class="nv">readComentario</span><span class="p">-></span><span class="nf">setTabela("</span><span class="s1">comentario</span><span class="p">");</span>
-  <span class="nv">readComentario</span><span class="p">-></span><span class="nf">Ler</span><span class="p">();</span>
-  <span class="c1">/*select * from comentario where categoria = 'jogos'</span>
-   <span class="c1"> order by data desc*/</span>   
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight php %}
+//Exemplo 5 usando o Exemplo 4:
+<?php
+  require('class/ReplicaClonagem.class.php');
+  $readNoticia = new ReplicaClonagem("posts",
+  "categoria = 'esporte'", "order by data desc");
+  $readNoticia->Ler();
+  /*select * from posts where categoria = 'esporte'
+    order by data desc*/
+  $readJogos = $readNoticia;//mesmo objeto
+  $readJogos->setTermos("categoria='jogos'");
+  $readJogos->Ler();
+  /*select * from posts where categoria = 'jogos'
+    order by data desc*/
+  $readComentario = clone("comentario");
+   //criando outro objeto, evita conflitos
+  readComentario->setTabela("comentario");
+  readComentario->Ler();
+  /*select * from comentario where categoria = 'jogos'
+    order by data desc*/   
+{% endhighlight %}
 
 <blockquote class="trivia">
 <p><strong class="cabecalho">Exemplo 5</strong>
@@ -317,152 +190,72 @@ nome já diz, clona o objeto. </p>
 Perceba que ao longo dos exemplos quando utilizamos as classes, usamos o operador <span class="kd-s">new</span> para instanciar, mas como na orientação
 a objetos é comum criar uma classe específica para cada problema, no fim temos uma carga muito grande de classes, e precisamos incluir no escopo do documento. Ao usar o <span class="kd-s">require</span> ou <span class="kd-s">include</span>, automaticamente estamos pegando toda carga do documento para o seu arquivo, e muitas vezes carregamos sem utilizar. Vamos usar um método que só vai incluir um arquivo no seu documento, somente quando ele for ser utilizado. Com isso temos uma carga muito menor de conteúdo sendo incluido, trazendo assim um desempenho melhor.
 
-<table class="highlighttable">
-<tr>
-	<td class="linenos" >
-	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js" > 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
- 10
- 11
- 12
- 13
- 14
- 15
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre><span class="c1">//Exemplo 6:</span>
-<span class="kd">&lt;?php</span>
-  <span class="kd">function</span><span class="nf"> __autoload</span><span class="p">(</span><span class="nv">$Class</span><span class="p">){</span>
-  <span class="c1">//Método mágico =)</span>
-  <span class="nv">dirName</span><span class="o"> = '</span><span class="s1">class</span><span class="p">';</span>
-  <span class="c1">//O nome da pasta que está as classes</span>
-  <span class="kd">if</span><span class="p">(</span><span class="kd">file_exists</span><span class="p">("</span>
-    <span class="s1">{$dirName}/{$Class}.class.php</span><span class="p">")){</span>
-    <span class="kd">require_once</span><span class="p">("
-    </span><span class="s1">{dirName}/{$Class}.class.php</span><span class="p">");</span>
-  <span class="p">}</span><span class="kd">else</span><span class="p">{</span>
-    <span class="kd">die</span><span class="p">("</span><span class="s1">Erro ao incluir </span>
-    <span class="s1">{$dirName}/{$Class}</span><span class="p">");</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight php %}
+//Exemplo 6:
+<?php
+  function __autoload($Class){
+  //Método mágico =)
+  dirName = 'class';
+  //O nome da pasta que está as classes
+  if(file_exists("
+    {$dirName}/{$Class}.class.php")){
+    require_once("
+    {dirName}/{$Class}.class.php");
+  }else{
+    die("Erro ao incluir 
+    {$dirName}/{$Class}");
+  }
+}
+{% endhighlight %}
 
 Essa função <span class="kd-s">__autoload</span> vai ser responsável pelo carregamento automático,
 quando declaramos essa função, o operador <span class="kd-s">new</span> vai jogar para nosso 
 método mágico o nome da classe.
 
-
-<table class="highlighttable">
-<tr>
-	<td class="linenos" >
-	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js" > 1
- 2
- 3
- 4
- 5
- 6
- 7
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre><span class="c1">//usando Exemplo 6:</span>
-<span class="kd">&lt;?php</span>
-  <span class="kd">require</span><span class="p">('</span><span class="s1">class/inc/Config.inc.php</span><span class="p">');</span>
-  <span class="c1">cada vez que requisitar uma nova classe,</span>
-  <span class="c1">o nosso metodo mágico vai receber </span>
-  <span class="c1">o nome da class.</span>
-  <span class="nv">classeA</span><span class="o"> = </span><span class="kd">new </span><span class="nc">MinhaClasse</span><span class="p">();</span>
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight php %}
+//usando Exemplo 6:
+<?php
+  require('class/inc/Config.inc.php');
+  cada vez que requisitar uma nova classe,
+  o nosso metodo mágico vai receber 
+  o nome da class.
+  classeA = new MinhaClasse();
+{% endhighlight %}
 
 ##Documentação com PHPDoc?
 Vamos criar uma documentação utilizando o PHPDoc pra informar usuários ou até mesmo para lembrar a gente de como se utiliza uma classe, ou para que serve específico método ou variável. Não é apenas escrever na classe o que ela faz, é uma documentação interativa que podemos sempre consultar quando formos utilizar qualquer atributo, método ou quando instanciamos a classe.
 
-<table class="highlighttable">
-<tr>
-	<td class="linenos" >
-	<div class="linenodiv">
-	<pre><code class="language-js" data-lang="js" > 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
- 10
- 11
- 12
- 13
- 14
- 15
- 16
- 17
- 18
- 19
- 20
- 21
- 22
- 23
- 24
- 25
- 26
- 27
- 28
- 29
- 30
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre><span class="c1">//Exemplo 7:</span>
-<span class="kd">&lt;?php</span>
-  <span class="c1">/**</span><span class="cp">DocumentaçãodeClasse:</span>
-  <span class="c1">*</span><span class="cp">Essa classe foi criada para mostrar como usa e </span> 
-  <span class="c1">*</span><span class="cp">como faz uma documentação de suas classes</span>
-  <span class="c1">*</span><span class="cp">@copyright (c) 2015, Victor Igor G. Martins Study</span>
-  <span class="c1">*/</span>
-<span class="kd">class</span><span class="nc"> DocumentacaoDeClasse</span><span class="p">{</span>
-  <span class="c1">/**</span><span class="cp">@var string Nome da Empresa</span>
-  <span class="kd">public</span><span class="nv"> $Empresa</span><span class="p">;</span><span class="c1">*/</span>
-  <span class="c1">/**</span><span class="cp">@var string O cargo do Funcionario</span><span class="c1">*/</span>
-  <span class="kd">public</span><span class="nv"> Cargo</span><span class="p">;</span>
-  <span class="c1">/**</span>
-  <span class="c1">*</span> <span class="cp">Modifica nome e a idade da pessoa</span>
-  <span class="c1">*/</span>
-  <span class="kd">public function</span><span class="nf"> setPessoa</span><span class="p">(</span><span class="nv">$Nome, $Idade</span><span class="p">){</span>
-    <span class="nv">$this</span><span class="p">-></span><span class="nv">Nome</span><span class="o"> = </span><span class="nv"> $Nome</span><span class="p">;</span>
-    <span class="nv">$this</span><span class="p">-></span><span class="nv">Idade</span><span class="o"> = </span><span class="nv"> $Idade</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="c1">/**</span>
-  <span class="c1">*</span><span class="cp">Ao executar essa função, você </span>
-  <span class="c1">*</span><span class="cp">pegará o nome da pessoa. </span>
-  <span class="c1">*</span><span class="cp">Você pode dar um echo neste </span>
-  <span class="c1">*</span><span class="cp">para visualizar o  Nome.</span>
-  <span class="c1">*</span><span class="cp">@return string</span>
-  <span class="c1">*/</span>
-  <span class="kd">public function</span><span class="nf"> getNome</span><span class="p">(){</span>
-     <span class="kd">return </span><span class="nv">$this</span><span class="p">-></span><span class="nv">Nome</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight php %}
+//Exemplo 7:
+<?php
+  /**DocumentaçãodeClasse:
+  *Essa classe foi criada para mostrar como usa e  
+  *como faz uma documentação de suas classes
+  *@copyright (c) 2015, Victor Igor G. Martins Study
+  */
+class DocumentacaoDeClasse{
+  /**@var string Nome da Empresa
+  public $Empresa;*/
+  /**@var string O cargo do Funcionario*/
+  public Cargo;
+  /**
+  * Modifica nome e a idade da pessoa
+  */
+  public function setPessoa($Nome, $Idade){
+    $this->Nome =  $Nome;
+    $this->Idade =  $Idade;
+  }
+/**
+  *Ao executar essa função, você 
+  *pegará o nome da pessoa. 
+  *Você pode dar um echo neste 
+  *para visualizar o  Nome.
+  *@return string
+  */
+  public function getNome(){
+     return $this->Nome;
+  }
+}
+{% endhighlight %}
 
 Existe vários outros atributos como o `@auto`, `@abstract`, `$acess`, `$license`, entre outros para você utilizar. Mais informações sobre PHODOC [aqui](http://www.phpdoc.org/docs/latest/index.html).

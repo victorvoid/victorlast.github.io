@@ -1,22 +1,34 @@
 ---
 layout: default
 ---
-<div id="corpo">
-      <ul id="post-list">
-        {% for post in site.posts %}
-        <li>
-            <h1 class="post-title">
-                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-            </h1>
-            <h3 class="post-subtitle">{{post.subtitle}}</h3>
-            <div class="date">{{ post.date | date: "%-d %b, %Y" }}</div>
-            <div class="categories">
-                <ul>
-                    <li><a href="/tags/#{{post.tags}}">#{{post.tags}}</a></li>
-                </ul>
-            </div>
-        </li>
-        {% endfor %}
-      </ul>
 
-</div>
+<main id="scroll" class="home" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+    {% for post in site.posts %}
+        <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+                <a class="datetime" href="{{ post.url | prepend: site.baseurl }}">
+                    <meta itemprop="datePublished" content="{{post.date}}">
+                    <time datetime="{{ post.date | date_to_xmlschema }}">
+                        <span class="day">
+                            {{ post.date | date: "%d" }}
+                        </span>
+                        <span class="month-year">
+                            {{ post.date | date: "%B %Y" }}
+                        </span>
+                    </time>
+                </a>
+                <div class="content">
+                    <a href="{{ post.url | prepend: site.baseurl }}"><h2 class="post-title" itemprop="name">{{ post.title }}</h2></a>
+                    <p class="description">
+                        {{ post.content | strip_html | truncatewords:40 }}
+                        <a href="{{ post.url | prepend: site.baseurl }}" class="link">Leia mais</a>
+                    </p>
+
+                    <div class="tags">
+                        {% for tag in post.tags %}
+                            <a href="{{ baseurl }}/tags/#{{tag | slugify }}">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+        </article>
+    {% endfor %}
+</main>

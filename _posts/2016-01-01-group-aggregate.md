@@ -3,6 +3,8 @@ layout: post
 title:  "MongoDB - Aggregate e Groups #5"
 date:   2016-01-01 00:14:31 -0400
 tags: mongobemean
+categories:
+- Aprendendo o MongoDB
 subtitle: Conceitos vistos na aula 05 no bemean, descobrindo a quantidade de elementos, limitando, ordenando e distinguindo valores de uma collection, agrupando...
 ---
 
@@ -15,127 +17,94 @@ use o [restaurantes.json](https://raw.githubusercontent.com/Webschool-io/be-mean
 ##Como saber a quantidade de documentos que eu tenho? 
 
 Podemos usar a função length:
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; db.restaurantes.find().length()
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight javascript %}
+ > db.restaurantes.find().length()
+
+{% endhighlight %}
 
 Porém dessa forma o resultado é 'lento', para isso temos uma função própria que é muito mais rápida que o <span class="nf-s">length( )</span>
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; db.restaurantes.count()
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight javascript %}
+ > db.restaurantes.count()
+ 
+{% endhighlight %}
+
 Resultado:
-<pre>
-25359
-</pre><br>
+{% highlight javascript %}
+> 25359
+
+{% endhighlight %}
+
 Com o <span class="nf-s">count( )</span> também podemos usar querys que usamos no <span class="nf-s">find( )</span> para saber a quantidade do que queremos.
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var query = {borough:'Bronx'}
-&gt; db.restaturantes.count(query)
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight javascript %}
+> var query = {borough:'Bronx'}
+> db.restaturantes.count(query)
+
+{% endhighlight %}
+
 Resultado:
-<pre>
-2338
-</pre>
+{% highlight javascript %}
+> 2338
+
+{% endhighlight %}
+
 
 ##Distinct
 
 Neste nosso restaurantes temos a seguinte estrutura:
 
-<pre>
+{% highlight json %}
   {
- <span class="sx-s"> "_id"</span>: ObjectId("564d6c5af9e09ea567dade51"),
-  <span class="sx-s">"address"</span>: {
-    <span class="sx-s">"building"</span>: "2780",
-    <span class="sx-s">"coord"</span>: [
+  "_id": ObjectId("564d6c5af9e09ea567dade51"),
+  "address": {
+    "building": "2780",
+    "coord": [
       -73.98241999999999,
       40.579505
     ],
-    <span class="sx-s">"street"</span>: "Stillwell Avenue",
-    <span class="sx-s">"zipcode"</span>: "11224"
+    "street": "Stillwell Avenue",
+    "zipcode": "11224"
   },
-  <span class="sx-s">"borough"</span>: "Brooklyn",
-  <span class="sx-s">"cuisine"</span>: "American ",
-  <span class="sx-s">"grades"</span>: [
+  "borough": "Brooklyn",
+  "cuisine": "American ",
+  "grades": [
     {
-      <span class="sr-s">"date"</span>: ISODate("2014-06-10T00:00:00Z"),
-      <span class="sr-s">"grade"</span>: "A",
-      <span class="sr-s">"score"</span>: 5
+      "date": ISODate("2014-06-10T00:00:00Z"),
+      "grade": "A",
+      "score": 5
     },
     {
-      <span class="sr-s">"date"</span>: ISODate("2013-06-05T00:00:00Z"),
-      <span class="sr-s">"grade"</span>: "A",
-      <span class="sr-s">"score"</span>: 7
+      "date": ISODate("2013-06-05T00:00:00Z"),
+      "grade": "A",
+      "score": 7
     },
     {
-      <span class="sr-s">"date"</span>: ISODate("2012-04-13T00:00:00Z"),
-      <span class="sr-s">"grade"</span>: "A",
-      <span class="sr-s">"score"</span>: 12
+      "date": ISODate("2012-04-13T00:00:00Z"),
+      "grade": "A",
+      "score": 12
     },
     {
-      <span class="sr-s">"date"</span>: ISODate("2011-10-12T00:00:00Z"),
-      <span class="sr-s">"grade"</span>: "A",
-      <span class="sr-s">"score"</span>: 12
+      "date": ISODate("2011-10-12T00:00:00Z"),
+      "grade": "A",
+      "score": 12
     }
   ],
-  <span class="sx-s">"name"</span>: "Riviera Caterer",
-  <span class="sx-s">"restaurant_id"</span>: "40356018"
+  "name": "Riviera Caterer",
+  "restaurant_id": "40356018"
 }
-</pre>
+{% endhighlight %}
+
 Repare, e se quisermos saber todas as <span class="sx-s">borough</span> nesse universo de 25359 documentos?
 Precisamos saber encontrar valores únicos de uma propriedade, pois ela pode se repetir em outros documentos. O <span class="nf-s">distinct( ) </span>vai nos ajudar com isso.
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; db.restaurantes.distinct('borough')
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight javascript %}
+> db.restaurantes.distinct('borough')
+
+{% endhighlight %}
+
 
 Resultado:
-<pre>
+{% highlight json %}
 [
   "Brooklyn",
   "Manhattan",
@@ -144,49 +113,34 @@ Resultado:
   "Bronx",
   "Missing"
 ]
-</pre>
+{% endhighlight %}
+
 
 Ora se ele retorna um array, e usamos JavaScript, podemos usar um <span class="nf-s">length</span> para saber a quantidade não é ?
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; db.restaurantes.distinct('borough').length
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight javascript %}
+> db.restaurantes.distinct('borough').length
+
+{% endhighlight %}
 
 Resultado: 
-<pre>6</pre>
+
+{% highlight javascript %}
+> 6
+
+{% endhighlight %}
 
 ##Tem como trazer o resultado ordenado ? 
 
 Quem ae já estudou os algoritmos de ordenação, <del>sabe que dá muita raiva</del> sabe que existe vários algoritmos de ordenação e com vários casos cada um. Poxa e agora ? <del>se lascou, vai ter que implementar uma função para isso</del>
 HEYY!!! Lembre, se estamos usando JavaScript, podemos usar a função <span class="nf-s">sort( )</span> para isso! e para os curiosos, ele usa o algorimo MergeSort, veja o código [aqui](http://mxr.mozilla.org/seamonkey/source/js/src/jsarray.c).
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; db.restaurantes.distinct('borough').sort()
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight javascript %}
+> db.restaurantes.distinct('borough').sort()
+
+{% endhighlight %}
 
 Resultado:
-<pre>
+{% highlight json %}
 [
   "Bronx",
   "Brooklyn",
@@ -195,24 +149,14 @@ Resultado:
   "Queens",
   "Staten Island"
 ]
-</pre>
+{% endhighlight %}
+
 Porém se quiser fazer o contrário, use a função <span class="nf-s">reverse( )</span>
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; db.restaurantes.distinct('borough').sort()
- .reverse()
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight javascript %}
+> db.restaurantes.distinct('borough').sort().reverse()
+
+{% endhighlight %}
 
 ##Limite
 
@@ -221,99 +165,51 @@ Agora vamos usar uma collection <span class="nc-s">pokemons</span> nos próximos
 
 
 As vezes podemos querer colocar um limite de busca, assim limitando o número de resultados, como por exemplo:
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; db.pokemons.find({}, {name:1, _id:0}).limit(3)
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight javascript %}
+> db.pokemons.find({}, {name:1, _id:0}).limit(3)
+
+{% endhighlight %}
+
 Resultado:
-<pre>
+{% highlight json %}
 {
-  <span class="sx-s">"name"</span>: "Pidgeotto"
+  "name": "Pidgeotto"
 }
 {
-  <span class="sx-s">"name"</span>: "Raticate"
+  "name": "Raticate"
 }
 {
-  <span class="sx-s">"name"</span>: "Fearow"
+  "name": "Fearow"
 }
-</pre>
+{% endhighlight %}
 
 Com ele podemos também usar o <span class="nf-s">skip( )</span>, para pedir para pular um determinado valor.
-
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; db.pokemons.find({}, {name:1, _id:0}).limit(5)
+{% highlight javascript %}
+> db.pokemons.find({}, {name:1, _id:0}).limit(5)
  .skip(2)
-</pre>
-</div>
-</td></tr>
-</table>
+
+{% endhighlight %}
 
 Assim ele pulou os 2 primeiros pokemons e retornou os próximos 5. Podemos fazer uma paginação com ele, assim mostrando de 5 em 5 por exemplo.
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
 
-  2
+{% highlight javascript %}
+> db.pokemons.find({}, {name:1, _id:0}).limit(5).skip(5*0)]
+> db.pokemons.find({}, {name:1, _id:0}).limit(5).skip(5*1)
+> db.pokemons.find({}, {name:1, _id:0}).limit(5).skip(5*2)
 
-  3
-
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; db.pokemons.find({}, {name:1, _id:0}).limit(5)
-.skip(5*0)]
-&gt; db.pokemons.find({}, {name:1, _id:0}).limit(5)
-.skip(5*1)
-&gt; db.pokemons.find({}, {name:1, _id:0}).limit(5)
-.skip(5*2)
-</pre>
-</div>
-</td></tr>
-</table>
+{% endhighlight %}
 
 ##Distinct
 Geralmente em uma collection que possui muitos documentos, contém propriedades com valores iguais. Nesse exemplo de pokemons, repare que não existe um exclusivo <span class="sx-s">type</span> pra cada um, ele se repete em outros. Vamos descobrir quais e quantos <span class="sx-s">types</span> de pokemons existe na collection:
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; db.pokemons.distinct('types').length
-&gt; db.pokemons.distinct('types')
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight javascript %}
+> db.pokemons.distinct('types').length
+> db.pokemons.distinct('types')
+
+{% endhighlight %}
+
 Resultado:
-<pre>18
+{% highlight json %}
 [
   "bug",
   "poison",
@@ -334,10 +230,10 @@ Resultado:
   "dark",
   "dragon"
 ]
-</pre>
+{% endhighlight %}
 
 ##Agrupamento 
-<img src="{{ "/img/elements-2.png"}}" class="img-responsive">
+<img src="{{ "/assets/img/memes/elements-2.png"}}">
 
 Podemos agrupar cada tipo de pokemons e poder mandar contar quantos pokemons tem aquele valor por exemplo, tudo isso usando a função <span class="nf-s">group( )</span>.
 
@@ -352,72 +248,49 @@ O <strong>group</strong> tem no total 6 propriedades que podemos utilizar, vamos
 
 Vamos ver algumas delas! (͡๏̯͡๏)۶
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-  11
-  12
-  13
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-<span class="c1">//exemplo 1</span>
+{% highlight javascript %}
+//exemplo 1
 db.pokemons.group({
-  <span class="kd-s">initial</span>: {total : 0},
-  <span class="kd-s">reduce</span> : <span class="nf-s">function</span> (curr, result){
-    curr.types.<span class="kd-s">forEach</span>(<span class="nf-s">function</span>(type){
-      <span class="nc-s">if</span>(result[type]){
+  initial: {total : 0},
+  reduce : function (curr, result){
+    curr.types.forEach(function(type){
+      if(result[type]){
         result[type]++;
-      }<span class="nc-s">else</span>{
+      }else{
         result[type] = 1;
       }
       result.total++;
     });
   }
 });
-</pre>
-</div>
-</td></tr>
-</table>
+{% endhighlight %}
 
 Resultado:
-<pre>
+{% highlight json %}
 [
   {
-    <span class="sx-s">"total"</span>: 934,
-    <span class="sx-s">"normal"</span>: 79,
-    <span class="sx-s">"flying"</span>: 81,
-    <span class="sx-s">"poison"</span>: 54,
-    <span class="sx-s">"bug"</span>: 58,
-    <span class="sx-s">"electric"</span>: 47,
-    <span class="sx-s">"water"</span>: 101,
-    <span class="sx-s">"fighting"</span>: 42,
-   <span class="sx-s"> "psychic"</span>: 61,
-    <span class="sx-s">"grass"</span>: 70,
-    <span class="sx-s">"fairy"</span>: 31,
-    <span class="sx-s">"fire"</span>: 53,
-    <span class="sx-s">"rock"</span>: 42,
-    <span class="sx-s">"ice"</span>: 28,
-    <span class="sx-s">"ground"</span>: 53,
-    <span class="sx-s">"steel"</span>: 35,
-    <span class="sx-s">"ghost"</span>: 34,
-    <span class="sx-s">"dark"</span>: 35,
-    <span class="sx-s">"dragon"</span>: 30
+    "total": 934,
+    "normal": 79,
+    "flying": 81,
+    "poison": 54,
+    "bug": 58,
+    "electric": 47,
+    "water": 101,
+    "fighting": 42,
+    "psychic": 61,
+    "grass": 70,
+    "fairy": 31,
+    "fire": 53,
+    "rock": 42,
+    "ice": 28,
+    "ground": 53,
+    "steel": 35,
+    "ghost": 34,
+    "dark": 35,
+    "dragon": 30
   }
 ]
-</pre>
+{% endhighlight %}
 
 ###Entendo o exemplo 1
 
@@ -428,116 +301,67 @@ No reduce escrevemos uma função que recebe o <span class="sr-s">curr</span> co
 ###Colocando condições
 Vamos usar a propriedade <span class="kd-s">cond</span> para informar nossa condição.
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-  11
-  12
-  13
-  14
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
+{% highlight javascript %}
 db.pokemons.group({
-  <span class="kd-s">initial</span>:{total : 0},
-  <span class="kd-s">cond</span>   :{defense: {$gt:200}},
-  <span class="kd-s">reduce</span> :<span class="nf-s">function</span> (curr, result){
-    curr.types.<span class="kd-s">forEach</span>(<span class="nf-s">function</span>(type){
-      <span class="nc-s">if</span>(result[type]){
+  initial:{total : 0},
+  cond   :{defense: {$gt:200}},
+  reduce :function (curr, result){
+    curr.types.forEach(function(type){
+      if(result[type]){
         result[type]++;
-      }<span class="nc-s">else</span>{
+      }else{
         result[type] = 1;
       }
       result.total++;
     });
   }
 });
-</pre>
-</div>
-</td></tr>
-</table>
+{% endhighlight %}
+
 Resultado:
-<pre>
+{% highlight json %}
 [
   {
-    <span class="sx-s">"total"</span>: 2,
-    <span class="sx-s">"rock"</span>: 1,
-    <span class="sx-s">"bug"</span>: 1
+    "total": 2,
+    "rock": 1,
+    "bug": 1
   }
 ]
-</pre>
+{% endhighlight %}
+
 
 ##Finalize
 Ao contrários das outras propriedades que é sempre chamada para cada documento, o <span class="kd-s">finalize</span> é chamada apenas ao final da execução.
 
-
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-
-  11
-  12
-
-  13
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-<span class="c1">//exemplo 2</span>
+{% highlight javascript %}
+//exemplo 2
 db.pokemons.group({
-  <span class="kd-s">initial</span>: {total: 0, defense: 0, attack:0},
-  <span class="kd-s">reduce</span> : <span class="nf-s">function</span> (current, result){
+  initial: {total: 0, defense: 0, attack:0},
+  reduce : function (current, result){
     result.total++;
     result.defense += current.defense;
     result.attack  += current.attack;
     },
-  <span class="kd-s">finalize</span>: <span class="nf-s">function</span>(result){
-     result.media_defense = 
-                  result.defense/result.total;
-     result.media_attack  = 
-                  result.attack/result.total;
+  finalize: function(result){
+     result.media_defense = result.defense/result.total;
+     result.media_attack  = result.attack/result.total;
   }
 })
-</pre>
-</div>
-</td></tr>
-</table>
+{% endhighlight %}
 
 Resultado:
-<pre>
+
+{% highlight json %}
 [
   {
-    <span class="sx-s">"total"</span>: 620,
-   <span class="sx-s"> "defense"</span>: 44363,
-    <span class="sx-s">"attack"</span>: 47022,
-    <span class="sx-s">"media_defense"</span>: 71.55322580645161,
-    <span class="sx-s">"media_attack"</span>: 75.84193548387097
+    "total": 620,
+    "defense": 44363,
+    "attack": 47022,
+    "media_defense": 71.55322580645161,
+    "media_attack": 75.84193548387097
   }
 ]
-</pre>
+{% endhighlight %}
 
 <blockquote class="trivia">
 <p><strong class="cabecalho">Exemplo 2 ? WTF</strong>
@@ -548,7 +372,7 @@ Usamos o <span class="kd-s">finalize</span> para sabermos a média de <span clas
 Temos 3 abordagens para agregações, cada uma com sua característica e propósitos para cada situação, veremos a <em>aggregation pipeline.</em>
 
 ####Aggregation Pipeline ? 
-<img src="{{ "/img/jackie-chan.jpg"}}" class="img-responsive">
+<img src="{{ "/assets/img/memes/wtf-homer.gif"}}">
 
 Ele é basicamente um framework para executar uma série de transformações de dados em um documento. Existe 10 tipos de transformações que podem ser utilizados.
 
@@ -566,58 +390,40 @@ Ele é basicamente um framework para executar uma série de transformações de 
 
 Vamos ver alguns deles para nossos exemplos. =) <br>
 Similar ao <strong>group</strong>, podemos fazer a mesma coisa em menor tamanho de linhas. Basicamente tudo que fazemos com o group, podemos fazer com o <strong>aggregate</strong>.
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-  11
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-<span class="c1">//exemplo 3</span>
+{% highlight javascript %}
+//exemplo 3
 db.pokemons.aggregate({
-  <span class="nf-s">$group</span>:{
-      <span class="kd-s">_id</span>:{},
-      <span class="kd-s">media_defense</span>:{ <span class="nf-s">$avg</span>: '$defense'},
-      <span class="kd-s">media_atack</span>: {<span class="nf-s">$avg</span>: '$attack'},
-      <span class="kd-s">defense</span>: {<span class="nf-s">$sum</span>: '$defense'},
-      <span class="kd-s">attack</span>: {<span class="nf-s">$sum</span>: '$attack'},
-      <span class="kd-s">total</span>: {<span class="nf-s">$sum</span>: 1}
+  $group:{
+      _id:{},
+      media_defense:{ $avg: '$defense'},
+      media_atack: {$avg: '$attack'},
+      defense: {$sum: '$defense'},
+      attack: {$sum: '$attack'},
+      total: {$sum: 1}
   }
 })
-</pre>
-</div>
-</td></tr>
-</table>
+{% endhighlight %}
 
 Resultado:
-<pre>{
-  <span class="sx-s">"result"</span>: [
+
+{% highlight javascript %}
+{
+  "result": [
     {
-      <span class="sr-s">"_id"</span>: {
+      "_id": {
         
       },
-      <span class="sr-s">"media_defense"</span>: 71.55322580645161,
-      <span class="sr-s">"media_atack"</span>: 75.84193548387097,
-      <span class="sr-s">"defense"</span>: 44363,
-      <span class="sr-s">"attack"</span>: 47022,
-      <span class="sr-s">"total"</span>: 620
+      "media_defense": 71.55322580645161,
+      "media_atack": 75.84193548387097,
+      "defense": 44363,
+      "attack": 47022,
+      "total": 620
     }
   ],
-  <span class="sx-s">"ok"</span>: 1
+  "ok": 1
 }
-</pre>
+{% endhighlight %}
+
 Você vai ver que deu o mesmo valor do <em>exemplo 1</em>
 
 ###Entendendo o exemplo 3
@@ -637,62 +443,39 @@ Você deve ter reparado na facilidade que deu usando esses operadores <strong>$s
 10. [$stdDevSamp](https://docs.mongodb.org/manual/reference/operator/aggregation/stdDevSamp/)
 
 Como no outro exemplo fiz uma condição, no <em>aggregate</em> também podemos.
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-  11
-  12
-  13
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-<span class="c1">//exemplo 4</span>
+{% highlight javascript %}
+//exemplo 4
 db.pokemons.aggregate([
-{<span class="nf-s">$match</span>: {types: 'fire'}},
+{$match: {types: 'fire'}},
 {
-  <span class="nf-s">$group</span>:{
-      <span class="kd-s">_id</span>:{},
-      <span class="kd-s">media_defense</span>:{ <span class="nf-s">$avg</span>: '$defense'},
-      <span class="kd-s">media_atack</span>: {<span class="nf-s">$avg</span>: '$attack'},
-      <span class="kd-s">defense</span>: {<span class="nf-s">$sum</span>: '$defense'},
-      <span class="kd-s">attack</span>: {<span class="nf-s">$sum</span>: '$attack'},
-      <span class="kd-s">total</span>: {<span class="nf-s">$sum</span>: 1}
+  $group:{
+      _id:{},
+      media_defense:{ $avg: '$defense'},
+      media_atack: {$avg: '$attack'},
+      defense: {$sum: '$defense'},
+      attack: {$sum: '$attack'},
+      total: {$sum: 1}
   }
 }])
-</pre>
-</div>
-</td></tr>
-</table>
-Resultado:
+{% endhighlight %}
 
-<pre>
+Resultado:
+{% highlight javascript %}
 {
-  <span class="sx-s">"result"</span>: [
+  "result": [
     {
-      <span class="sr-s">"_id"</span>: {
+      "_id": {
         
       },
-      <span class="sr-s">"media_defense"</span>: 67.20754716981132,
-      <span class="sr-s">"media_atack"</span>: 78.88679245283019,
-      <span class="sr-s">"defense"</span>: 3562,
-      <span class="sr-s">"attack"</span>: 4181,
-      <span class="sr-s">"total"</span>: 53
+      "media_defense": 67.20754716981132,
+      "media_atack": 78.88679245283019,
+      "defense": 3562,
+      "attack": 4181,
+      "total": 53
     }
   ],
-  <span class="sx-s">"ok"</span>: 1
+  "ok": 1
 }
-</pre>
+{% endhighlight %}
  
 <strong>Group</strong> e <strong>Aggregate</strong> são conceitos muitos importantes e usados. Na [documentação](https://docs.mongodb.org/manual/) você pode encontrar mais exemplos.

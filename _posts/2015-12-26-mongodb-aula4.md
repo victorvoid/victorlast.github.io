@@ -1,91 +1,58 @@
 ---
 layout: post
-title:  "MongoDB - Atua&shy;lizan&shy;do e remo&shy;ven&shy;do dados #4.1 #4.2"
+title:  "MongoDB - Atualizando e removendo dados #4.1 #4.2"
 date:   2015-12-26 00:06:31 -0400
 tags: mongobemean
+categories:
+- Aprendendo o MongoDB
 subtitle: Conceitos vistos na aula 4.1 e 4.2 no bemean, atualizando e removendo objetos, operadores de array, operadores de buscas em arrays, operadores de negação... 
 ---
 #Atualizando e Remo&shy;ven&shy;do da&shy;dos
-<img src="https://camo.githubusercontent.com/f1329f8746e4b4bbea6979ca658e66941931c5f6/68747470733a2f2f636c6475702e636f6d2f4356765578365573776f2e676966" class="img-responsive">
+<img src="https://camo.githubusercontent.com/f1329f8746e4b4bbea6979ca658e66941931c5f6/68747470733a2f2f636c6475702e636f6d2f4356765578365573776f2e676966">
 
 ##UPDATE
 
 No MongoDB não existe só uma forma de atualizar o documento, uma das formas já vimos [neste post](http://victorvoid.github.io/2015/12/07/mongodb-aula-1-2-3-be-mean.html), que foi fazendo uma busca usando o <span class="nf-s">findOne( )</span>, e através do resultado modificamos e usamos a função <span class="nf-s">save( )</span>, porém esse caminho é grande, perceba que precisamos fazer a busca, salvar na variável, e modificar para depois salvar.
+{% highlight javascript %}
+> var query = {name: 'Carterpie'}
+> var p     = db.pokemons.findOne(query)
+> p.name    = 'RatoCabeludo'
+> db.pokemons.save(p)
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
- 2
- 3
- 4
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var query = {name: 'Carterpie'}
-&gt; var p     = db.pokemons.findOne(query)
-&gt; p.name    = 'RatoCabeludo'
-&gt; db.pokemons.save(p)
-</pre>
-</div>
-</td></tr>
-</table>
+{% endhighlight %}
 
 ###Qual a melhor forma? 
 
 Ele possui uma função chamada <span class="nf-s">update( )</span> que tem esse objetivo de fazer tudo de uma só vez. Contém 3 parâmetros que veremos com mais detalhe cada um.
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; db.colecao.update(query, modificador, options);
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight javascript %}
+> db.colecao.update(query, modificador, options);
+
+{% endhighlight %}
+
 <blockquote class="trivia">
 <p><strong class="cabecalho">Info 1</strong>
 O parâmetro <span class="kd-s">options</span> não é obrigatório.</p>
 </blockquote>
 Vamos inserir um objeto para modificarmos
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
 
+{% highlight javascript %}
+> var poke = {name: "Testemon", attack: 8000, 
+        defense: 8000, height: 2.1, 
+        description: "Pokemon de teste"}
+> db.pokemons.save(poke);
+> var query = {name: /testemon/i}
+> db.pokemons.find(query);
 
- 2
- 3
- 4
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var poke = {name: "Testemon", attack: 8000, 
-	      defense: 8000, height: 2.1, 
-	      description: "Pokemon de teste"}
-&gt; db.pokemons.save(poke);
-&gt; var query = {name: /testemon/i}
-&gt; db.pokemons.find(query);
-</pre>
-</div>
-</td></tr>
-</table>
+{% endhighlight %}
+
 <blockquote class="trivia">
 <p><strong class="cabecalho">Info 2</strong>
 Na variável <span class="kd-s">query</span> passamos o name, porém usamos a barra entre o nome, isso é uma <strong>REGEX</strong>, o <strong>i</strong> informa que não importa se é maiúsculo ou minúsculo. Assim fazendo uma busca Case insensitive</p>
 </blockquote>
 Me retornou: 
-<pre>
+
+{% highlight json %}
 {
   "_id": ObjectId("5665171cd394bd50ba306acd"),
   "name": "Testemon",
@@ -94,103 +61,59 @@ Me retornou:
   "height": 2.1,
   "description": "Pokemon de teste"
 }
-</pre>
+{% endhighlight %}
 
 ##Vamos modificar o Testemon
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
- 2
- 3
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var query = {name: /testemon/i}
-&gt; var mod   = {description: "Mudei aqui"}
-&gt; db.pokemons.update(query, mod)
-</pre>
-</div>
-</td></tr>
-</table>
-Agora faça um
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; db.pokemons.find(query);
-</pre>
-</div>
-</td></tr>
-</table>
-<pre>
+
+{% highlight javascript %}
+> var query = {name: /testemon/i}
+> var mod   = {description: "Mudei aqui"}
+> db.pokemons.update(query, mod)
+
+{% endhighlight %}
+
+Agora agora faça uma busca
+
+{% highlight javascript %}
+> db.pokemons.find(query);
+
+{% endhighlight %}
+
+{% highlight json %}
 {
   "_id": ObjectId("5665171cd394bd50ba306acd"),
   "description": "Mudei aqui"
 }
-</pre>
+{% endhighlight %}
+
 
 ##Ué cadê meus outros campos ? 
-<img src="{{ "/img/homer-pensando.gif"}}">
+<img src="{{ "/assets/img/memes/homer-pensando.gif"}}">
 
 hahaha fiz de propósito, essa forma é incorreta, para isso precisamos saber alguns operadores de modificação. <del>Concerte a merda </del>Adicione os valores de volta para continuarmos.
 
 ##Operadores de modificação
 
 <strong>$set</strong>: modifica um valor caso já exista, caso não exista, o $set irá criar o campo com esse valor que está alterando.
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
 
+{% highlight javascript %}
+> var mod = {$set:
+         {
+           name:'Testemon', attack: 8000, 
+           defense: 8000, height: 2.1, 
+           description: "Pokemon de teste"
+         }
+     }
+> db.pokemons.update(query, mod)
 
-
-
-
-
- 2
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var mod = {$set:
-	       {
-	         name:'Testemon', attack: 8000, 
-	         defense: 8000, height: 2.1, 
-	         description: "Pokemon de teste"
-	       }
-	   }
-&gt; db.pokemons.update(query, mod)
-</pre>
-</div>
-</td></tr>
-</table>
+{% endhighlight %}
 
 <strong>$unset</strong>: remove campos.
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
- 2
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var mod = {$unset: {height: 1}} 
-&gt; db.pokemons.update(query,mod)
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight javascript %}
+> var mod = {$unset: {height: 1}} 
+> db.pokemons.update(query,mod)
+
+{% endhighlight %}
 
 <blockquote class="trivia">
 <p><strong class="cabecalho">Info 3</strong>
@@ -198,24 +121,12 @@ Informe 1 (<span class="nf-s">true</span>) nos campos desejável, assim removend
 </blockquote>
 
 <strong>$inc</strong>: para incrementar um valor e caso o campo não exista, ele irá criar o campo e setar o valor, e para decrementar, passe o valor negativo.
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
+{% highlight javascript %}
+> var mod = {$inc:{attack:1}} 
+ //-1 para decrementar
+> db.pokemons.update(query,mod)
 
- 2
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var mod = {$inc:{attack:1}} 
-<span class="c1"> //-1 para decrementar</span>
-&gt; db.pokemons.update(query,mod)
-</pre>
-</div>
-</td></tr>
-</table>
+{% endhighlight %}
 
 Nos documentos também temos arrays, e se agora queremos também trabalhar com eles, precisamos saber os seus operadores.
 
@@ -224,25 +135,14 @@ Nos documentos também temos arrays, e se agora queremos também trabalhar com e
 <strong>$push</strong>: ele adiciona um valor ao campo do array caso ele já esteja no documento, e caso não exista esse array, ele irá criar esse campo do tipo array que está passando.
 <em>Caso o campo não existe e não for um array, irá retornar um erro.</em>
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
- 2
- 3
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var mod = {$push: {moves: 'choque de trovão'}}
-&gt; db.pokemons.update(query, mod)
-&gt; db.pokemons.find(query)
-</pre>
-</div>
-</td></tr>
-</table>
-<pre>	
+{% highlight javascript %}
+> var mod = {$push: {moves: 'choque de trovão'}}
+> db.pokemons.update(query, mod)
+> db.pokemons.find(query)
+
+{% endhighlight %}
+
+{% highlight json %}
 {
   "_id": ObjectId("5665171cd394bd50ba306acd"),
   "description": "Pokemon de teste",
@@ -253,39 +153,22 @@ Nos documentos também temos arrays, e se agora queremos também trabalhar com e
     "choque de trovão"
   ]
 }
-</pre>
+{% endhighlight %}
 
-<strong>$pushAll</strong>: se utiliza quando queremos passar mais de um valor para um array.
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
- 2
-
-
-
- 3
- 4
- 5
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var query = {name: /pokemon de teste/i}
-&gt; var attacks =[
+**$pushAll**: se utiliza quando queremos passar mais de um valor para um array.
+{% highlight javascript %}
+> var query = {name: /pokemon de teste/i}
+> var attacks =[
                  'choque do trovão', 
                  'ataque rapido', 
                  'bola elétrica'
                ]
-&gt; var mod = {$pushAll: {moves: attacks}}
-&gt; db.pokemons.update(query, mod)
-&gt; db.pokemons.find(query)
-</pre>
-</div>
-</td></tr>
-</table>
-<pre>
+> var mod = {$pushAll: {moves: attacks}}
+> db.pokemons.update(query, mod)
+> db.pokemons.find(query)
+
+{% endhighlight %}
+{% highlight json %}
 {
   "_id": ObjectId("5665171cd394bd50ba306acd"),
   "description": "Pokemon de teste",
@@ -298,28 +181,17 @@ Nos documentos também temos arrays, e se agora queremos também trabalhar com e
     "bola elétrica"
   ]
 }
-</pre>
+{% endhighlight %}
 
-<strong>$pull</strong>: retira o valor do campo, caso o campo seja um array existente. Caso não exista ele não fará nada, e se o campo existir e não for array, ocorre em um erro.
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
- 2
- 3
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var mod = {$pull:{moves: 'bola elétrica'}}
-&gt; db.pokemons.update(query,mod)
-&gt; db.pokemons.find(query)
-</pre>
-</div>
-</td></tr>
-</table>
-<pre>
+**$pull**: retira o valor do campo, caso o campo seja um array existente. Caso não exista ele não fará nada, e se o campo existir e não for array, ocorre em um erro.
+{% highlight javascript %}
+> var mod = {$pull:{moves: 'bola elétrica'}}
+> db.pokemons.update(query,mod)
+> db.pokemons.find(query)
+
+{% endhighlight %}
+
+{% highlight json %}
 {
   "_id": ObjectId("5665171cd394bd50ba306acd"),
   "description": "Pokemon de teste",
@@ -331,37 +203,21 @@ Nos documentos também temos arrays, e se agora queremos também trabalhar com e
     "ataque rapido"
   ]
 }
-</pre>
+{% endhighlight %}
 
-<strong>$pullAll</strong>: inverso do <strong>$pushAll</strong>, retira todos os valores passado por um array.
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-
-
-
- 2
- 3
- 4
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var attacks = [ 
+**$pullAll**: inverso do <strong>$pushAll</strong>, retira todos os valores passado por um array.
+{% highlight javascript %}
+> var attacks = [ 
                "choque do trovão",
                "ataque rapido"
                 ]
-&gt; var mod = {$pullAll: {moves: attacks}}
-&gt; db.pokemons.update(query,mod)
-&gt; db.pokemons.find(query)
-</pre>
-</div>
-</td></tr>
-</table>
+> var mod = {$pullAll: {moves: attacks}}
+> db.pokemons.update(query,mod)
+> db.pokemons.find(query)
 
-<pre>
+{% endhighlight %}
+
+{% highlight javascript %}
 {
     "choque do trovão",
     "ataque rapido"
@@ -374,25 +230,15 @@ Nos documentos também temos arrays, e se agora queremos também trabalhar com e
     "choque de trovão"
   ]
 }
-</pre>
+{% endhighlight %}
 
 ###Parâmetro OPTIONS do UPDATE
 
 Lembra daquele último parâmetro que falei que não era obrigatório ? 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; db.colecao.update(query, modificador, options);
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight javascript %}
+> db.colecao.update(query, modificador, options);
+
+{% endhighlight %}
 
 ##OPTIONS
 
@@ -400,72 +246,52 @@ Lembra daquele último parâmetro que falei que não era obrigatório ?
 
 Simples, para configurar alguns valores diferentes do padrão em nosso <em>update</em>.
 Possui os seguintes parâmetros:
-
-<pre>
+{% highlight json %}
 {
-	upsert:       boolean
-	multi:        boolean
-	writeConcern: document
+  upsert:       boolean
+  multi:        boolean
+  writeConcern: document
 }
-</pre>
+{% endhighlight %}
 
 ##upsert
 
 Lembra de quando fazemos a busca e colocamos no parâmetro de modificação o valor a ser modificado ? Caso a query não seja encontrada, ele **NÃO** fará nada, e retornará para você:
-<pre>
+{% highlight javascript %}
 WriteResult({
   "nMatched": 0,
   "nUpserted": 0,
   "nModified": 0
 })
-</pre>
+{% endhighlight %}
+
 Tem como modificar esse comportamento ? Sim, o **upsert** serve justamente para isso, por padrão o valor dele é <span class="err-s">false</span>, com isso não fará nada, mas se modificar para <span class="nf-s">true</span>, ele insere o objeto que está sendo passado como modificação.<br>
 Vamos ao seguinte exemplo, modificando o valor do 'upsert':
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-  3
-  4
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var query   = {name : 'esse campo nao existe'}
-&gt; var mod     = {$push: {moves: 'campo de fogo'}}
-&gt; var options = {upsert: true}
-&gt; db.pokemons.update(query, mod, options)
-</pre>
-</div>
-</td></tr>
-</table>
-<pre>
+{% highlight javascript %}
+> var query   = {name : 'esse campo nao existe'}
+> var mod     = {$push: {moves: 'campo de fogo'}}
+> var options = {upsert: true}
+> db.pokemons.update(query, mod, options)
+
+{% endhighlight %}
+
+{% highlight javascript %}
 WriteResult({
-  "nMatched": 0, <span class="c1-s">//não encontrou</span>
-  "nUpserted": 1 <span class="c1-s">//porém fez um upsert</span>
+  "nMatched": 0, //não encontrou
+  "nUpserted": 1 //porém fez um upsert
   "nModified": 0,
   "_id": ObjectId("567df96b8c9d5a59c75d1501") 
-  <span class="c1-s">//objeto que foi inserido</span>
+  //objeto que foi inserido
 })
-</pre>
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; db.pokemons.find(query)
-</pre>
-</div>
-</td></tr>
-</table>
-<pre>
+{% endhighlight %}
+
+{% highlight javascript %}
+> db.pokemons.find(query)
+
+{% endhighlight %}
+
+{% highlight json %}
 {
   "_id": ObjectId("567df96b8c9d5a59c75d1501"),
   "name": "esse campo nao existe",
@@ -473,71 +299,43 @@ WriteResult({
     "choque de fogo"
   ]
 }
-</pre>
+{% endhighlight %}
+
 Percebeu que ele criou um novo documento ? =) <br>
 <br>
-<strong>$setOnInsert</strong>: serve para que podemos colocar um documento que seja inserido caso o upsert seja true e aconteça essa inserção. <br>
+**$setOnInsert**: serve para que podemos colocar um documento que seja inserido caso o upsert seja true e aconteça essa inserção. <br>
 Vamos fazer um exemplo que seta os valores comuns para nosso objeto caso ele não seja encontrado no nosso update.
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-
-
-
-
-
-
-
-
-  3
-  4
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var query= {name : 'naoexiste'}
-&gt; var mod  = {$push: 
+{% highlight javascript %}
+> var query= {name : 'naoexiste'}
+> var mod  = {$push: 
                 {moves: 'campo de água'},
                 $setOnInsert:{
                  attack: null,
                  defense: null,
                  height: null, 
-                 description: "Sem informações"	
+                 description: "Sem informações" 
                 }
              }
-&gt; var options = {upsert: true}
-&gt; db.pokemons.update(query, mod, options)
-</pre>
-</div>
-</td></tr>
-</table>
-<pre>
+> var options = {upsert: true}
+> db.pokemons.update(query, mod, options)
+
+{% endhighlight %}
+{% highlight javascript %}
 WriteResult({
   "nMatched": 0,
   "nUpserted": 1,
   "nModified": 0,
   "_id": ObjectId("567dffac8c9d5a59c75d1502")
 })
-</pre><br>
+{% endhighlight %}
+
+{% highlight javascript %}
+> db.pokemons.find(query)
+
+{% endhighlight %}
+
 <span class="c1-s">Repare que agora ele fez uma inserção, pois não foi encontrada a query.</span>
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; db.pokemons.find(query)
-</pre>
-</div>
-</td></tr>
-</table>
-<pre>
+{% highlight json %}
 {
   "_id": ObjectId("567dffac8c9d5a59c75d1502"),
   "name": "naoexiste",
@@ -549,7 +347,7 @@ WriteResult({
   "height": null,
   "description": "Sem maiores informações"
 }
-</pre><br>
+{% endhighlight %}
 
 ##MULTI
 
@@ -558,26 +356,14 @@ lá precisamos usar o **where** para informar quais os objetos que você quer at
 O MongoDB não deixa acontecer esse tipo de <del>cagada</del> situação. (✌╰_╯)☞ <br>
 Por padrão ele só deixa alterar um de cada vez, a não ser que você passe por parâmetro desse multi como <span class="nf-s">true</span>.
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-  3
-  4
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var query   = {}
-&gt; var mod     = {$set:{active: false}}
-&gt; var options = {multi: true}
-&gt; db.pokemons.find(query)
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight javascript %}
+> var query   = {}
+> var mod     = {$set:{active: false}}
+> var options = {multi: true}
+> db.pokemons.find(query)
+
+{% endhighlight %}
+
 Agora se você for verificar, vai ver que todos os documentos estão com uma active <span class="err-s">false</span>. Só assim você consegue fazer um update em vários documentos, alterando seu campo **multi**.
 
 ##WRITECONCERN
@@ -589,92 +375,52 @@ Mais sobre o assunto: <a href="https://docs.mongodb.org/v3.0/reference/write-con
 
 Agora vamos aprimorar nossas buscas, aprendendo fazer buscas em arrays, mas para isso vamos inserir arrays em todos os nossos objetos. (Opa em todos ? Já sabemos fazer isso.)
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-  3
-  4
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var query   = {}
-&gt; var mod     = {$set: {moves:['investida']}}
-&gt; var options = {multi: true}
-&gt; db.pokemons.update(query, mod, options)
-</pre>
-</div>
-</td></tr>
-</table>
-<pre>
+{% highlight javascript %}
+> var query   = {}
+> var mod     = {$set: {moves:['investida']}}
+> var options = {multi: true}
+> db.pokemons.update(query, mod, options)
+
+{% endhighlight %}
+
+{% highlight javascript %}
 WriteResult({
   "nMatched": 11,
   "nUpserted": 0,
   "nModified": 11
 })
-</pre>
+{% endhighlight %}
 
 Vamos inserir mais dados nos arrays para depois fazermos buscas:
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-  3
 
-  4
-  5
-  6
+{% highlight javascript %}
+> var query = {name: /Arcanine/i}
+> var mod   = {$push: {moves: 'veloz demais'}}
+> db.pokemons.update(query, mod)
 
-  7
-  8
-  9
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var query = {name: /Arcanine/i}
-&gt; var mod   = {$push: {moves: 'veloz demais'}}
-&gt; db.pokemons.update(query, mod)
+> var query = {name: /Psyduck/i}
+> var mod   = {$push: {moves: 'lança chamas'}}
+> db.pokemons.update(query, mod)
 
-&gt; var query = {name: /Psyduck/i}
-&gt; var mod   = {$push: {moves: 'lança chamas'}}
-&gt; db.pokemons.update(query, mod)
+> var query = {name: /Metapod/i}
+> var mod   = {$push: {moves: 'folha navalha'}}
+> db.pokemons.update(query, mod)
 
-&gt; var query = {name: /Metapod/i}
-&gt; var mod   = {$push: {moves: 'folha navalha'}}
-&gt; db.pokemons.update(query, mod)
-</pre>
-</div>
-</td></tr>
-</table>
+{% endhighlight %}
 
 Pronto! Agora já temos arrays em nossos objetos.
 
 ###Operadores de buscas em arrays:
 
-<strong>$in</strong>: ele retorna todos os documentos que tem no seu determinado array o valor passado por parâmetro, caso queira especificar mais valores do array, use apenas uma virgula para informar outro valor.
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var query = {moves: {$in: [/veloz demais/i]}}
-&gt; db.pokemons.find(query)
-</pre>
-</div>
-</td></tr>
-</table>
-<pre>
+**$in**: ele retorna todos os documentos que tem no seu determinado array o valor passado por parâmetro, caso queira especificar mais valores do array, use apenas uma virgula para informar outro valor.
+
+{% highlight javascript %}
+> var query = {moves: {$in: [/veloz demais/i]}}
+> db.pokemons.find(query)
+
+{% endhighlight %}
+
+{% highlight json %}
 {
   "_id": ObjectId("564da193ab81d6513c255cac"),
   "name": "Arcanine",
@@ -688,142 +434,72 @@ Pronto! Agora já temos arrays em nossos objetos.
     "veloz demais"
   ]
 }
-</pre><br>
+{% endhighlight %}
 
-<strong>$nin</strong>: É o inverso do $in, e retorna os objetos que não tiverem no valor passado no array.
+**$nin**: É o inverso do $in, e retorna os objetos que não tiverem no valor passado no array.
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var query = {moves: {$nin: [/folha navalha"/i]}}
-&gt; db.pokemons.find(query)
-</pre>
-</div>
-</td></tr>
-</table><br>
+{% highlight javascript %}
+> var query = {moves: {$nin: [/folha navalha"/i]}}
+> db.pokemons.find(query)
+
+{% endhighlight %}
+
 Vai retornar todos os objetos que não tem no seu array moves o valor 'folha navalha'.
 
-<strong>$all</strong>: Ele é semelhante o **$and**, pois só vai retornar se todos os valores passado por parâmetro do array se forem encontrado no objeto.
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-
-
-
-
-
-
-  2
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var query = {moves: {$all: 
+**$all**: Ele é semelhante o **$and**, pois só vai retornar se todos os valores passado por parâmetro do array se forem encontrado no objeto.
+{% highlight javascript %}
+> var query = {moves: {$all: 
                             [
                             'folha navalha', 
                             'investida'
                             ]
                        }
                }
-&gt; db.pokemons.find(query)
-</pre>
-</div>
-</td></tr>
-</table><br>
+> db.pokemons.find(query)
+
+{% endhighlight %}
 
 ##Operadores de Negação
 
-<strong>$ne</strong>(not equal): ele nos ajuda a procurar todos os objetos que não tempo determinado valor. <br>
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var query = {type: {$ne: 'grama'}}
-&gt; db.pokemons.find(query)
-</pre>
-</div>
-</td></tr>
-</table>
+**$ne**(not equal): ele nos ajuda a procurar todos os objetos que não tempo determinado valor.
+
+{% highlight javascript %}
+> var query = {type: {$ne: 'grama'}}
+> db.pokemons.find(query)
+
+{% endhighlight %}
 
 E então vai retornar os diversos objetos que não tem o tipo grama. Bem simples. =) 
 <blockquote class="trivia">
-<p><strong class="cabecalho">Info 3</strong>
-<span class="err-s">Cuidado</span> ele não aceita <strong>REGEX</strong>. sVocê não pode passar uma regex usando esse operador, ocorrerá em um erro.
+<p><strong class="cabecalho">Info 4</strong>
+<span class="err-s">Cuidado</span> ele não aceita <strong>REGEX</strong>. Você não pode passar uma regex usando esse operador, ocorrerá em um erro.
 </p>
 </blockquote>
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-<del>var query = {type: {$ne: /grama/i}} </del>
-</pre>
-</div>
-</td></tr>
-</table>
 
-<strong>$not</strong>: retorna todos os objetos que não tenha determinada <del>coisa</del> atribuição.
+{% highlight javascript %}
+var query = {type: {$ne: /grama/i}} //<--JAMAIS FAÇA ISSO LOL
+{% endhighlight %}
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var query = {name: {$not:/Golbat/i}}
-&gt; db.pokemons.find(query)
-</pre>
-</div>
-</td></tr>
-</table>
+**$not**: retorna todos os objetos que não tenha determinada <del>coisa</del> atribuição.
 
+{% highlight javascript %}
+> var query = {name: {$not:/Golbat/i}}
+> db.pokemons.find(query)
+
+{% endhighlight %}
 
 ##REMOVE
 
 É simples, para removermos um documento, utilizaremos a função <span class="nf-s">remove( )</span> que é própria para isso, e de resto você já sabe, utilize os diversos modos de criar uma query para achar os documentos que queira excluir.
 
-<table class="highlighttable">
-<tr>
-  <td class="linenos" >
-  <div class="linenodiv">
-  <pre><code class="language-js" data-lang="js" > 1
-  2
-</code></pre></div></td>
-<td class="code" >
-<div class="highlight">
-<pre>
-&gt; var query = {name: /Golbat/i}
-&gt; db.pokemons.remove(query)
-</pre>
-</div>
-</td></tr>
-</table>
+{% highlight javascript %}
+> var query = {name: /Golbat/i}
+> db.pokemons.remove(query)
+
+{% endhighlight %}
 
 <blockquote class="trivia">
-<p><strong class="cabecalho">Info 3</strong>
+<p><strong class="cabecalho">Info 5</strong>
 <span class="err-s">Cuidado</span> ele é multi <span class="nf-s">true</span>.
 </p>
 </blockquote>

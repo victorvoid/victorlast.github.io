@@ -1,8 +1,42 @@
-author: "Victor Igor"
+# Site settings
+description: Um blog sobre tudo que aprendo.
 baseurl: ""
-description: "Um blog sobre tudo que aprendo."
-domain_name: "http://victorvoid.github.io/"
+url: "https://victorvoid.github.io" 
+
+# User settings
+username: Victor Igor
+user_description: Estudante de Web
+user_title: Devesenvolvedor Web/Guitarrista
 email: victor.0w3@hotmail.com
-lang: pt-br
-title: "Victor Igor | Blog"
-url: "https://victorvoid.github.io"
+twitter_username: vict0rvoid
+github_username:  victorvoid
+gplus_username:  victor0w3
+disqus_username: victorvoid
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
+permalink: /:title/
+
+
+# html minify
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
+
+# Links to include in menu navigation
+# For external links add external: true
+links:
+  - title: Home
+    url: /
+  - title: Series
+    url: /series
+  - title: Tags
+    url: /tags
+  - title: Sobre Mim
+    url: /about
+
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']

@@ -7,9 +7,9 @@ subtitle: Criar grandes sistemas apenas com JavaScript ? Sério ?
 ---
 # O que é MEAN ? 
 
-<img src="{{ "/img/jackie-chan.jpg"}}">
+<img src="{{ "/assets/img/memes/wtf-homer.gif"}}">
 
-MEAN é uma abreviação de 4 tecnologias, e todas elas usam JavaScript. 
+MEAN é uma abreviação de 4 tecnologias, e todas elas usam JavaScript. LOL 
 
 ##Significando respectivamente:
 
