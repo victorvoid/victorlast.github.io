@@ -58,6 +58,6 @@ Preciso sempre me motivar, e acho que todo mundo precisa, motivação é coisa s
 
 >Follows a young computer programmer who suffers from social anxiety disorder and forms connections through hacking. He's recruited by a mysterious anarchist, who calls himself Mr. Robot.
 
-E palestras no [free-time](free-time.github.io)
+E palestras no [free-time](http://free-time.github.io)
 
 OK! já tá sabendo demais. ಠ_ಠ
