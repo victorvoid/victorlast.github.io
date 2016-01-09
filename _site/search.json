@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "MongoDB - Relacionamento, Explain e Replicas #6.1 #6.2",
+      "category" : "Aprendendo o MongoDB",
+      "tags"     : "mongobemean",
+      "url"      : "/relacionamento-explain-replicas/",
+      "date"     : "09 Jan 2016"
+    } ,
+  
+    {
       "title"    : "Garbage Collector no JavaScript",
       "category" : "",
       "tags"     : "jsbemean",
