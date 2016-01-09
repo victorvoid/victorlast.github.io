@@ -3,6 +3,7 @@ layout: post
 title:  "MongoDB - Relacionamento, Explain e Replicas #6.1 #6.2"
 date:   2016-01-09 00:06:31 -0400
 tags: mongobemean
+image: '/assets/img/post-image.png'
 categories:
 - Aprendendo o MongoDB
 subtitle: Conceitos vistos na aula 6.1 e 6.2 no bemean, relacionamentos entre collections, explain, replicas, índices, rand, GridFS...

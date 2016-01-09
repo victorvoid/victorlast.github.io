@@ -3,6 +3,7 @@ layout: post
 title:  "MongoDB - Introdução #1 #2 #3 "
 date:   2015-12-07 00:06:31 -0400
 tags: mongobemean
+image: '/assets/img/post-image.png'
 categories:
 - Aprendendo o MongoDB
 subtitle: Conceitos vistos na aula 01, 02, 03 no bemean, importação, exportação, insercão, operadores aritméticos, buscas básicas, operador de existência...
