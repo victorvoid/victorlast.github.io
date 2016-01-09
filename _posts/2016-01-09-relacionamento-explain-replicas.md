@@ -9,6 +9,10 @@ subtitle: Conceitos vistos na aula 6.1 e 6.2 no bemean, relacionamentos entre co
 ---
 #Relacionamento
 
+<img src="https://cdn-images-1.medium.com/max/800/1*68w3Nptp6SHEwNn5ZanosQ.gif" alt="">
+
+Não! Não é esse tipo de relacionamento, e sim de banco de dados. =(
+
 Nos banco relacionais é de fato o uso de <span class="">joins</span> pra relacionar uma tabela com outra, porém como funciona o relacionamento no MongoDB ? Joins não existem no MongoDB, não tem como fazer a busca automática de duas coleções separadas usando alguma chave estrangeira como nos relacionais. Existe duas formas, a Manual e DBRef. Já que a forma Manual é a mais usada, vamos ver como funciona.
 
 ##Relacionamento Manual 
