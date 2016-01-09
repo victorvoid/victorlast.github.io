@@ -8,7 +8,7 @@ categories:
 subtitle: Conceitos vistos na aula 01, 02, 03 no bemean, importação, exportação, insercão, operadores aritméticos, buscas básicas, operador de existência...
 ---
 
-# <a target="_blank" href="http://victorvoid.github.io/2015/12/03/o-que-e-meanstack.html">Full-Stack JavaScript ?</a>
+# <a target="_blank" href="http://victorvoid.github.io/o-que-e-meanstack/">Full-Stack JavaScript ?</a>
 <img src="{{ "/assets/img/memes/mean.jpeg"}}">
 
 #Instalação
