@@ -283,7 +283,7 @@ Aprenda na prática com:
 
 As 2 estapas que ocorrem na replicação são:
 
-<span class="sx-s">Inital Sync</span>: Aconte quando a replicação inicia, ela clona todos os bancos de dados, depois ele aplica as alterações, contróis os índices de todas as coleções e por fim, ele faz a transição pro secundário, como na imagem a cima.
+<span class="sx-s">Initial Sync</span>: Aconte quando a replicação inicia, ela clona todos os bancos de dados, depois ele aplica as alterações, contróis os índices de todas as coleções e por fim, ele faz a transição pro secundário, como na imagem a cima.
 
 <span class="sx-s">Replication</span>: Depois de ter os dados na replica secundária, vai continuar replicando, sicronizando para deixar sempre atualizado, caso faça alguma modificação na primária, acontecendo de forma assícrono.
 
