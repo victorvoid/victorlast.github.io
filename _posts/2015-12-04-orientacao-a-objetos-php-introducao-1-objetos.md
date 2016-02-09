@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Orientação a objetos com PHP #1 - Objetos e Classes"
+title:  "Getting Started com PHP Orientado a objetos #1"
 date:   2015-12-04 00:12:31 -0400
 image: '/assets/img/assets/img/phpoo/phpoo.jpg'
 tags: php
@@ -14,10 +14,11 @@ subtitle: Início de uma série de como usar a orientação a objetos no php. Ob
 
 <img src="{{ "/assets/img/phpoo/phpoo.jpg"}}">
 
-### Resumo
-Não estou fazendo essa série para ensinar a fundo a orientação a objetos, e sim como usar o php na orientação a objetos. =)
+### Info
 
-#### Criei a série abordando os seguintes tópicos:
+Essa série foi de acordo com o curso da <a href="https://www.upinside.com.br/" target="_blank">UpInside Treinamentos</a> (que por sinal é muito boa), porém em formato de artigos para os que não são fãs de video aulas, espero que gostem. =)
+
+#### A série aborda os seguintes tópicos:
 
 1. Introdução/Classes e objetos
 2. Herança
@@ -257,3 +258,9 @@ class DocumentacaoDeClasse{
 {% endhighlight %}
 
 Existe vários outros atributos como o `@auto`, `@abstract`, `$acess`, `$license`, entre outros para você utilizar. Mais informações sobre PHODOC [aqui](http://www.phpdoc.org/docs/latest/index.html).
+
+## Concluindo
+
+E é isso, até a próxima, bye! =)
+
+<img src="{{ "/assets/img/mongodb123/bye.gif"}}">

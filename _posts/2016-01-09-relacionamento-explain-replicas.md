@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "MongoDB - Relacionamento, Explain e Replicas #6.1 #6.2"
+title:  "Relacionamento, Explain e Replicas no MongoDB #6.1 #6.2"
 date:   2016-01-09 00:06:31 -0400
 image: '/assets/img/memes/replica-set-read-write-operations-primary.png'
 tags: mongobemean
@@ -9,7 +9,7 @@ categories:
 subtitle: Conceitos vistos na aula 6.1 e 6.2 no bemean, relacionamentos entre collections, explain, replicas, índices, rand, GridFS...
 ---
 
-# Relacionamento
+# Relacionamento ? 
 
 <img src="{{ "/assets/img/relacionamento-explain-replicas/relacao-gato.gif"}}">
 
@@ -345,10 +345,19 @@ Você não pode executar nenhum comando nos secundários, apenas no primário.</
 Para verificar o status da nossa replicaSet basta executar <span class="nf-s">rs.status( )</span>, e com isso você verifica várias informações como o nome de todas as replicas, id, data, etc.
 
 E para o status do nosso OpLog, é <span class="nf-s">rs.printReplicationInfo( )</span> e então informações como o do tamanho do nosso OpLog, info da primeira modificação, e info da última vez que foi feito alguma modificação. 
-
 [Saiba mais sobre Replicas na documentação](https://docs.mongodb.org/manual/replication/)
 
+## Concluindo
 
+E claro não deixe de ler: <br> 
+<a href="http://nomadev.com.br/mongodb-como-mudar-seu-jeito-relacional-de-pensar/" target="_blank">Como mudar seu jeito relacional de pensar - Parte 1</a>
+
+<a href="http://nomadev.com.br/mongodb-como-mudar-seu-jeito-relacional-de-pensar-parte-2/" target="_blank">Como mudar seu jeito relacional de pensar - Parte 2</a>
+
+<a href="https://docs.mongodb.org/manual/applications/data-models-relationships/">Model Relationships Between Documents</a>
+
+E é isso, até a próxima, bye! =)
+<img src="{{ "/assets/img/mongodb123/bye.gif"}}">
 
 
 

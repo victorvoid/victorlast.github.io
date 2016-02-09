@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "MongoDB - Atualizando e removendo dados #4.1 #4.2"
+title:  "Atualizando e removendo dados no MongoDB #4.1 #4.2"
 date:   2015-12-26 00:06:31 -0400
 tags: mongobemean
 image: '/assets/img/mongodb-post.png'
@@ -12,6 +12,8 @@ subtitle: Conceitos vistos na aula 4.1 e 4.2 no bemean, atualizando e removendo 
 # Atualizando e Removendo dados
 
 <img src="{{ "/assets/img/mongodb-update/digitando-rapido.gif"}}">
+
+<del>Agora o bicho vai pegar LOL.</del> 
 
 ## UPDATE
 
@@ -509,3 +511,9 @@ var query = {type: {$ne: /grama/i}} //<--JAMAIS FAÇA ISSO LOL
 
 Se você der um remove sem nada na query, ele apagará tudo. =(<br>
 <del>Cuidado para não fazer merda!!!</del> ٩(-̮̮̃-̃)۶
+
+## Concluindo
+
+E é isso, agora se divirta treinando modificando seus dados usando todos os operadores, tenta criar atualizações de vários dados simultâneos com javascript, abuse dos laços de repetições e condições, até a próxima, bye! 
+
+<img src="{{ "/assets/img/mongodb123/bye.gif"}}">

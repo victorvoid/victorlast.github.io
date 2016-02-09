@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>MongoDB - Relacionamento, Explain e Replicas #6.1 #6.2</title>
+    <title>Relacionamento, Explain e Replicas no MongoDB #6.1 #6.2</title>
     <meta name="description" content="Um blog de anotações, resumos, e artigos de computação em geral.">
 
     <!-- Google Authorship Markup -->
@@ -14,7 +14,7 @@
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@vict0rvoid">
-    <meta name="twitter:title" content="MongoDB - Relacionamento, Explain e Replicas #6.1 #6.2">
+    <meta name="twitter:title" content="Relacionamento, Explain e Replicas no MongoDB #6.1 #6.2">
     <meta name="twitter:description" content="Um blog de anotações, resumos, e artigos de computação em geral.">
     
     <meta property="twitter:image:src" content="http://victorvoid.github.io/assets/img/memes/replica-set-read-write-operations-primary.png">
@@ -22,7 +22,7 @@
 
     <!-- Social: Facebook / Open Graph -->
     <meta property="og:url" content="http://victorvoid.github.io/relacionamento-explain-replicas/">
-    <meta property="og:title" content="MongoDB - Relacionamento, Explain e Replicas #6.1 #6.2">
+    <meta property="og:title" content="Relacionamento, Explain e Replicas no MongoDB #6.1 #6.2">
     
     <meta property="og:image" content="http://victorvoid.github.io/assets/img/memes/replica-set-read-write-operations-primary.png">
     
@@ -30,7 +30,7 @@
     <meta property="og:site_name" content="Blog - Victor Igor">
 
     <!-- Social: Google+ / Schema.org  -->
-    <meta itemprop="name" content="MongoDB - Relacionamento, Explain e Replicas #6.1 #6.2"/>
+    <meta itemprop="name" content="Relacionamento, Explain e Replicas no MongoDB #6.1 #6.2"/>
     <meta itemprop="description" content="Um blog de anotações, resumos, e artigos de computação em geral.">
     <meta itemprop="image" content="http://victorvoid.github.io/assets/img/blog-image.jpg"/>
 
@@ -54,7 +54,7 @@
         
             <time itemprop="datePublished" datetime="2016-01-09 00:06:31 -0400" class="date">09 Jan 2016</time>
         
-        <h1 class="post-title" itemprop="name">MongoDB - Relacionamento, Explain e Replicas #6.1 #6.2</h1>
+        <h1 class="post-title" itemprop="name">Relacionamento, Explain e Replicas no MongoDB #6.1 #6.2</h1>
         <p itemprop="description" class="subtitle"></p>
     </div>
      <a class="down" data-scroll href="#scroll"><svg class="icon icon-angle-down"><use xlink:href="#icon-angle-down"></use></svg></a>
@@ -96,7 +96,8 @@
         <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
             <article role="article" id="scroll" class="post-content" itemprop="articleBody">
-                <h1 id="relacionamento">Relacionamento</h1>
+                <h1 id="relacionamento-">Relacionamento ?</h1>
+
 <p><img src="/assets/img/relacionamento-explain-replicas/relacao-gato.gif" /></p>
 
 <p>Não! Não é esse tipo de relacionamento, e sim de banco de dados. =(</p>
@@ -385,9 +386,20 @@ Você não pode executar nenhum comando nos secundários, apenas no primário.</
 
 <p>Para verificar o status da nossa replicaSet basta executar <span class="nf-s">rs.status( )</span>, e com isso você verifica várias informações como o nome de todas as replicas, id, data, etc.</p>
 
-<p>E para o status do nosso OpLog, é <span class="nf-s">rs.printReplicationInfo( )</span> e então informações como o do tamanho do nosso OpLog, info da primeira modificação, e info da última vez que foi feito alguma modificação.</p>
+<p>E para o status do nosso OpLog, é <span class="nf-s">rs.printReplicationInfo( )</span> e então informações como o do tamanho do nosso OpLog, info da primeira modificação, e info da última vez que foi feito alguma modificação. 
+<a href="https://docs.mongodb.org/manual/replication/">Saiba mais sobre Replicas na documentação</a></p>
 
-<p><a href="https://docs.mongodb.org/manual/replication/">Saiba mais sobre Replicas na documentação</a></p>
+<h2 id="concluindo">Concluindo</h2>
+
+<p>E claro não deixe de ler: <br /> 
+<a href="http://nomadev.com.br/mongodb-como-mudar-seu-jeito-relacional-de-pensar/" target="_blank">Como mudar seu jeito relacional de pensar - Parte 1</a></p>
+
+<p><a href="http://nomadev.com.br/mongodb-como-mudar-seu-jeito-relacional-de-pensar-parte-2/" target="_blank">Como mudar seu jeito relacional de pensar - Parte 2</a></p>
+
+<p><a href="https://docs.mongodb.org/manual/applications/data-models-relationships/">Model Relationships Between Documents</a></p>
+
+<p>E é isso, até a próxima, bye! =)
+<img src="/assets/img/mongodb123/bye.gif" /></p>
 
 
             </article>

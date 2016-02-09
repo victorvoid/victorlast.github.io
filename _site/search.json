@@ -1,7 +1,7 @@
 [
   
     {
-      "title"    : "MongoDB - Relacionamento, Explain e Replicas #6.1 #6.2",
+      "title"    : "Relacionamento, Explain e Replicas no MongoDB #6.1 #6.2",
       "category" : "Aprendendo o MongoDB",
       "tags"     : "mongobemean",
       "url"      : "/relacionamento-explain-replicas/",
@@ -17,7 +17,7 @@
     } ,
   
     {
-      "title"    : "MongoDB - Aggregate e Groups #5",
+      "title"    : "Aggregate e Groups no MongoDB #5",
       "category" : "Aprendendo o MongoDB",
       "tags"     : "mongobemean",
       "url"      : "/group-aggregate/",
@@ -25,7 +25,7 @@
     } ,
   
     {
-      "title"    : "MongoDB - Atualizando e removendo dados #4.1 #4.2",
+      "title"    : "Atualizando e removendo dados no MongoDB #4.1 #4.2",
       "category" : "Aprendendo o MongoDB",
       "tags"     : "mongobemean",
       "url"      : "/mongodb-aula4/",
@@ -33,7 +33,7 @@
     } ,
   
     {
-      "title"    : "MongoDB - Introdução #1 #2 #3 ",
+      "title"    : "Getting Started com MongoDB #1 #2 #3 ",
       "category" : "Aprendendo o MongoDB",
       "tags"     : "mongobemean",
       "url"      : "/mongodb-aula-1-2-3-be-mean/",
@@ -41,7 +41,7 @@
     } ,
   
     {
-      "title"    : "Orientação a objetos com PHP #1 - Objetos e Classes",
+      "title"    : "Getting Started com PHP Orientado a objetos #1",
       "category" : "Aprendendo PHP OO",
       "tags"     : "php",
       "url"      : "/orientacao-a-objetos-php-introducao-1-objetos/",

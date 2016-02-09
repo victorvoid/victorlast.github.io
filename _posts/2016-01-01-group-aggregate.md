@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "MongoDB - Aggregate e Groups #5"
+title:  "Aggregate e Groups no MongoDB #5"
 date:   2016-01-01 00:14:31 -0400
 tags: mongobemean
 image: '/assets/img/mongodb-post.png'
@@ -10,6 +10,11 @@ subtitle: Conceitos vistos na aula 05 no bemean, descobrindo a quantidade de ele
 ---
 
 # MongoDB - Aggregate e Groups
+
+LOL Vamos continuar essa série pra ficar mais <del>hard core agora</del> legal com esses operadores. 
+
+<img src="{{ "/assets/img/group-aggregate/hc.gif"}}">
+
 
 Antes de fatos aprendermos sobre Agreggate e Groups, vamos ver alguns tópicos importantes.
 Para seguir os primeiros exemplos vamos usar a collection <span class="nc-s">restaurantes</span>
@@ -480,3 +485,15 @@ Resultado:
 {% endhighlight %}
  
 <strong>Group</strong> e <strong>Aggregate</strong> são conceitos muitos importantes e usados. Na [documentação](https://docs.mongodb.org/manual/) você pode encontrar mais exemplos.
+
+## Concluindo
+
+Aproveite para ler: 
+
+<a href="https://docs.mongodb.org/master/MongoDB-aggregation-guide-master.pdf">MongoDB Aggregation and Data Processing</a>
+
+<a href="http://www.amazon.com/MongoDB-Aggregation-Framework-Principles-Examples-ebook/dp/B00DGKGWE4/ref=pd_sim_351_9?ie=UTF8&dpID=41Tand%2B2p1L&dpSrc=sims&preST=_UX300_PJku-sticker-v3%2CTopRight%2C0%2C-44_AC_UL160_SR100%2C160_&refRID=082JMA3FA2NDBN7B7EXK" target="_blank">MongoDB Aggregation Framework Principles and Examples</a>
+
+E é isso, pratique e pratique, até a próxima.
+
+<img src="{{ "/assets/img/mongodb123/bye.gif"}}">

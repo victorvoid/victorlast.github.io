@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "MongoDB - Introdução #1 #2 #3 "
+title:  "Getting Started com MongoDB #1 #2 #3 "
 date:   2015-12-07 00:06:31 -0400
 image: '/assets/img/mongodb-post.png'
 tags: mongobemean
@@ -8,6 +8,8 @@ categories:
 - Aprendendo o MongoDB
 subtitle: Conceitos vistos na aula 01, 02, 03 no bemean, importação, exportação, insercão, operadores aritméticos, buscas básicas, operador de existência...
 ---
+
+Se ainda não sabe o que é MEAN, dê uma lida:
 
 # <a target="_blank" href="http://victorvoid.github.io/o-que-e-meanstack/">Full-Stack JavaScript ?</a>
 
@@ -18,6 +20,26 @@ subtitle: Conceitos vistos na aula 01, 02, 03 no bemean, importação, exportaç
 <a target="_blank" href="https://www.mongodb.org/downloads#production">Clique aqui</a>
 
 # Introdução ao MongoDB
+
+O MongoDB é um banco NoSQL orientado a documentos, open source, usa javascript, e extremamente rápido, mas isso não é tudo, aliás não ache que ele é um banco que deva substituir todos seus bancos relacionais. Existe casos que o relacional seja a melhor opção ou até outro banco NoSQL. BLAH! 
+
+## Então quando você usaria victor ? O__0
+
+1. Um sistema onde eu teria uma massa imensa de dados(Gigantesca).
+2. Onde os dados crescerá  muito e precisaria dividi-los.
+3. Caso eu queira que os dados sejam baseados por localização.
+4. Não queira um DBA para meu projeto.
+5. Qualquer aplicação real time como chats e rede sociais.
+
+Usuaria o noSQL em qualquer caso em que o relacional não daria conta, ou que ficasse com gambiarras. O MongoDB dependendo do que eu queira seria minha opção, ou senão outro banco noSQL. 
+
+<img src="{{ "/assets/img/mongodb123/documento-relacao.jpg"}}">
+
+Pra ficar melhor seu entendimento, leia: <a href="http://tech.leroymerlin.com.br/devemos-usar-nosql-e-mongodb" target="_blank">Devo usar NoSQL e MongoDB?</a>
+
+
+##Get's get started
+
 Vamos começar a brincadeira inicializando o mongoDB no seu terminal (levantando)
 
 {% highlight javascript %}
@@ -349,5 +371,8 @@ Resultado:
 
 Se vc ja fez blog, já deve ter visto em tags clounds, aquelas tag mais usadas. Imagina vc querer montar essa possibilidade, vc tem que pesquisar todos os posts que possuem tags, então ae criar todo o mecanismo, não adianta vc querer dar um select em tudo e depois filtrar, pq não filtrar direto ?
 
+## Concluindo
 
+Com esses poucos comandos já dá pra brincar um pouco =) lindo ele não é !? A série continua, até a próxima. 
 
+<img src="{{ "/assets/img/mongodb123/bye.gif"}}">
