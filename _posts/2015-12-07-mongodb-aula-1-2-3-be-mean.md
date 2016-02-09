@@ -38,7 +38,7 @@ Usuaria o noSQL em qualquer caso em que o relacional não daria conta, ou que fi
 Pra ficar melhor seu entendimento, leia: <a href="http://tech.leroymerlin.com.br/devemos-usar-nosql-e-mongodb" target="_blank">Devo usar NoSQL e MongoDB?</a>
 
 
-##Get's get started
+## Get's get started
 
 Vamos começar a brincadeira inicializando o mongoDB no seu terminal (levantando)
 
