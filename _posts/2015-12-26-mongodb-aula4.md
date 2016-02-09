@@ -8,7 +8,9 @@ categories:
 - Aprendendo o MongoDB
 subtitle: Conceitos vistos na aula 4.1 e 4.2 no bemean, atualizando e removendo objetos, operadores de array, operadores de buscas em arrays, operadores de negação... 
 ---
+
 #Atualizando e Remo&shy;ven&shy;do da&shy;dos
+
 <img src="{{ "/assets/img/mongodb-update/digitando-rapido.gif"}}">
 
 ##UPDATE

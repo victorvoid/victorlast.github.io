@@ -8,7 +8,9 @@ categories:
 - Aprendendo o MongoDB
 subtitle: Conceitos vistos na aula 6.1 e 6.2 no bemean, relacionamentos entre collections, explain, replicas, índices, rand, GridFS...
 ---
-#Relacionamento
+
+# Relacionamento
+
 <img src="{{ "/assets/img/relacionamento-explain-replicas/relacao-gato.gif"}}">
 
 Não! Não é esse tipo de relacionamento, e sim de banco de dados. =(

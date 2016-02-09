@@ -6,7 +6,8 @@ image: '/assets/img/instanciacao-com-js/instanciacao-com-js.png'
 tags: [jsbemean]
 subtitle: Closure ? Hoisting ? Instanciação usando uma IIFE?
 ---
-#Instanciação com JavaScript  
+
+# Instanciação com JavaScript  
 
 Primeiro de tudo, você deve está se perguntando, *"qual o objetivo desse artigo ?
 Ensinar declarar uma variável no JavaScript ? Vou aprender alguma coisa ? Vai ser importante para mim ?*"
@@ -122,6 +123,7 @@ Logo depois ele executará a funcao <span class="kd-s">imprimeCachorro( )</span>
 Com isso, já sabemos o que significa o underfine quando aparecer.
 
 ###A mesma coisa pode ser aplicada para uma função.
+
 {% highlight javascript %}
 //Exemplo 6:
 function getQualquerValor(){
@@ -164,6 +166,7 @@ valor  = getQualquerValor(); //--> 1
 {% endhighlight %}
 
 ###E agora ? Vai ser o mesmo resultado ?
+
 {% highlight javascript %}
 //Exemplo 7:
 function getQualquerValor(){
@@ -199,6 +202,7 @@ function getQualquerValor(){
 valor  = getQualquerValor();
 console.log(valor);//--> 0
 {% endhighlight %}
+
 ##Closures
 
 Traduzindo closure, podemos dizer que é algo de encerramento, no sentido de guardar, pôr em um lugar fechado. JavaScript não é a única a usar essa poderosa técnica, ela veio das linguagens funcionais, mas que acabou difundindo e implementado em outras linguagens como C#.
@@ -221,6 +225,7 @@ var total  = closureSoma2(5);
 console.log(total);//--> 7
 
 {% endhighlight %}
+
 ###Outro exemplo ಠ_ಠ  
 
 {% highlight javascript %}

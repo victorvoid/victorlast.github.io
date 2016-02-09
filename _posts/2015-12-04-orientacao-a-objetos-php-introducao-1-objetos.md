@@ -8,7 +8,8 @@ categories:
 - Aprendendo PHP OO
 subtitle: Início de uma série de como usar a orientação a objetos no php. Objetos, Replica clonagem, Cargas automáticas, etc...
 ---
-#Programação Orientada a Objetos com PHP
+
+# Programação Orientada a Objetos com PHP
 
 
 <img src="{{ "/assets/img/phpoo/phpoo.jpg"}}">
