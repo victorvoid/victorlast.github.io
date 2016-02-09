@@ -2,14 +2,13 @@
 layout: post
 title:  "Instanciação com JavaScript"
 date:   2015-11-25 00:07:31 -0400
+image: '/assets/img/instanciacao-com-js/instanciacao-com-js.png'
 tags: [jsbemean]
 subtitle: Closure ? Hoisting ? Instanciação usando uma IIFE?
 ---
 #Instanciação com JavaScript  
 
-####Victor Igor
-
-Primeiro de tudo, você deve está se perguntando, *"qual o objetivo desse post ?
+Primeiro de tudo, você deve está se perguntando, *"qual o objetivo desse artigo ?
 Ensinar declarar uma variável no JavaScript ? Vou aprender alguma coisa ? Vai ser importante para mim ?*"
 
 ##Resumo

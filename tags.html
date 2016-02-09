@@ -2,7 +2,7 @@
 layout: minimal
 title: "#Tags"
 permalink: /tags/index.html
-description: "Pesquise através das tags."
+description: "Take a look at my beautiful tags."
 ---
 
 <div class="tags">
@@ -20,7 +20,7 @@ description: "Pesquise através das tags."
 </div>
 
 {% for tag in site.tags  %}
-    <span class="tag-title" id="{{ tag[0] | slugify }}">#{{ tag[0] }}</span>
+    <span class="tag-title" id="{{ tag[0] | slugify }}">{{ tag[0] }}</span>
     <ul class="post-list">
         {% assign pages_list = tag[1] %}
         {% for post in pages_list reversed %}

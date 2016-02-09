@@ -2,15 +2,15 @@
 layout: post
 title:  "MongoDB - Introdução #1 #2 #3 "
 date:   2015-12-07 00:06:31 -0400
-tags: mongobemean
 image: '/assets/img/mongodb-post.png'
+tags: mongobemean
 categories:
 - Aprendendo o MongoDB
 subtitle: Conceitos vistos na aula 01, 02, 03 no bemean, importação, exportação, insercão, operadores aritméticos, buscas básicas, operador de existência...
 ---
 
 # <a target="_blank" href="http://victorvoid.github.io/o-que-e-meanstack/">Full-Stack JavaScript ?</a>
-<img src="{{ "/assets/img/memes/mean.jpeg"}}">
+<img src="{{ "/assets/img/mongodb123/mean.jpeg"}}">
 
 #Instalação
 
@@ -33,7 +33,7 @@ Depois de inicializar, para que você abra o client de desenvolvimento do mongoD
 
 ##Comandos básicos
 
-<img class="img-responsive" src="{{ "/assets/img/memes/homer-hack.jpg"}}">
+<img src="{{ "/assets/img/mongodb123/dog-notebook.gif"}}">
 
 *Os exemplos foram feitos de acordo com o meu database, caso a sua esteja vazia, você pode baixar [esse](https://raw.githubusercontent.com/Webschool-io/be-mean-instagram/master/Apostila/module-mongodb/src/data/pokemons.json) arquivo JSON.*
 

@@ -9,7 +9,7 @@ categories:
 subtitle: Conceitos vistos na aula 6.1 e 6.2 no bemean, relacionamentos entre collections, explain, replicas, índices, rand, GridFS...
 ---
 #Relacionamento
-<img src="{{ "/assets/img/memes/relacao-gato.gif"}}">
+<img src="{{ "/assets/img/relacionamento-explain-replicas/relacao-gato.gif"}}">
 
 Não! Não é esse tipo de relacionamento, e sim de banco de dados. =(
 
@@ -279,7 +279,7 @@ Aprenda na prática com:
 É basicamente um espalhamento dos seus dados em outro servidor, e no MongoDb uma **ReplicaSet** pode ter 50 replicas. <del>oloco :0</del>
 
 **Diagrama:**
-<img src="{{ "/assets/img/memes/replica-set-read-write-operations-primary.png"}}">
+<img src="{{ "/assets/img/relacionamento-explain-replicas/replica-set-read-write-operations-primary.png"}}">
 
 As 2 estapas que ocorrem na replicação são:
 

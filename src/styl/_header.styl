@@ -1,0 +1,84 @@
+html,
+body
+	height 100%
+
+
+$bg
+	background main
+	height 100%
+	.content
+		width 95%
+		align(both)
+		text-align center
+
+// Header home
+bkg = 'https://farm4.staticflickr.com/3015/2917955598_86d0be4c2c_o.jpg'
+.header-site
+	@extends $bg
+	background: url(bkg) no-repeat center center fixed
+	background-size: cover
+	h1,h2
+		color: sec
+		text-align center
+	.site-title
+		font-size rem(60px)
+		line-height 1
+		margin-top -80px
+		display block
+		+above(cut)
+			margin-bottom 0
+			font-size rem(60px)
+	.site-description
+		font-size rem(20px)
+		display block
+		margin rem(30px) 0
+		+above(cut)
+			font-size rem(20px)
+
+	.codeH
+		padding-top: 100px
+		
+	.codeheader
+		 font-family "Courier new"
+
+	.codeblue
+		color: #3877FF
+	.codered
+		color:#bf616a;
+
+// Header Post
+.header-post
+	@extends $bg
+	.content
+		+above(cut)
+			center(1000px)
+	.subheader
+		display table
+		padding 20px
+		a
+			border 2px solid sec
+			border-radius 20px
+			padding 0 10px
+			+above(cut)
+				padding 0 10px
+
+	.date
+		mainFont(300)
+		font-size rem(16px)
+	h1
+		text-transform uppercase
+		font-size rem(30px)
+		margin 0 0 30px
+		+above(cut)
+			font-size rem(60px)
+	.subtitle
+		mainFont(300)
+		font-size rem(20px)
+	h1,.subtitle, .date
+		color sec
+		text-align center
+	p
+		color sec
+		text-decoration none
+		mainFont(300)
+		font-size rem(18px)

@@ -234,7 +234,7 @@ Resultado:
 {% endhighlight %}
 
 ##Agrupamento 
-<img src="{{ "/assets/img/memes/elements-2.png"}}">
+<img src="{{ "/assets/img/group-aggregate/elements-2.png"}}">
 
 Podemos agrupar cada tipo de pokemons e poder mandar contar quantos pokemons tem aquele valor por exemplo, tudo isso usando a função <span class="nf-s">group( )</span>.
 
@@ -373,7 +373,7 @@ Usamos o <span class="kd-s">finalize</span> para sabermos a média de <span clas
 Temos 3 abordagens para agregações, cada uma com sua característica e propósitos para cada situação, veremos a <em>aggregation pipeline.</em>
 
 ####Aggregation Pipeline ? 
-<img src="{{ "/assets/img/memes/wtf-homer.gif"}}">
+<img src="{{ "/assets/img/group-aggregate/dog-mordida.gif"}}">
 
 Ele é basicamente um framework para executar uma série de transformações de dados em um documento. Existe 10 tipos de transformações que podem ser utilizados.
 

@@ -1,15 +1,17 @@
 ---
 layout: post
 title:  "MEAN - Full-Stack JavaScript ?"
+image: '/assets/img/o-que-e-meanstack/o-que-e-meanstack.jpg'
 date:   2015-12-03 00:12:31 -0400
 tags: jsbemean
 subtitle: Criar grandes sistemas apenas com JavaScript ? Sério ?
 ---
 # O que é MEAN ? 
 
-<img src="{{ "/assets/img/memes/wtf-homer.gif"}}">
+Acooooooooooooooooooooooooooooooooooooorda!!!!!!!!!!!!!!!!!!!!!!
+<img src="{{ "/assets/img/o-que-e-meanstack/dog-assustado.gif"}}">
 
-MEAN é uma abreviação de 4 tecnologias, e todas elas usam JavaScript. LOL 
+Pesquisando rapidinho sobre MEAN full stack no google você encontra que é uma abreviação de 4 tecnologias, e que todas elas usam JavaScript. LOL 
 
 ##Significando respectivamente:
 
@@ -32,9 +34,12 @@ O mundo de startup tá muito forte, e raramente usam JAVA/.NET, grande parte del
 
 ##Por onde começar ? 
 
-Atualmente estou fazendo um ótimo curso sobre o assunto e indico para todos, chamado [Be MEAN](http://dagora.net/be-mean/), vai te ensinar de tudo e mais um pouco! E o melhor, totalmente free. =)
+Atualmente (2015/2016) existe um ótimo curso sobre o assunto e indico para todos, chamado [Be MEAN](http://dagora.net/be-mean/), vai te ensinar de tudo e mais um pouco! E o melhor, totalmente free. =)
 
 O professor é o Suissa e recomendo o [blog](http://nomadev.com.br/) dele, tem sempre conteúdos sobre o assunto.
+
+Além disso leia este post e receba muitas informações sobre: 
+[Primeiros passos rumo ao Full-Stack com JavaScript!](https://medium.com/@cristofersousa/full-stack-developer-como-me-tornar-um-5c9d23765461#.g5xz3zu3u)
 
 ##Links para instalação:
 - [MongoDB](https://www.mongodb.org/) <span id="coracao" style="float:right"> ♥</span> 

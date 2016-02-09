@@ -1,12 +1,12 @@
 # Site settings
-description: Um blog sobre tudo que aprendo.
+description: "Um blog de anotações, resumos, e artigos de computação em geral."
 baseurl: ""
-url: "https://victorvoid.github.io" 
-title: "Victor Igor | Blog"
+url: "http://localhost:3000" 
+title: "Blog - Victor Igor"
 # User settings
 username: Victor Igor
-user_description: Estudante de Web
-user_title: Devesenvolvedor Web
+user_description: Estudante de coisas da computação
+user_title: "Anotações, resumos e artigos de computação em geral (ツ)"
 email: victor.0w3@hotmail.com
 twitter_username: vict0rvoid
 github_username:  victorvoid

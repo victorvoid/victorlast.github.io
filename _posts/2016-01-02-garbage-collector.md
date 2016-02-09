@@ -2,6 +2,7 @@
 layout: post
 title:  "Garbage Collector no JavaScript"
 date:   2016-01-02 00:07:31 -0400
+image: '/assets/img/garbage-collector/simpson-lixeira.jpg'
 tags: [jsbemean]
 subtitle: Coletor de lixo ? preciso me preocupar com isso ? como funciona ?
 ---
@@ -19,7 +20,7 @@ Na linguagem **C** por exemplo, por termos muitos usos de ponteiros e alocação
 
 ## Como funciona o Garbage Collector no JavaScript ?
 
-<img src="http://static-media.fxx.com/img/FX_Networks_-_FXX/604/903/Simpsons_09_14.jpg?resize=600:*" class="img-responsive">
+<img src="{{ "/assets/img/garbage-collector/simpson-lixeira.jpg"}}">
 
 Nós temos muita sorte de não precisar fazer o gerenciamento de memória manualmente como na **linguagem C**. O JavaScript possui o seu coletor de lixo, e não importa o que está alocado na memória, pode ser de strings, objetos ou arrays. Ele tem uma magia tão boa que consegue determinar quando é seguro recuperar aquela memória ou não, percebendo sempre quando o espaço está sendo inutilizável.
 
@@ -48,7 +49,7 @@ latido = null;
 
 ## Devo me preocupar com ele ?
 
-<img src="https://media.giphy.com/media/PLPEm70uvbYE8/giphy.gif" alt="" class="img-responsive">
+<img src="{{ "/assets/img/garbage-collector/simpson-game.gif"}}">
 
 Claro, aliás ele é um dos maiores obstáculos para quem cria games com **HTML5** por exemplo, pois um bom game precisa ter uma boa perfomace para o jogador ter uma ótima experiência, porém os objetos nos jogos são criados de forma gradual, e se seu código cria muitos lixos, você vai ter problemas com isso. Por exemplo, um jogo que roda 60ps tem 16ms para redenrizar cada quadro e a coleta pode ser feita em 100ms ou mais, causando em uma pausa. Tem muitos motores de jogos como o [Construct 2](https://www.scirra.com/construct2) que faz com o uso de JavaScript, e tenta minimizar esse problema, e não chega a ser perceptível.
 

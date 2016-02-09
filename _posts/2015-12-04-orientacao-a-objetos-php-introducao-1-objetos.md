@@ -2,19 +2,16 @@
 layout: post
 title:  "Orientação a objetos com PHP #1 - Objetos e Classes"
 date:   2015-12-04 00:12:31 -0400
+image: '/assets/img/assets/img/phpoo/phpoo.jpg'
 tags: php
 categories:
 - Aprendendo PHP OO
-subtitle: Saiba os princípios básicos de orientação a objetos com php e no que ele pode te ajudar.
+subtitle: Início de uma série de como usar a orientação a objetos no php. Objetos, Replica clonagem, Cargas automáticas, etc...
 ---
 #Programação Orientada a Objetos com PHP
 
-####Victor Igor
 
-
-<img class="img-responsive" src="{{ "/assets/img/memes/tirinha-orientacao-a-objetos.png"}}">
-
-####fonte: [Vida de programador](http://vidadeprogramador.com.br/2012/04/02/php-orientado-a-objetos/)
+<img src="{{ "/assets/img/phpoo/phpoo.jpg"}}">
 
 ###Resumo
 Não estou fazendo essa série para ensinar a fundo a orientação a objetos, e sim como usar o php na orientação a objetos. =)
