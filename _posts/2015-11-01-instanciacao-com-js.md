@@ -12,7 +12,7 @@ subtitle: Closure ? Hoisting ? Instanciação usando uma IIFE?
 Primeiro de tudo, você deve está se perguntando, *"qual o objetivo desse artigo ?
 Ensinar declarar uma variável no JavaScript ? Vou aprender alguma coisa ? Vai ser importante para mim ?*"
 
-##Resumo
+## Resumo
 
 O objetivo não é ensinar a declarar uma variável ou lhe encher de teorias (também não tem como fugir totalmente delas).
 Se você realmente quer saber como funciona **JavaScript**, e quer ter uma opinião para defender-la, pra isso não há nada
@@ -25,11 +25,11 @@ vezes não sabemos, por acontecer *'escondido'*.
 
 Hoisting, Closures, Variáveis globais, Variável por parâmetro e instanciação usando uma IIFE, com JavaScript.
 
-##Palavras chaves:
+## Palavras chaves:
 
 hosting, closures, variáveis, javascript, instancia, escopo
 
-##Hoisting
+## Hoisting
 
 Não precisa ser um gênio para entender. Muitos que não sabem seu significado pode está pensando 
 *"Nossa, deve ser algo difícil!"*, mas na verdade precisa mais de atenção, a linguagem usa e você não tá percebendo, porém pode causar bastante confusão se não souber da sua existência, por ter comportamentos *'ocultos'*. Então o que significa **Hoisting** ? Traduzindo para português, seria *'elevação'*, e isso tem todo sentido no JavaScript. 
@@ -100,7 +100,7 @@ Retorna <span class="err-s">underfine</span> por ter uma variável no seu escopo
 
 A lógica de muitas linguagens seria mostrar 'dog', pois já foi instanciada no topo. Taí um dos porquês que você precisa estudar a linguagem como funciona e não apenas sua sintaxe, JavaScript diferente de algumas linguagens, tem seus comportamentos diferenciado, e se você já estudou C, vai perceber que a sua ação é diferente. E é aí amiguinho que a mágica acontece, a variávei foi 'hoisteada', elevada para o topo. Isso acontece pois o compilador na verdade, declara todas as variáveis, logo que seu código começa a ser compilado.
 
-###Como acontece? ⬇
+### Como acontece? ⬇
 
 {% highlight javascript %}
 //Exemplo 5:
@@ -122,7 +122,7 @@ Logo depois ele executará a funcao <span class="kd-s">imprimeCachorro( )</span>
 
 Com isso, já sabemos o que significa o underfine quando aparecer.
 
-###A mesma coisa pode ser aplicada para uma função.
+### A mesma coisa pode ser aplicada para uma função.
 
 {% highlight javascript %}
 //Exemplo 6:
@@ -144,7 +144,7 @@ console.log(valor);//--> 1
 Acontece que as duas funções <span class="kd-s">pegaValor( )</span> foram jogadas para o topo, e em seguida é retornada a última <span class="kd-s">pegaValor( )</span>, pois ela sobrescreve a primeira.</p>
 </blockquote>
 
-###Como acontece ? ⬇
+### Como acontece ? ⬇
 
 {% highlight javascript %}
 //Exemplo 6:
@@ -165,7 +165,7 @@ function getQualquerValor(){
 valor  = getQualquerValor(); //--> 1
 {% endhighlight %}
 
-###E agora ? Vai ser o mesmo resultado ?
+### E agora ? Vai ser o mesmo resultado ?
 
 {% highlight javascript %}
 //Exemplo 7:
@@ -184,7 +184,7 @@ console.log(valor);//--> 0
 
 Agora cuidado, estamos usando uma funções anônima, com isso a declaração sobe e as funções (atribuição) continuam no mesmo lugar, e assim prevalecendo sempre a de cima.
 
-###Como acontece ? ⬇
+### Como acontece ? ⬇
 
 {% highlight javascript %}
 //Exemplo 8:
@@ -203,7 +203,7 @@ valor  = getQualquerValor();
 console.log(valor);//--> 0
 {% endhighlight %}
 
-##Closures
+## Closures
 
 Traduzindo closure, podemos dizer que é algo de encerramento, no sentido de guardar, pôr em um lugar fechado. JavaScript não é a única a usar essa poderosa técnica, ela veio das linguagens funcionais, mas que acabou difundindo e implementado em outras linguagens como C#.
 
@@ -226,7 +226,7 @@ console.log(total);//--> 7
 
 {% endhighlight %}
 
-###Outro exemplo ಠ_ಠ  
+### Outro exemplo ಠ_ಠ  
 
 {% highlight javascript %}
 //Exemplo 10:
@@ -252,7 +252,7 @@ console.log(total);//--> 7
 
 {% endhighlight %}
 
-###Mais outro exemplo, e se reclamar vem mais outro ლ(ಠ▃ಠლ)
+### Mais outro exemplo, e se reclamar vem mais outro ლ(ಠ▃ಠლ)
 
 {% highlight javascript %}
 //Exemplo 11:
@@ -275,7 +275,7 @@ contador.incremente();
 console.log(contador.get());//--> 2
 {% endhighlight %}
 
-###Na prática ⬇
+### Na prática ⬇
 
 Primeiro vamos imaginar que precisamos saber quantas vezes o usuário está clicando no botão. Se você entendeu mesmo, não vai querer usar uma variável global pra sair contando, isso só vai te trazer prejuízo na frente.
 
@@ -336,11 +336,11 @@ p.depositar(100);//Depositado com sucesso!
 p.sacar(20);//Novo saldo: 80  
 {% endhighlight %}
 
-###Boas práticas: (⌒‿⌒)
+### Boas práticas: (⌒‿⌒)
 
 Em projetos grande um dos problemas que acontecem muito é o de comportamento, alguns por está conseguindo acessar variáveis que não deviam, vazando escopo, sempre feche o escopo, se organize e não fique criando variáveis globais.
 
-##Variáveis Globais
+## Variáveis Globais
 
 Falamos bastante sobre não criar variáveis globais, e que isso pode lhe trazer dores de cabeça lá na frente, mas por quê ? Elas podem ser acessadas por qualquer escopo, e possibilitando as chances de você modificar ou usar o mesmo nome.
 
@@ -370,7 +370,7 @@ console.log(mensagem);//sou global
 Na exemplo 2 a função <em>alteraMensagem</em>, não foi criado nenhuma variável, apenas atribuição, por isso ela modificou, diferente do exemplo 1, onde tem uma palavra reservada <span class="kd-s">var</span>, onde indica uma declaração no escopo atual.</p>
 </blockquote>
 
-##Variáveis por parâmetro
+## Variáveis por parâmetro
 
 É comum demais passarmos parâmetros pela nossas funções, porém no JavaScript não precisamos especificar que tipo de dados vamos receber.
 
@@ -395,11 +395,11 @@ var resultado = somar(1);
 console.log(canguru);//--> NaN
 {% endhighlight %}
 
-###Mas por quê ?
+### Mas por quê ?
 
 Simples, como não foi passado por parâmetro, ela é setada como underfined, e você não pode querer somar um número com <span class="err-s">underfined</span>.
 
-###E quando existe mais parâmetros do que o esperado ?
+### E quando existe mais parâmetros do que o esperado ?
 
 Sem problemas, vamos ver outro exemplo ٩(͡๏̯͡๏)۶
 
@@ -417,11 +417,11 @@ console.log(total);//--> 50
 
 Preciso nem explicar o que houve. (ړײ
 
-##Instanciação usando uma IIFE
+## Instanciação usando uma IIFE
 
 IIFE é comumente chamado de "fechamento" ou envoltório.
 
-###Por que usar isso ?
+### Por que usar isso ?
 
 Variáveis globais é um enorme risco, onde pode ocorrer colisões de nomes e trazendo grandes consequências e possívelmente um dos problemas mais difícieis de detectar. Com JavaScript é apenas uma questão de adequação, você declara dentro de um escopo local para que ela não fique jogada no escopo global, e claro, nunca esquecer da palavra-chave var, pois sem ela, a variável é global.
 
@@ -435,7 +435,7 @@ console.log(canguru);//--> NaN
 
 {% endhighlight %}
 
-###Mas por quê ?
+### Mas por quê ?
 
 Simples, como não foi passado por parâmetro, ela é setada como underfined, e você não pode querer somar um número com <span class="err-s">underfined</span>.
 
@@ -469,10 +469,10 @@ var valor = getValue();
 console.log(valor);//--> 2
 {% endhighlight %}
 
-##Conclusão
+## Conclusão
 Dessa forma aprendemos vários conceitos, todos eles são importantes, e alguns possuem até livros específicos como o de Closure: The Definitive Guide, então nunca descarte de sempre estudar.
 
-##Bibliografia
+## Bibliografia
 
 - [Mozilla - Closures](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures)
 - [W3School - Function Invocation](http://www.w3schools.com/js/js_function_invocation.asp)

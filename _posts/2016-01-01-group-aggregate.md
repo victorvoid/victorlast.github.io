@@ -15,7 +15,7 @@ Antes de fatos aprendermos sobre Agreggate e Groups, vamos ver alguns tópicos i
 Para seguir os primeiros exemplos vamos usar a collection <span class="nc-s">restaurantes</span>
 use o [restaurantes.json](https://raw.githubusercontent.com/Webschool-io/be-mean-instagram/master/Apostila/module-mongodb/src/data/restaurantes.json) para importar.【ツ】<br> 
 
-##Como saber a quantidade de documentos que eu tenho? 
+## Como saber a quantidade de documentos que eu tenho? 
 
 Podemos usar a função length:
 {% highlight javascript %}
@@ -50,7 +50,7 @@ Resultado:
 {% endhighlight %}
 
 
-##Distinct
+## Distinct
 
 Neste nosso restaurantes temos a seguinte estrutura:
 
@@ -130,7 +130,7 @@ Resultado:
 
 {% endhighlight %}
 
-##Tem como trazer o resultado ordenado ? 
+## Tem como trazer o resultado ordenado ? 
 
 Quem ae já estudou os algoritmos de ordenação, <del>sabe que dá muita raiva</del> sabe que existe vários algoritmos de ordenação e com vários casos cada um. Poxa e agora ? <del>se lascou, vai ter que implementar uma função para isso</del>
 HEYY!!! Lembre, se estamos usando JavaScript, podemos usar a função <span class="nf-s">sort( )</span> para isso! e para os curiosos, ele usa o algorimo MergeSort, veja o código [aqui](http://mxr.mozilla.org/seamonkey/source/js/src/jsarray.c).
@@ -159,7 +159,7 @@ Porém se quiser fazer o contrário, use a função <span class="nf-s">reverse( 
 
 {% endhighlight %}
 
-##Limite
+## Limite
 
 Agora vamos usar uma collection <span class="nc-s">pokemons</span> nos próximos exemplos, use o [pokemons.json](https://raw.githubusercontent.com/wbruno/boas-praticas-js/master/pokemon-seed/pokemons.json) para importar.
 
@@ -200,7 +200,7 @@ Assim ele pulou os 2 primeiros pokemons e retornou os próximos 5. Podemos fazer
 
 {% endhighlight %}
 
-##Distinct
+## Distinct
 Geralmente em uma collection que possui muitos documentos, contém propriedades com valores iguais. Nesse exemplo de pokemons, repare que não existe um exclusivo <span class="sx-s">type</span> pra cada um, ele se repete em outros. Vamos descobrir quais e quantos <span class="sx-s">types</span> de pokemons existe na collection:
 
 {% highlight javascript %}
@@ -232,8 +232,8 @@ Resultado:
   "dragon"
 ]
 {% endhighlight %}
-
-##Agrupamento 
+ 
+## Agrupamento 
 <img src="{{ "/assets/img/group-aggregate/elements-2.png"}}">
 
 Podemos agrupar cada tipo de pokemons e poder mandar contar quantos pokemons tem aquele valor por exemplo, tudo isso usando a função <span class="nf-s">group( )</span>.
@@ -293,13 +293,13 @@ Resultado:
 ]
 {% endhighlight %}
 
-###Entendo o exemplo 1
+### Entendo o exemplo 1
 
 Usamos algumas propriedades do group, que é o <span class="nf-s">init</span> e o <span class="nf-s">reduce</span>:
 No init inicializamos a variável total para contar e em seguida o reduce onde toda a mágica acontece.
 No reduce escrevemos uma função que recebe o <span class="sr-s">curr</span> como parâmetro e será de fato cada objeto, e o <span class="sr-s">result</span> que é responsável pelo resultado, em seguida acesso o tipo de cada pokemon e faço um <span class="kd-s">forEach</span> para descobrir quantos pokemons tem esse tipo.
 
-###Colocando condições
+### Colocando condições
 Vamos usar a propriedade <span class="kd-s">cond</span> para informar nossa condição.
 
 {% highlight javascript %}
@@ -331,7 +331,7 @@ Resultado:
 {% endhighlight %}
 
 
-##Finalize
+## Finalize
 Ao contrários das outras propriedades que é sempre chamada para cada documento, o <span class="kd-s">finalize</span> é chamada apenas ao final da execução.
 
 {% highlight javascript %}
@@ -369,10 +369,10 @@ Resultado:
 Usamos o <span class="kd-s">finalize</span> para sabermos a média de <span class="sx-s">attacks</span> e <span class="sx-s">defenses</span>, pra isso ao final de tudo pegamos a soma deles e dividimos pela quantidade. Simples não é? ( ͡°﻿ ͜ʖ ͡°)</p>
 </blockquote>
 
-##Aggregate
+## Aggregate
 Temos 3 abordagens para agregações, cada uma com sua característica e propósitos para cada situação, veremos a <em>aggregation pipeline.</em>
 
-####Aggregation Pipeline ? 
+#### Aggregation Pipeline ? 
 <img src="{{ "/assets/img/group-aggregate/dog-mordida.gif"}}">
 
 Ele é basicamente um framework para executar uma série de transformações de dados em um documento. Existe 10 tipos de transformações que podem ser utilizados.
@@ -427,7 +427,7 @@ Resultado:
 
 Você vai ver que deu o mesmo valor do <em>exemplo 1</em>
 
-###Entendendo o exemplo 3
+### Entendendo o exemplo 3
 No <em>aggregate</em> tenho uma propriedade chamada <span class="nf-s">$group</span>, aliás todas as funções do <em>aggregate</em> começa com o<strong> $</strong>. O <strong>_id</strong> serve para definir o agrupamento, por exemplo se eu quisesse agrupar por <em>data</em> ou <em>tempo</em>, mas como nesse exemplo não vamos precisar separar nada, fica vazio. Usei a função <span class="nf-s">$avg</span> para trazer a média da coluna <span class="sx-s">defense</span> e <span class="sx-s">attack</span>, a <span class="nf-s">$sum</span> foi para trazer o somatório de cada, é importante destacar que ao definir a coluna precisamos colocar o <strong>$</strong> no início para informar o mongo que ela é uma coluna.
 
 Você deve ter reparado na facilidade que deu usando esses operadores <strong>$sum</strong> e <strong>$svg</strong> não é ? Pois bem, eles são operadores acumuladores, temos 10 no total que salva sua vida. ٩(-̮̮̃•̃)۶

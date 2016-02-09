@@ -13,11 +13,11 @@ subtitle: Conceitos vistos na aula 01, 02, 03 no bemean, importação, exportaç
 
 <img src="{{ "/assets/img/mongodb123/mean.jpeg"}}">
 
-#Instalação
+# Instalação
 
 <a target="_blank" href="https://www.mongodb.org/downloads#production">Clique aqui</a>
 
-#Introdução ao MongoDB
+# Introdução ao MongoDB
 Vamos começar a brincadeira inicializando o mongoDB no seu terminal (levantando)
 
 {% highlight javascript %}
@@ -32,7 +32,7 @@ Depois de inicializar, para que você abra o client de desenvolvimento do mongoD
 
 {% endhighlight %}
 
-##Comandos básicos
+## Comandos básicos
 
 <img src="{{ "/assets/img/mongodb123/dog-notebook.gif"}}">
 
@@ -62,7 +62,7 @@ Exportar arquivos de uma coleção para um arquivo JSON:
 
 {% endhighlight %}
 
-##Selecionando o banco para usá-lo
+## Selecionando o banco para usá-lo
 
 {% highlight javascript %}
 > use nomedobanco
@@ -100,7 +100,7 @@ No mongoDB não temos tabelas, no noSQL, elas tem o nome de collections, e para 
 
 {% endhighlight %}
 
-##Inserção
+## Inserção
 
 Para fazer uma inserção vamos usar um exemplo de um banco já criado, e lembre-se, use o comando para usá-lo e em seguida uma inserção para ele alocar um espaço do banco.
 
@@ -187,7 +187,7 @@ Então se fizer um
 
 ele estará lá, porém esse caminho foi muito longo não acha ? =( Tivemos que encontrar o objeto depois modificar e usar o **save**. Porém lá pra frente veremos o comando **update** que faz isso de uma vez. =)
 
-##Buscas básicas
+## Buscas básicas
 
 {% highlight javascript %}
 > db.colecao.find({clasura}, {campos}) 
@@ -236,7 +236,7 @@ Resultado:
 }
 {% endhighlight %}
 
-##Operadores Aritméticos
+## Operadores Aritméticos
 
 É bastante fácil. **(⌒‿⌒)**
 
@@ -283,7 +283,7 @@ Resultado:
 }
 {% endhighlight %}
 
-##Operadores lógicos
+## Operadores lógicos
 
 OU é **$or**
 
@@ -336,7 +336,7 @@ Resultado:
 }
 {% endhighlight %}
 
-##Operadores existenciais
+## Operadores existenciais
 
 **$exist**
 
@@ -345,7 +345,7 @@ Resultado:
 
 {% endhighlight %}
 
-###Para quê ?
+### Para quê ?
 
 Se vc ja fez blog, já deve ter visto em tags clounds, aquelas tag mais usadas. Imagina vc querer montar essa possibilidade, vc tem que pesquisar todos os posts que possuem tags, então ae criar todo o mecanismo, não adianta vc querer dar um select em tudo e depois filtrar, pq não filtrar direto ?
 

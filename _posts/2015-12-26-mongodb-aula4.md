@@ -9,11 +9,11 @@ categories:
 subtitle: Conceitos vistos na aula 4.1 e 4.2 no bemean, atualizando e removendo objetos, operadores de array, operadores de buscas em arrays, operadores de negação... 
 ---
 
-#Atualizando e Remo&shy;ven&shy;do da&shy;dos
+# Atualizando e Removendo dados
 
 <img src="{{ "/assets/img/mongodb-update/digitando-rapido.gif"}}">
 
-##UPDATE
+## UPDATE
 
 No MongoDB não existe só uma forma de atualizar o documento, uma das formas já vimos [neste post](http://victorvoid.github.io/2015/12/07/mongodb-aula-1-2-3-be-mean.html), que foi fazendo uma busca usando o <span class="nf-s">findOne( )</span>, e através do resultado modificamos e usamos a função <span class="nf-s">save( )</span>, porém esse caminho é grande, perceba que precisamos fazer a busca, salvar na variável, e modificar para depois salvar.
 {% highlight javascript %}
@@ -24,7 +24,7 @@ No MongoDB não existe só uma forma de atualizar o documento, uma das formas j�
 
 {% endhighlight %}
 
-###Qual a melhor forma? 
+### Qual a melhor forma? 
 
 Ele possui uma função chamada <span class="nf-s">update( )</span> que tem esse objetivo de fazer tudo de uma só vez. Contém 3 parâmetros que veremos com mais detalhe cada um.
 
@@ -66,7 +66,7 @@ Me retornou:
 }
 {% endhighlight %}
 
-##Vamos modificar o Testemon
+## Vamos modificar o Testemon
 
 {% highlight javascript %}
 > var query = {name: /testemon/i}
@@ -90,7 +90,7 @@ Agora agora faça uma busca
 {% endhighlight %}
 
 
-##Ué cadê meus outros campos ? 
+## Ué cadê meus outros campos ? 
 <img src="{{ "/assets/img/mongodb-update/i-have-no-idea.gif"}}">
 
 hahaha fiz de propósito, essa forma é incorreta, para isso precisamos saber alguns operadores de modificação. <del>Concerte a merda </del>Adicione os valores de volta para continuarmos.
@@ -133,7 +133,7 @@ Informe 1 (<span class="nf-s">true</span>) nos campos desejável, assim removend
 
 Nos documentos também temos arrays, e se agora queremos também trabalhar com eles, precisamos saber os seus operadores.
 
-##Operadores de Array
+## Operadores de Array
 
 <strong>$push</strong>: ele adiciona um valor ao campo do array caso ele já esteja no documento, e caso não exista esse array, ele irá criar esse campo do tipo array que está passando.
 <em>Caso o campo não existe e não for um array, irá retornar um erro.</em>
@@ -235,7 +235,7 @@ Nos documentos também temos arrays, e se agora queremos também trabalhar com e
 }
 {% endhighlight %}
 
-###Parâmetro OPTIONS do UPDATE
+### Parâmetro OPTIONS do UPDATE
 
 Lembra daquele último parâmetro que falei que não era obrigatório ? 
 {% highlight javascript %}
@@ -243,9 +243,9 @@ Lembra daquele último parâmetro que falei que não era obrigatório ?
 
 {% endhighlight %}
 
-##OPTIONS
+## OPTIONS
 
-####Para que ele serve ?
+#### Para que ele serve ?
 
 Simples, para configurar alguns valores diferentes do padrão em nosso <em>update</em>.
 Possui os seguintes parâmetros:
@@ -257,7 +257,7 @@ Possui os seguintes parâmetros:
 }
 {% endhighlight %}
 
-##upsert
+## upsert
 
 Lembra de quando fazemos a busca e colocamos no parâmetro de modificação o valor a ser modificado ? Caso a query não seja encontrada, ele **NÃO** fará nada, e retornará para você:
 {% highlight javascript %}
@@ -352,7 +352,7 @@ WriteResult({
 }
 {% endhighlight %}
 
-##MULTI
+## MULTI
 
 Lembra daqueles updates sem **WHERE** no banco relacional ? <del>só faltava quebrar tudo pela frente:p</del>
 lá precisamos usar o **where** para informar quais os objetos que você quer atualizar, caso contrário <del>nem queira saber</del> ☹ vai atualizar todos. <br>
@@ -369,12 +369,12 @@ Por padrão ele só deixa alterar um de cada vez, a não ser que você passe por
 
 Agora se você for verificar, vai ver que todos os documentos estão com uma active <span class="err-s">false</span>. Só assim você consegue fazer um update em vários documentos, alterando seu campo **multi**.
 
-##WRITECONCERN
+## WRITECONCERN
 
 Ele descreve a garantia de que o MongoDB fornece ao relatar o sucesso de uma operação de escrita. Se você quer isso rápido, ele pode ter uma preocupação fraca, cajo queira uma preocupação forte, ele retorna mais demorado. Porém com a preocupação mais fraca, pode ocorrer de não persistir os dados, e não vai saber sobre aquele erro que pode ter acontecido após alguma coisa, agora com a preocupação mais demorada, ele espera o MongoDB confirmar a alteração de escrita pra você, então a garantia é maior.
 Mais sobre o assunto: <a href="https://docs.mongodb.org/v3.0/reference/write-concern/">Clique aqui</a>
 
-##Buscas em arrays ? 
+## Buscas em arrays ? 
 
 Agora vamos aprimorar nossas buscas, aprendendo fazer buscas em arrays, mas para isso vamos inserir arrays em todos os nossos objetos. (Opa em todos ? Já sabemos fazer isso.)
 
@@ -413,7 +413,7 @@ Vamos inserir mais dados nos arrays para depois fazermos buscas:
 
 Pronto! Agora já temos arrays em nossos objetos.
 
-###Operadores de buscas em arrays:
+### Operadores de buscas em arrays:
 
 **$in**: ele retorna todos os documentos que tem no seu determinado array o valor passado por parâmetro, caso queira especificar mais valores do array, use apenas uma virgula para informar outro valor.
 
@@ -462,7 +462,7 @@ Vai retornar todos os objetos que não tem no seu array moves o valor 'folha nav
 
 {% endhighlight %}
 
-##Operadores de Negação
+## Operadores de Negação
 
 **$ne**(not equal): ele nos ajuda a procurar todos os objetos que não tempo determinado valor.
 
@@ -491,7 +491,7 @@ var query = {type: {$ne: /grama/i}} //<--JAMAIS FAÇA ISSO LOL
 
 {% endhighlight %}
 
-##REMOVE
+## REMOVE
 
 É simples, para removermos um documento, utilizaremos a função <span class="nf-s">remove( )</span> que é própria para isso, e de resto você já sabe, utilize os diversos modos de criar uma query para achar os documentos que queira excluir.
 

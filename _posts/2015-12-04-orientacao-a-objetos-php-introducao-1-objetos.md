@@ -14,10 +14,10 @@ subtitle: Início de uma série de como usar a orientação a objetos no php. Ob
 
 <img src="{{ "/assets/img/phpoo/phpoo.jpg"}}">
 
-###Resumo
+### Resumo
 Não estou fazendo essa série para ensinar a fundo a orientação a objetos, e sim como usar o php na orientação a objetos. =)
 
-####Criei a série abordando os seguintes tópicos:
+#### Criei a série abordando os seguintes tópicos:
 
 1. Introdução/Classes e objetos
 2. Herança
@@ -26,7 +26,7 @@ Não estou fazendo essa série para ensinar a fundo a orientação a objetos, e 
 5. MVC
 6. E agora ? Já sei tudo ?
 
-#Introdução
+# Introdução
 
 
 <blockquote class="highlight-paragraph pull-in">
@@ -40,7 +40,7 @@ Aprender um novo paradigma nunca vai ser ruim, seja funcional, estrutural ou ló
 da coisa do que até mesmo utilizar a programação orientada a objetos. Aprender um certo paradigma, não significa que você precisa
 usar-lo pra sua vida, e claro abstrair conhecimentos necessários que até podem ser usados e melhorados no seu código do dia-a-dia.
 
-###PHP suporte a orientação a objetos ?
+### PHP suporte a orientação a objetos ?
 
 PHP era somente estrutural, mas na versão 3 ele começou a suportar orientação a objetos, mas a verdade que a versão 3, a única coisa
 que podíamos fazer era criar classes e agrupar métodos, e parava por aí, não tinha um suporte além disso para a orientação a objetos. 
@@ -52,7 +52,7 @@ conceitos de encapsulamento, uso de interfaces, métodos e classes abstratas, cl
 objetos com php ficou melhor, podendo trabalhar com outro modelo, que é o de abstração, criando uma arquitetura de classe especializada 
 em gerenciar o sistema.
 
-#Classes e Objetos
+# Classes e Objetos
 `Classe`: é uma representação de um tipo de objeto; pense como uma estrutura que descreve o objeto.
 
 `Objetos`: de maneira legal, é uma classe sendo estanciada. Ou de maneira chata, é algo que contém atributos (ou propriedades) e possui um comportamento. Cada objeto tem uma identidade e é distinguível de outro mesmo que seus atributos sejam idênticos. 
@@ -125,7 +125,7 @@ que estanciar um objeto*/
   }
 {% endhighlight %}
 
-###Como posso usar esses conceitos a meu favor na criação de um sistema ?
+### Como posso usar esses conceitos a meu favor na criação de um sistema ?
 
 <del>Te vira! </del>As vezes utilizamos muitas query para consultarmos nosso banco em várias partes do site, e nessas diversas vezes acabamos repetindo pedaços da mesma query. Sabemos que POO é abstração de dados. Para resolver é fácil, vamos fazer o uso de replica clonagem, aproveitando características de um objeto.
 
@@ -183,7 +183,7 @@ nome já diz, clona o objeto. </p>
 </blockquote>
 
 
-##Cargas automática ? 
+## Cargas automática ? 
 
 Perceba que ao longo dos exemplos quando utilizamos as classes, usamos o operador <span class="kd-s">new</span> para instanciar, mas como na orientação
 a objetos é comum criar uma classe específica para cada problema, no fim temos uma carga muito grande de classes, e precisamos incluir no escopo do documento. Ao usar o <span class="kd-s">require</span> ou <span class="kd-s">include</span>, automaticamente estamos pegando toda carga do documento para o seu arquivo, e muitas vezes carregamos sem utilizar. Vamos usar um método que só vai incluir um arquivo no seu documento, somente quando ele for ser utilizado. Com isso temos uma carga muito menor de conteúdo sendo incluido, trazendo assim um desempenho melhor.
@@ -220,7 +220,7 @@ método mágico o nome da classe.
   classeA = new MinhaClasse();
 {% endhighlight %}
 
-##Documentação com PHPDoc?
+## Documentação com PHPDoc?
 Vamos criar uma documentação utilizando o PHPDoc pra informar usuários ou até mesmo para lembrar a gente de como se utiliza uma classe, ou para que serve específico método ou variável. Não é apenas escrever na classe o que ela faz, é uma documentação interativa que podemos sempre consultar quando formos utilizar qualquer atributo, método ou quando instanciamos a classe.
 
 {% highlight php %}

@@ -17,7 +17,7 @@ Não! Não é esse tipo de relacionamento, e sim de banco de dados. =(
 
 Nos banco relacionais é de fato o uso de <span class="">joins</span> pra relacionar uma tabela com outra, porém como funciona o relacionamento no MongoDB ? Joins não existem no MongoDB, não tem como fazer a busca automática de duas coleções separadas usando alguma chave estrangeira como nos relacionais. Existe duas formas, a Manual e DBRef. Já que a forma Manual é a mais usada, vamos ver como funciona.
 
-##Relacionamento Manual 
+## Relacionamento Manual 
 
 Salve o **_id** de uma coleção em outra, por exemplo:
 1º vamos pegar 3 _id de pokemons da nossa collection <span class="nc-s">pokemons</span> que já havíamos trabalho (caso ainda não tenha a collection pokemons use o [pokemons.json](https://raw.githubusercontent.com/Webschool-io/be-mean-instagram/master/Apostila/module-mongodb/src/data/pokemons.json) para importar)
@@ -52,7 +52,7 @@ var json = {name: "meus pokemons", pokemons: pokemons}
 
 No <span class="kd-s">pokemons</span>:**pokemons** o <span class="kd-s">pokemons</span> é um array de **pokemons** (aquele que criamos logo ali em cima).
 
-##Inserindo no inventário
+## Inserindo no inventário
 
 {% highlight javascript %}
 db.invt.insert(json)
@@ -85,7 +85,7 @@ Conferindo:
 
 {% endhighlight %}
 
-##Pegando todos os dados a partir do id
+## Pegando todos os dados a partir do id
 
 Pra fazer isso vamos criar uma função que recebe o **_id** e insere em um array todos os dados dos pokemons.
 
@@ -151,7 +151,7 @@ Repare que agora a variável <span class="kd-s">pokemons</span> está com todos 
 ]
 {% endhighlight %}
 
-##DBRef 
+## DBRef 
 <span class="nc-s">obs</span>: para não deixar de lado o DBRef, é importante saber como funciona.
 
 A outra forma é o DBRef, uma convenção pra representar um documento relacional, ou seja,semelhantes a chave estrangeira vista em banco relacionais.
@@ -164,7 +164,7 @@ Pelo fato de conseguir referenciar seus documentos que estão em outra database,
 
 [Exemplos com DBRed](https://docs.mongodb.org/manual/reference/database-references/)
 
-#Explain
+# Explain
 
 O que é o **Explain** ? 
 Ele nos mostra como o MongoDB executa as query internamente. 
@@ -182,11 +182,11 @@ Se colocarmos **executionStats**, vai nos mostrar além da padrão, informaçõe
 
 Repare que temos por exemplo o <span class="sx-s">executionTimeMillis</span>, que nos mostra o tempo em milissegundo, e o <span class="sx-s">docsExamined</span>, que nos retorna quantos documentos foram examinados, ou seja, procurando com essa query a cima, ele varreu toda nossa base pra poder encontrar o <span class="sr-s">Meloetta-aria</span>.
 
-##Quando usar o Explain ? 
+## Quando usar o Explain ? 
 
   Sempre que queremos analisar o que ele fez, a partir dessas e outras informações que ele nos dá. 
 
-#Index
+# Index
   
   Os índices são importantes, com ele tem como 'marcar' uma determinada propriedade que estamos sempre buscando, e quando eu buscar ele, execute mais rápido. Por padrão o mongo que cria os **_id** não é ? não apenas, como também são indexados, e para que saiba que não estou mentindo '--' execute: 
 
@@ -207,7 +207,7 @@ db.pokemons.getIndexes()
 
 E se você buscar pelo **_id** e não pelo nome e em seguida usar <span class="nf-s">explain</span> para saber a quantidade de elementos verificados, vai perceber que só foi 1, isso mesmo <del>é magia </del>, com isso a busca ficou muito mais rápida. Agora você sabe o porquê existe aquele <span class="nc-s">system.indexes</span> quando listamos as collections, pois ele deixa tudo mapeado. 
 
-##Como criar um index ?
+## Como criar um index ?
 Repare que nas collections, já vem o **_id** indexado. 
 {% highlight javascript %}
 db.system.indexes.find()
@@ -222,7 +222,7 @@ Pra você indexar o nome por exemplo, crie:
 
 Agora a pesquisa pelo nome ficou muito mais rápida: ٩(●̮̮̃•̃)۶
 
-##E se eu não quero mais que o nome fique indexado ? 
+## E se eu não quero mais que o nome fique indexado ? 
 
 {% highlight javascript %}
   db.pokemons.dropIndex({nome: 1})
@@ -233,7 +233,7 @@ Agora a pesquisa pelo nome ficou muito mais rápida: ٩(●̮̮̃•̃)۶
 Tome cuidado com os index, não fique criando index pra qualquer coisa, sempre que criar, seu banco fica mais complexo, pois ele precisa guardar, verifique sempre se realmente precisa na hora de criar.</p>
 </blockquote>
 
-#Rand
+# Rand
 
 Rand é uma função que retorna um número aleatório, por exemplo queremos pegar dois pokemons qualquer:
 
@@ -243,11 +243,11 @@ db.pokemons.find().limit(2).skip(_rand() * db.pokemons.count())
 
 {% endhighlight %}
 
-#GridFS
+# GridFS
 
 Ele é um sistema de arquivos, e com ele você pode salvar arquivos binário. Por exemplo, um vídeo, imagem, ou música. 
 
-##Por que usar ? 
+## Por que usar ? 
 
 Você pode não querer usar o **GridFS** e salvar em um arquivo <span class="sx-s">BJSON</span>, mas só que sabemos que um documento desse tem um limite de 16MB =( Se quer enviar um vídeo de 40MB por exemplo, o GridFS ta ae pra nos ajudar com isso.
 
@@ -255,7 +255,7 @@ Acesse esse artigo para saber quando usar o **GridFS** no MongoDB.
 
 [When to Use GridFS on MongoDB](https://dzone.com/articles/when-use-gridfs-mongodb)
 
-##Como usar ? 
+## Como usar ? 
 
 Entre no terminal (não do mongo), pois é um binário.
 Para inserir na database, vá até onde o seu vídeo está, e execute
@@ -276,7 +276,7 @@ Aprenda na prática com:
 
 [Building MongoDB Applications with Binary Files Using GridFS: Part 2](http://www.mongodb.com/blog/post/building-mongodb-applications-binary-files-using-gridfs-part-2?jmp=docs&_ga=1.8699637.1774300310.1449161772)
 
-#Replica
+# Replica
 
 É basicamente um espalhamento dos seus dados em outro servidor, e no MongoDb uma **ReplicaSet** pode ter 50 replicas. <del>oloco :0</del>
 
@@ -289,15 +289,15 @@ As 2 estapas que ocorrem na replicação são:
 
 <span class="sx-s">Replication</span>: Depois de ter os dados na replica secundária, vai continuar replicando, sicronizando para deixar sempre atualizado, caso faça alguma modificação na primária, acontecendo de forma assícrono.
 
-##OpLog
+## OpLog
 
 O OpLog é simplesmente um log de alteração, mantém todas as modifições na **capped collection**, e ele tem um tamanho fixo, caso ultrapasse ele sobrescreve.(Mais pra frente vamos ver como saber o tamanho)
 
-##Por que usar Replica ? 
+## Por que usar Replica ? 
 
 Para garantir que seus dados ficam em lugares além do servidor principal, aliás qualquer sistema o próprio mongodb diz para ter no mínimo uma replica, seja simples que for, garanta a segurança nos seus dados, nenhum servidor é 100% seguro.
 
-##Como criar ? 
+## Como criar ? 
 
 Abra o terminal e execute, para quantas replicas quer.
 
