@@ -95,7 +95,7 @@ Agora agora faça uma busca
 
 hahaha fiz de propósito, essa forma é incorreta, para isso precisamos saber alguns operadores de modificação. <del>Concerte a merda </del>Adicione os valores de volta para continuarmos.
 
-##Operadores de modificação
+## Operadores de modificação
 
 <strong>$set</strong>: modifica um valor caso já exista, caso não exista, o $set irá criar o campo com esse valor que está alterando.
 
