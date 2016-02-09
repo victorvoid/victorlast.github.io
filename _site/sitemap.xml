@@ -2,39 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	
 	  <url>
-		<loc>http://localhost:3000/relacionamento-explain-replicas/</loc>
+		<loc>http://victorvoid.github.io/relacionamento-explain-replicas/</loc>
 	  </url>
 	
 	  <url>
-		<loc>http://localhost:3000/garbage-collector/</loc>
+		<loc>http://victorvoid.github.io/garbage-collector/</loc>
 	  </url>
 	
 	  <url>
-		<loc>http://localhost:3000/group-aggregate/</loc>
+		<loc>http://victorvoid.github.io/group-aggregate/</loc>
 	  </url>
 	
 	  <url>
-		<loc>http://localhost:3000/mongodb-aula4/</loc>
+		<loc>http://victorvoid.github.io/mongodb-aula4/</loc>
 	  </url>
 	
 	  <url>
-		<loc>http://localhost:3000/mongodb-aula-1-2-3-be-mean/</loc>
+		<loc>http://victorvoid.github.io/mongodb-aula-1-2-3-be-mean/</loc>
 	  </url>
 	
 	  <url>
-		<loc>http://localhost:3000/orientacao-a-objetos-php-introducao-1-objetos/</loc>
+		<loc>http://victorvoid.github.io/orientacao-a-objetos-php-introducao-1-objetos/</loc>
 	  </url>
 	
 	  <url>
-		<loc>http://localhost:3000/o-que-e-meanstack/</loc>
+		<loc>http://victorvoid.github.io/o-que-e-meanstack/</loc>
 	  </url>
 	
 	  <url>
-		<loc>http://localhost:3000/instanciacao-com-js/</loc>
+		<loc>http://victorvoid.github.io/instanciacao-com-js/</loc>
 	  </url>
 	
 	  <url>
-		<loc>http://localhost:3000/porque-blog/</loc>
+		<loc>http://victorvoid.github.io/porque-blog/</loc>
 	  </url>
 	
 </urlset>
