@@ -6,7 +6,8 @@ image: '/assets/img/blog-porque/blog-porque.jpg'
 tags: victorigor
 subtitle: Por que diabos criar um blog ? 
 ---
-#Blog por quê?
+
+# Blog por quê?
 
 <img src="{{ "/assets/img/blog-porque/dog-esperando.gif"}}">
 
