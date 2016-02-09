@@ -2,7 +2,7 @@
 layout: post
 title:  "Relacionamento, Explain e Replicas no MongoDB #6.1 #6.2"
 date:   2016-01-09 00:06:31 -0400
-image: '/assets/img/memes/replica-set-read-write-operations-primary.png'
+image: '/assets/img/relacionamento-explain-replicas/replica-set-read-write-operations-primary.png'
 tags: mongobemean
 categories:
 - Aprendendo o MongoDB
