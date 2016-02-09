@@ -1,7 +1,7 @@
 # Site settings
 description: "Um blog de anotações, resumos, e artigos de computação em geral."
 baseurl: ""
-url: "http://localhost:3000" 
+url: "http://victorvoid.github.io" 
 title: "Blog - Victor Igor"
 # User settings
 username: Victor Igor
