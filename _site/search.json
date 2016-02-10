@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Aprenda de uma vez o que é o Sharding no MongoDB #7",
+      "category" : "Aprendendo o MongoDB",
+      "tags"     : "mongobemean",
+      "url"      : "/sharding-gerenciamento-usuarios/",
+      "date"     : "10 Feb 2016"
+    } ,
+  
+    {
       "title"    : "Relacionamento, Explain e Replicas no MongoDB #6.1 #6.2",
       "category" : "Aprendendo o MongoDB",
       "tags"     : "mongobemean",

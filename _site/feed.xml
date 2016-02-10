@@ -5,9 +5,23 @@
     <description>Um blog de anotações, resumos, e artigos de computação em geral.</description>
     <link>http://victorvoid.github.io/</link>
     <atom:link href="http://victorvoid.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 09 Feb 2016 14:42:18 -0400</pubDate>
-    <lastBuildDate>Tue, 09 Feb 2016 14:42:18 -0400</lastBuildDate>
+    <pubDate>Wed, 10 Feb 2016 13:38:19 -0400</pubDate>
+    <lastBuildDate>Wed, 10 Feb 2016 13:38:19 -0400</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Aprenda de uma vez o que é o Sharding no MongoDB #7</title>
+        <description>&lt;p&gt;Eita que demorei um pouco pra postar. =( Acabei me atrasando com algumas coisas, mas então vamos lá, aliás está em época de carnaval. &lt;del&gt;Que mostra claramente o que o brasileiro é, mesmo o país na pior, sempre sorrindo.&lt;/del&gt; :D &lt;br /&gt; Não pera, eu não vou falar sobre carnaval aqui lol, sim, como o título diz, é mongoDB, uma coisa muito mais divertida, não é ?&lt;/p&gt; &lt;p&gt;Então vamos logo entender que diabos é esse &lt;strong&gt;sharding&lt;/strong&gt;.&lt;/p&gt; &lt;h1 id=&quot;sharding--pra-qu-&quot;&gt;Sharding ? Pra quê ?&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/o-que-e-meanstack/o-que-e-meanstack.jpg&quot; /&gt;&lt;/p&gt; &lt;p&gt;O sharding é aquele processo de armazenar os dados em várias máquinas. Tá, mas pra...</description>
+        <pubDate>Wed, 10 Feb 2016 00:06:31 -0400</pubDate>
+        <link>http://victorvoid.github.io/sharding-gerenciamento-usuarios/</link>
+        <guid isPermaLink="true">http://victorvoid.github.io/sharding-gerenciamento-usuarios/</guid>
+        
+        <category>mongobemean</category>
+        
+        
+        <category>Aprendendo o MongoDB</category>
+        
+      </item>
     
       <item>
         <title>Relacionamento, Explain e Replicas no MongoDB #6.1 #6.2</title>

@@ -70,6 +70,27 @@
     	border 1px solid lightGray
     	margin 50px auto
 
+    .foto-legenda
+        position: relative
+        border: rem(8px) solid white
+        box-shadow: 1px 1px 4px black
+        width: 80%
+        center(rem(760px))
+        
+        figcaption
+            opacity:0
+            position: absolute
+            top: 0
+            background-color: rgba(0,0,0,0.4)
+            width:100%
+            height: 100%
+            box-sizing: border-box
+            transition: opacity 1s
+            &:hover
+                opacity: 1
+            p 
+                text-align: center
+                color: white;
 .share
     center(800px)
     text-align center
@@ -91,6 +112,7 @@ table
     th, td
         border rem(2px) solid #ccc
         padding rem(5px)
+
 
 .tag-title
     mainFont(300)

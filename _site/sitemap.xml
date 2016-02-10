@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	
 	  <url>
+		<loc>http://victorvoid.github.io/sharding-gerenciamento-usuarios/</loc>
+	  </url>
+	
+	  <url>
 		<loc>http://victorvoid.github.io/relacionamento-explain-replicas/</loc>
 	  </url>
 	
