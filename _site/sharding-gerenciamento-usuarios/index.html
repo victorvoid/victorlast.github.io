@@ -141,9 +141,11 @@ Não pera, eu não vou falar sobre carnaval aqui lol, sim, como o título diz, �
 
 <p>Pra isso leia esse artigo do sussu que ele explica: <a href="http://nomadev.com.br/be-mean-mongodb-como-usar-sharding/" target="_blank">Como usar Sharding</a></p>
 
+<p>Lembrando que MongoDB fornece as funções de usuário do banco de dados e administração de banco de dados embutidos em cada banco de dados. Ele fornece todas as outras funções integrado apenas no banco de dados administrador. E para criação de <em>sharding</em>, você precisa ser um <em>admin</em> ou um <em>manager</em>, bem se você ainda não entende como fazer o gerenciamento de usuários, vamos lá aprender, porque é muito importante para a segurança. =)</p>
+
 <h1 id="gerenciamento-de-usurios">Gerenciamento de Usuários</h1>
 
-<p>Você vai precisar ter um gerenciamento dos seus usuários do banco, por exemplo, colocando privilégios que uns tem e outros não, alguns podem modificar e outros apenas ler, tudo tem como gerenciar, e isso é muito importante. Toda aquela nossa autenticação e autorização fica na coleção <code>system.users</code> no banco <code>admin</code> e você pode gerenciar através do mongo. Aliás se você não sabe a diferença entre autenticação e autorização <del>você está ferrado</del>, eu posso tentar explicar de uma forma bem simples:</p>
+<p>Você vai precisar ter um gerenciamento dos seus usuários do banco, por exemplo, colocando privilégios que uns tem e outros não, alguns podem modificar e outros apenas monitorar, tudo tem como gerenciar. Toda aquela nossa autenticação e autorização fica na coleção <code>system.users</code> no banco <code>admin</code> e você pode gerenciar através do mongo. Aliás se você não sabe a diferença entre autenticação e autorização <del>você está ferrado</del>, eu posso tentar explicar de uma forma bem simples:</p>
 
 <blockquote>
   <p>Sabe quando você coloca senha no seu computador, e ao iniciar ele pede o login e senha ? Então, ao está logando, você está autenticando, e autorização é esse processo de verificação, caso esteja errado você não está autorizado para entrar.</p>

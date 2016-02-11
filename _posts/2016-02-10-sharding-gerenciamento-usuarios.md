@@ -53,9 +53,11 @@ Também não vai querer sair criando sharding pra tudo né lol mas se você tem 
 
 Pra isso leia esse artigo do sussu que ele explica: <a href="http://nomadev.com.br/be-mean-mongodb-como-usar-sharding/" target="_blank">Como usar Sharding</a> 
 
+Lembrando que MongoDB fornece as funções de usuário do banco de dados e administração de banco de dados embutidos em cada banco de dados. Ele fornece todas as outras funções integrado apenas no banco de dados administrador. E para criação de *sharding*, você precisa ser um *admin* ou um *manager*, bem se você ainda não entende como fazer o gerenciamento de usuários, vamos lá aprender, porque é muito importante para a segurança. =)
+
 # Gerenciamento de Usuários
 
-Você vai precisar ter um gerenciamento dos seus usuários do banco, por exemplo, colocando privilégios que uns tem e outros não, alguns podem modificar e outros apenas ler, tudo tem como gerenciar, e isso é muito importante. Toda aquela nossa autenticação e autorização fica na coleção `system.users` no banco `admin` e você pode gerenciar através do mongo. Aliás se você não sabe a diferença entre autenticação e autorização <del>você está ferrado</del>, eu posso tentar explicar de uma forma bem simples:
+Você vai precisar ter um gerenciamento dos seus usuários do banco, por exemplo, colocando privilégios que uns tem e outros não, alguns podem modificar e outros apenas monitorar, tudo tem como gerenciar. Toda aquela nossa autenticação e autorização fica na coleção `system.users` no banco `admin` e você pode gerenciar através do mongo. Aliás se você não sabe a diferença entre autenticação e autorização <del>você está ferrado</del>, eu posso tentar explicar de uma forma bem simples:
 
 > Sabe quando você coloca senha no seu computador, e ao iniciar ele pede o login e senha ? Então, ao está logando, você está autenticando, e autorização é esse processo de verificação, caso esteja errado você não está autorizado para entrar.
 
