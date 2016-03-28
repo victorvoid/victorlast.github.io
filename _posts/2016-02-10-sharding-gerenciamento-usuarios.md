@@ -3,6 +3,7 @@ layout: post
 title:  "Aprenda de uma vez o que é o Sharding no MongoDB"
 date:   2016-02-10 00:06:31
 tags: mongodb
+description: Sharding, o porquê do uso dele e como gerenciar usuários.
 ---
 Sharding, o porquê do uso dele e como gerenciar usuários.
 

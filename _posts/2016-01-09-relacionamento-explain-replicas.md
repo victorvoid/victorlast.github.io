@@ -3,6 +3,7 @@ layout: post
 title:  "Relacionamento no MongoDB ? Explain e Replicas ? WTF"
 date:   2016-01-09 00:06:31
 tags: mongodb
+description: Tem como fazer relacionamentos sim! E se reclamar vai ter tabelas lol sqn.
 ---
  Relacionamentos entre collections, explain, replicas, índices, rand, e GridFS.
 

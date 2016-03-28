@@ -5,8 +5,8 @@
     <description>Gosta de JavaScript ? Sim ? Então já podemos ser amigos.</description>
     <link>http://victorvoid///</link>
     <atom:link href="http://victorvoid///feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 28 Mar 2016 01:38:54 -0400</pubDate>
-    <lastBuildDate>Mon, 28 Mar 2016 01:38:54 -0400</lastBuildDate>
+    <pubDate>Mon, 28 Mar 2016 02:04:57 -0400</pubDate>
+    <lastBuildDate>Mon, 28 Mar 2016 02:04:57 -0400</lastBuildDate>
     <generator>Jekyll v3.0.2</generator>
     
       <item>
@@ -985,7 +985,7 @@ Similar ao &lt;strong&gt;group&lt;/strong&gt;, podemos fazer a mesma coisa em me
     
       <item>
         <title>Como atualizar e remover no MongoDB ?</title>
-        <description>&lt;p&gt;Atualizando e removendo objetos, operadores de array, operadores de buscas em arrays, operadores de negação.&lt;/p&gt;
+        <description>&lt;p&gt;Atualizando e removendo objetos, operadores de array, operadores de buscas em arrays e operadores de negação.&lt;/p&gt;
 
 &lt;h1 id=&quot;atualizando-e-removendo-dados&quot;&gt;Atualizando e Removendo dados&lt;/h1&gt;
 
@@ -1696,8 +1696,6 @@ CUIDADO! VAI ESTAR SALVO LOCALMENTE! Precisamos salvar, e para isso usaremos o &
         
         <category>mongodb</category>
         
-        
-        <category>Aprendendo o MongoDB</category>
         
       </item>
     
