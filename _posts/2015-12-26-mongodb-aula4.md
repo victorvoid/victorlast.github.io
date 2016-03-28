@@ -9,7 +9,7 @@ Atualizando e removendo objetos, operadores de array, operadores de buscas em ar
 
 # Atualizando e Removendo dados
 
-<img src="{{ "/assets/img/mongodb-update/digitando-rapido.gif"}}">
+<img src="{{ "/images/mongodb-update/digitando-rapido.gif"}}">
 
 <del>Agora o bicho vai pegar LOL.</del>
 
@@ -514,4 +514,4 @@ Se você der um remove sem nada na query, ele apagará tudo. =(<br>
 
 E é isso, agora se divirta treinando modificando seus dados usando todos os operadores, tenta criar atualizações de vários dados simultâneos com javascript, abuse dos laços de repetições e condições, até a próxima, bye!
 
-<img src="{{ "/assets/img/mongodb123/bye.gif"}}">
+<img src="{{ "/images/mongodb123/bye.gif"}}">
