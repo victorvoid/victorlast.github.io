@@ -1,39 +1,16 @@
 ---
 layout: post
-title:  "Instanciação com JavaScript"
-date:   2015-11-25 00:07:31 -0400
-image: '/assets/img/instanciacao-com-js/instanciacao-com-js.png'
-tags: [jsbemean]
-subtitle: Closure ? Hoisting ? Instanciação usando uma IIFE?
+title:  "Hoisting e o tal do Closure"
+date:   2015-11-25 00:07:31
+tags: [javascript]
 ---
-
-# Instanciação com JavaScript  
-
-Primeiro de tudo, você deve está se perguntando, *"qual o objetivo desse artigo ?
-Ensinar declarar uma variável no JavaScript ? Vou aprender alguma coisa ? Vai ser importante para mim ?*"
-
-## Resumo
-
-O objetivo não é ensinar a declarar uma variável ou lhe encher de teorias (também não tem como fugir totalmente delas).
-Se você realmente quer saber como funciona **JavaScript**, e quer ter uma opinião para defender-la, pra isso não há nada
-mais importante que ficar sabendo a fundo o assunto, não é ? Portanto veremos alguns conceitos que muitas 
-vezes não sabemos, por acontecer *'escondido'*. 
-
-1. O que é ?
-2. Como usa ?
-3. Como funciona ?
-
-Hoisting, Closures, Variáveis globais, Variável por parâmetro e instanciação usando uma IIFE, com JavaScript.
-
-## Palavras chaves:
-
-hosting, closures, variáveis, javascript, instancia, escopo
+Closure ? Hoisting ? Instanciação usando uma IIFE? WTF ?
 
 ## Hoisting
 
-Não precisa ser um gênio para entender. Muitos que não sabem seu significado pode está pensando 
-*"Nossa, deve ser algo difícil!"*, mas na verdade precisa mais de atenção, a linguagem usa e você não tá percebendo, porém pode causar bastante confusão se não souber da sua existência, por ter comportamentos *'ocultos'*. Então o que significa **Hoisting** ? Traduzindo para português, seria *'elevação'*, e isso tem todo sentido no JavaScript. 
-Antes de mostrar um exemplo com hoisting, é importante entender como funciona a declaração de uma variável no 
+Não precisa ser um gênio para entender. Muitos que não sabem seu significado pode está pensando
+*"Nossa, deve ser algo difícil!"*, mas na verdade precisa mais de atenção, a linguagem usa e você não tá percebendo, porém pode causar bastante confusão se não souber da sua existência, por ter comportamentos *'ocultos'*. Então o que significa **Hoisting** ? Traduzindo para português, seria *'elevação'*, e isso tem todo sentido no JavaScript.
+Antes de mostrar um exemplo com hoisting, é importante entender como funciona a declaração de uma variável no
 javascript.
 
 {% highlight javascript %}
@@ -226,7 +203,7 @@ console.log(total);//--> 7
 
 {% endhighlight %}
 
-### Outro exemplo ಠ_ಠ  
+### Outro exemplo ಠ_ಠ
 
 {% highlight javascript %}
 //Exemplo 10:
@@ -333,7 +310,7 @@ function banco(){
 }
 var banco();
 p.depositar(100);//Depositado com sucesso!
-p.sacar(20);//Novo saldo: 80  
+p.sacar(20);//Novo saldo: 80
 {% endhighlight %}
 
 ### Boas práticas: (⌒‿⌒)

@@ -1,23 +1,32 @@
 # Site settings
-description: "Um blog de anotações, resumos, e artigos de computação em geral."
-baseurl: ""
-url: "http://victorvoid.github.io" 
-title: "Blog - Victor Igor"
-# User settings
-username: Victor Igor
-user_description: Estudante de coisas da computação
-user_title: "Anotações, resumos e artigos de computação em geral (ツ)"
-email: victor.0w3@hotmail.com
-twitter_username: vict0rvoid
-github_username:  victorvoid
-gplus_username:  VictorIgor0w3
-disqus_username: victorvoid
+title: Victor Igor
+description: 'Gosta de JavaScript ? Sim ? Então já podemos ser amigos.'
+url: 'http://victorvoid/'
+baseurl: '/'
+# google_analytics: 'UA-XXXXXX-X'
+disqus_shortname: victorvoid
+
+author:
+  name: 'Victor Igor'
+  email: victor.0w3@hotmail.com
+  twitter_username: victorvoid_
+  facebook_username: victorcalangu
+  github_username:  victorvoid
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
 
 # Build settings
-markdown: kramdown
-highlighter: pygments
+destination: _site
+paginate: 10
 permalink: /:title/
-
+markdown: kramdown
+highlighter: rouge
 
 # html minify
 compress_html:
@@ -26,17 +35,11 @@ compress_html:
   endings: []
   profile: false
 
-# Links to include in menu navigation
-# For external links add external: true
-links:
-  - title: Home
-    url: /
-  - title: Series
-    url: /series
-  - title: Tags
-    url: /tags
-  - title: Sobre Mim
-    url: /about
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
 
-# exclude my node related stuff
-exclude: ['package.json', 'src', 'node_modules']
+gems: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']

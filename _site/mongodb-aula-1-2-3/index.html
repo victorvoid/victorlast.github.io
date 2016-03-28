@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Getting Started com MongoDB</title>
+  <meta name="description" content="Gosta de JavaScript ? Sim ? Então já podemos ser amigos.">
+  <meta name="author" content="Victor Igor">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Victor Igor">
+  <meta name="twitter:description" content="Gosta de JavaScript ? Sim ? Então já podemos ser amigos.">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Victor Igor">
+  <meta property="og:description" content="Gosta de JavaScript ? Sim ? Então já podemos ser amigos.">
+
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/styl.css">
+  <link rel="canonical" href="http://victorvoid///mongodb-aula-1-2-3/">
+  <link rel="alternate" type="application/rss+xml" title="Victor Igor" href="/feed.xml">
+</head>
+
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+
+<header class="panel-cover" style="background-image: url(/images/cover.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/" title="link to home of Victor Igor">
+          <img src="/images/profile.png" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title">Victor Igor</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">Gosta de JavaScript ? Sim ? Então já podemos ser amigos.</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="link to Victor Igor blog" class="blog-button">Blog</a></li>
+            </ul>
+          </nav>
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+
+            
+              <!-- Twitter -->
+              <li class="navigation__item">
+                <a href="http://twitter.com/victorvoid_" title="@victorvoid_ on Twitter" target="_blank">
+                  <i class="icon icon-social-twitter"></i>
+                  <span class="label">Twitter</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Facebook -->
+              <li class="navigation__item">
+                <a href="http://fb.me/victorcalangu" title="victorcalangu on Facebook" target="_blank">
+                  <i class="icon icon-social-facebook"></i>
+                  <span class="label">Facebook</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/victorvoid" title="victorvoid on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:victor.0w3@hotmail.com" title="Email victor.0w3@hotmail.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+            
+
+            <!-- RSS -->
+            <li class="navigation__item">
+              <a href="/feed.xml" title="Subscribe" target="_blank">
+                <i class="icon icon-rss"></i>
+                <span class="label">RSS</span>
+              </a>
+            </li>
+
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="6 Dec 2015" class="post-meta__date date">6 Dec 2015</time> &#8226; <span class="post-meta__tags">on <a href="/tags/#mongodb">mongodb</a> </span>
+    </div>
+    <h1 class="post-title">Getting Started com MongoDB</h1>
+  </header>
+
+  <section class="post">
+    <p>Importação, exportação, insercão, operadores aritméticos, buscas básicas, operador de existência, agora vai, é hoje que você aprende</p>
+
+<p>Se ainda não sabe o que é MEAN, dê uma lida:</p>
+
+<h1 id="a-targetblank-hrefhttpvictorvoidgithubioo-que-e-meanstackfull-stack-javascript-a"><a target="_blank" href="http://victorvoid.github.io/o-que-e-meanstack/">Full-Stack JavaScript ?</a></h1>
+
+<p><a target="_blank" href="http://victorvoid.github.io/o-que-e-meanstack/"><img src="/images/mongodb123/mean.jpg" /></a></p>
+
+<h2 id="instalao">Instalação</h2>
+
+<p><a target="_blank" href="https://www.mongodb.org/downloads#production">Clique aqui</a></p>
+
+<h2 id="introduo-ao-mongodb">Introdução ao MongoDB</h2>
+
+<p>O MongoDB é um banco NoSQL orientado a documentos, open source, usa javascript, e extremamente rápido, mas isso não é tudo, aliás não ache que ele é um banco que deva substituir todos seus bancos relacionais. Existe casos que o relacional seja a melhor opção ou até outro banco NoSQL. BLAH!</p>
+
+<h2 id="ento-quando-voc-usaria-victor--o0">Então quando você usaria victor ? O__0</h2>
+
+<ol>
+  <li>Um sistema onde eu teria uma massa imensa de dados(Gigantesca).</li>
+  <li>Onde os dados crescerá  muito e precisaria dividi-los.</li>
+  <li>Caso eu queira que os dados sejam baseados por localização.</li>
+  <li>Não queira um DBA para meu projeto.</li>
+  <li>Qualquer aplicação real time como chats e rede sociais.</li>
+</ol>
+
+<p>Usuaria o noSQL em qualquer caso em que o relacional não daria conta, ou que ficasse com gambiarras. O MongoDB dependendo do que eu queira seria minha opção, ou senão outro banco noSQL.</p>
+
+<p><img src="/images/mongodb123/documento-relacao.jpg" /></p>
+
+<p>Pra ficar melhor seu entendimento, leia: <a href="http://tech.leroymerlin.com.br/devemos-usar-nosql-e-mongodb" target="_blank">Devo usar NoSQL e MongoDB?</a></p>
+
+<h2 id="gets-get-started">Get’s get started</h2>
+
+<p>Vamos começar a brincadeira inicializando o mongoDB no seu terminal (levantando)</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">mongod</span></code></pre></figure>
+
+<p>Depois de inicializar, para que você abra o client de desenvolvimento do mongoDB use apenas o comando:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">mongo</span></code></pre></figure>
+
+<h2 id="comandos-bsicos">Comandos básicos</h2>
+
+<p><img src="/images/mongodb123/dog-notebook.gif" /></p>
+
+<p><em>Os exemplos foram feitos de acordo com o meu database, caso a sua esteja vazia, você pode baixar <a href="https://raw.githubusercontent.com/Webschool-io/be-mean-instagram/master/Apostila/module-mongodb/src/data/pokemons.json">esse</a> arquivo JSON.</em></p>
+
+<p>Importar os dados de um JSON:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">mongoimport</span> <span class="o">--</span><span class="nx">db</span> <span class="nx">database</span> <span class="o">--</span><span class="nx">collection</span>
+  <span class="nx">collection</span> <span class="o">--</span><span class="nx">drop</span> <span class="o">--</span><span class="nx">file</span> <span class="nx">data</span><span class="p">.</span><span class="nx">json</span></code></pre></figure>
+
+<p>Caso não exista o banco ou a collection, ele irá criar um novo, como por exemplo:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">mongoimport</span> <span class="o">--</span><span class="nx">db</span> <span class="nx">be</span><span class="o">-</span><span class="nx">mean</span> <span class="o">--</span><span class="nx">collection</span> <span class="nx">clientes</span>
+  <span class="o">--</span><span class="nx">drop</span> <span class="o">--</span><span class="nx">file</span> <span class="nx">clientes</span><span class="p">.</span><span class="nx">json</span></code></pre></figure>
+
+<p>Exportar arquivos de uma coleção para um arquivo JSON:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">mongoexport</span> <span class="o">--</span><span class="nx">db</span> <span class="nx">nomedodatabase</span> <span class="o">--</span><span class="nx">collection</span> <span class="nx">nomedacolecao</span>
+  <span class="o">--</span><span class="nx">out</span> <span class="nx">minha_colecao</span><span class="p">.</span><span class="nx">json</span></code></pre></figure>
+
+<h2 id="selecionando-o-banco-para-us-lo">Selecionando o banco para usá-lo</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">use</span> <span class="nx">nomedobanco</span></code></pre></figure>
+
+<p>Caso ele não exista, o mongo vai criar a database. Se quiser levantar o client em uma database já selecionada para usar:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">mongo</span> <span class="nx">be</span><span class="o">-</span><span class="nx">mean</span><span class="o">-</span><span class="nx">instagram</span></code></pre></figure>
+
+<p>Agora se eu usar o comando:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">db</span></code></pre></figure>
+
+<p>Ele me retornará o nome do banco que está em uso.
+Mas e se eu quiser listar todos os bancos que eu tenho ?</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">show</span> <span class="nx">dbs</span></code></pre></figure>
+
+<p>Fácil não é ?</p>
+
+<p>No mongoDB não temos tabelas, no noSQL, elas tem o nome de collections, e para listar as collections que tenho no banco é:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">show</span> <span class="nx">collections</span></code></pre></figure>
+
+<h2 id="insero">Inserção</h2>
+
+<p>Para fazer uma inserção vamos usar um exemplo de um banco já criado, e lembre-se, use o comando para usá-lo e em seguida uma inserção para ele alocar um espaço do banco.</p>
+
+<p>Inserindo na collection teste, como vai ser a primeira vez, ele irá criar.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">db</span><span class="p">.</span><span class="nx">teste</span><span class="p">.</span><span class="nx">insert</span><span class="p">({</span><span class="na">nome</span><span class="p">:</span> <span class="s2">"Victor"</span><span class="p">,</span> <span class="na">idade</span><span class="p">:</span><span class="mi">18</span><span class="p">})</span></code></pre></figure>
+
+<p>Agora sim ele alocou no hd, pois teve uma inserção de dados e quando usarmos o comando para listar os bancos ele irá aparecer.</p>
+
+<p>Ora, podemos melhorar essa inserção, já que estamos no client, podemos usar variáveis e deixar essa inserção mais organizada não é ? Muitas vezes inserimos muitos dados e acaba ficando difícil.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">json</span> <span class="o">=</span> <span class="p">{</span><span class="na">escola</span><span class="p">:</span> <span class="s2">"Webschool"</span><span class="p">,</span> <span class="na">active</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">teste</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span></code></pre></figure>
+
+<p>Agora queremos listar todos os conteúdos da collection, para saber se realmente inseriu todos os dados.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">db</span><span class="p">.</span><span class="nx">pokemons</span><span class="p">.</span><span class="nx">find</span><span class="p">()</span></code></pre></figure>
+
+<p>OPA! Escrevi errado, e agora ? Posso modificar ? =(</p>
+
+<p>Claro!</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'Carterpie'</span><span class="p">}</span>
+<span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">db</span><span class="p">.</span><span class="nx">pokemons</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nx">p</span></code></pre></figure>
+
+<p>Ele irá mostrar o resto das informações, porém ele vem como cursor, nao tem como modificar usando “p.name = ‘RatoCabeludo’ “</p>
+
+<p>Pra resolver, usaremos o <strong>findOne</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">db</span><span class="p">.</span><span class="nx">pokemons</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nx">p</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">'RatoCabeludo'</span></code></pre></figure>
+
+<p>Ele mudará(Caso o campo name não exista, ele criará um novo com o valor setado)
+CUIDADO! VAI ESTAR SALVO LOCALMENTE! Precisamos salvar, e para isso usaremos o <strong>save</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">db</span><span class="p">.</span><span class="nx">pokemons</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span></code></pre></figure>
+
+<p>Repare que aparece esse resultado:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">WriteResult</span><span class="p">({</span>
+  <span class="s2">"nMatched"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"nUpserted"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">"nModified"</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">})</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//Significa respectivamente:</span>
+<span class="nx">nMatched</span>  <span class="o">-</span> <span class="nx">Encontrado</span>
+<span class="nx">nUpserted</span> <span class="o">-</span> <span class="nx">Inseriu</span>
+<span class="nx">nModified</span> <span class="o">-</span> <span class="nx">Modificado</span></code></pre></figure>
+
+<p>Então se fizer um</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">db</span><span class="p">.</span><span class="nx">pokemons</span><span class="p">.</span><span class="nx">find</span><span class="p">()</span></code></pre></figure>
+
+<p>ele estará lá, porém esse caminho foi muito longo não acha ? =( Tivemos que encontrar o objeto depois modificar e usar o <strong>save</strong>. Porém lá pra frente veremos o comando <strong>update</strong> que faz isso de uma vez. =)</p>
+
+<h2 id="buscas-bsicas">Buscas básicas</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">db</span><span class="p">.</span><span class="nx">colecao</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="nx">clasura</span><span class="p">},</span> <span class="p">{</span><span class="nx">campos</span><span class="p">})</span></code></pre></figure>
+
+<p>Onde <strong>clasuras</strong> seria nosso <em>where</em> no banco relacional e o <strong>campos</strong> seria o nosso <em>select</em>.</p>
+
+<p>No objeto de <strong>campos</strong> apenas precisamos dizer quais campos podem ser retornados
+1 - diz qual o campo quer retornar(true)
+0 - nega o campo nessa busca(false)</p>
+
+<p>exemplo:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">query</span><span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="s1">'Persian'</span><span class="p">}</span>
+<span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">field</span><span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">description</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="o">&gt;</span> <span class="nx">db</span><span class="p">.</span><span class="nx">pokemons</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">field</span><span class="p">)</span></code></pre></figure>
+
+<p>Resultado:</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="err">ObjectId(</span><span class="s2">"564da193ab81d6513c255cb1"</span><span class="err">)</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Persian"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sabe voltar pra sua casa."</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p>Veja que ele também retorna o _id, para tira-lo é só usar o 0 para negar.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">field</span><span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">description</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">_id</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+<span class="o">&gt;</span> <span class="nx">db</span><span class="p">.</span><span class="nx">pokemons</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">field</span><span class="p">)</span></code></pre></figure>
+
+<p>Resultado:</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Persian"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sabe voltar pra sua casa."</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h2 id="operadores-aritmticos">Operadores Aritméticos</h2>
+
+<p>É bastante fácil. <strong>(⌒‿⌒)</strong></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span>  <span class="err">é</span> <span class="nx">$lt</span>
+  <span class="nx">less</span> <span class="nx">than</span>
+<span class="o">&lt;=</span> <span class="err">é</span> <span class="nx">$lte</span>
+  <span class="nx">less</span> <span class="nx">than</span> <span class="nx">or</span> <span class="nx">equal</span>
+<span class="o">&gt;</span>  <span class="err">é</span> <span class="nx">$gt</span>
+        <span class="nx">greater</span>
+<span class="o">&gt;=</span> <span class="err">é</span> <span class="nx">$gte</span>
+  <span class="nx">greater</span> <span class="nx">or</span> <span class="nx">equal</span></code></pre></figure>
+
+<p>Exemplo:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="p">{</span><span class="na">height</span><span class="p">:</span> <span class="p">{</span><span class="na">$lt</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}</span>
+<span class="o">&gt;</span> <span class="nx">db</span><span class="p">.</span><span class="nx">pokemons</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span></code></pre></figure>
+
+<p>Resultado:</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="err">ObjectId(</span><span class="s2">"564da193ab81d6513c255caa"</span><span class="err">)</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Raichu"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if the electrical..."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electric"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"attack"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"defence"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="err">ObjectId(</span><span class="s2">"564da193ab81d6513c255cab"</span><span class="err">)</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Psyduck"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Psyduck uses a mysterious power."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Water"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"attack"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"defence"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h2 id="operadores-lgicos">Operadores lógicos</h2>
+
+<p>OU é <strong>$or</strong></p>
+
+<p>Exemplo:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">query</span> <span class="o">=</span> <span class="p">{</span><span class="na">$or</span><span class="p">:[{</span><span class="na">name</span><span class="p">:</span><span class="s1">'Metapod'</span><span class="p">},{</span><span class="na">height</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">}]}</span>
+<span class="o">&gt;</span> <span class="nx">db</span><span class="p">.</span><span class="nx">pokemons</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span></code></pre></figure>
+
+<p>Resultado:</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="err">ObjectId(</span><span class="s2">"564da193ab81d6513c255cae"</span><span class="err">)</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Metapod"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The shell covering this Pokémons."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bug"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"attack"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"defence"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p><strong>$nor</strong> (not or) - Todos os outros registros que não vieram na busca do nosso $or</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">query</span> <span class="o">=</span> <span class="p">{</span><span class="na">$nor</span><span class="p">:[{</span><span class="na">name</span><span class="p">:</span><span class="s1">'Metapod'</span><span class="p">},{</span><span class="na">height</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">}]}</span></code></pre></figure>
+
+<p><strong>$and</strong></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">query</span> <span class="o">=</span> <span class="p">{</span><span class="na">$and</span><span class="p">:[{</span><span class="na">name</span><span class="p">:</span><span class="s1">'Metapod'</span><span class="p">},{</span><span class="na">height</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">}]}</span>
+<span class="o">&gt;</span> <span class="nx">db</span><span class="p">.</span><span class="nx">pokemons</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span></code></pre></figure>
+
+<p>Resultado:</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="err">ObjectId(</span><span class="s2">"564da193ab81d6513c255cae"</span><span class="err">)</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Metapod"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The shell covering this Pokémons."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bug"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"attack"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"defence"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h2 id="operadores-existenciais">Operadores existenciais</h2>
+
+<p><strong>$exist</strong></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">db</span><span class="p">.</span><span class="nx">colleciton</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="na">campo</span><span class="p">:{</span><span class="na">$exist</span><span class="p">:</span><span class="kc">true</span><span class="p">}})</span></code></pre></figure>
+
+<h3 id="para-qu-">Para quê ?</h3>
+
+<p>Se vc ja fez blog, já deve ter visto em tags clounds, aquelas tag mais usadas. Imagina vc querer montar essa possibilidade, vc tem que pesquisar todos os posts que possuem tags, então ae criar todo o mecanismo, não adianta vc querer dar um select em tudo e depois filtrar, pq não filtrar direto ?</p>
+
+<h2 id="concluindo">Concluindo</h2>
+
+<p>Com esses poucos comandos já dá pra brincar um pouco =) lindo ele não é !? A série continua, até a próxima.</p>
+
+<p><img src="/images/mongodb123/bye.gif" /></p>
+
+  </section>
+  <section id="disqus_thread"></section><!-- /#disqus_thread -->
+</article>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'victorvoid'; // required: replace example with your forum shortname
+        var disqus_config = function () {
+          this.page.url = 'http://victorvoid//mongodb-aula-1-2-3/';
+          this.page.identifier = '/mongodb-aula-1-2-3';
+          this.page.title = 'Getting Started com MongoDB';
+        };
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+      </div>
+
+      <footer class="footer">
+  <span class="footer__copyright">&copy; 2016 Victor Igor. All rights reserved.</span>
+</footer> 
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+    </div>
+  </body>
+</html>

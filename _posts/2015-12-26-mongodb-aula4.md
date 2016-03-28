@@ -1,19 +1,16 @@
 ---
 layout: post
-title:  "Atualizando e removendo dados no MongoDB #4.1 #4.2"
-date:   2015-12-26 00:06:31 -0400
-tags: mongobemean
-image: '/assets/img/mongodb-post.png'
-categories:
-- Aprendendo o MongoDB
-subtitle: Conceitos vistos na aula 4.1 e 4.2 no bemean, atualizando e removendo objetos, operadores de array, operadores de buscas em arrays, operadores de negação... 
+title:  "Como atualizar e remover no MongoDB ?"
+date:   2015-12-26 00:06:31
+tags: mongodb
 ---
+Atualizando e removendo objetos, operadores de array, operadores de buscas em arrays, operadores de negação.
 
 # Atualizando e Removendo dados
 
 <img src="{{ "/assets/img/mongodb-update/digitando-rapido.gif"}}">
 
-<del>Agora o bicho vai pegar LOL.</del> 
+<del>Agora o bicho vai pegar LOL.</del>
 
 ## UPDATE
 
@@ -26,7 +23,7 @@ No MongoDB não existe só uma forma de atualizar o documento, uma das formas j�
 
 {% endhighlight %}
 
-### Qual a melhor forma? 
+### Qual a melhor forma?
 
 Ele possui uma função chamada <span class="nf-s">update( )</span> que tem esse objetivo de fazer tudo de uma só vez. Contém 3 parâmetros que veremos com mais detalhe cada um.
 
@@ -42,8 +39,8 @@ O parâmetro <span class="kd-s">options</span> não é obrigatório.</p>
 Vamos inserir um objeto para modificarmos
 
 {% highlight javascript %}
-> var poke = {name: "Testemon", attack: 8000, 
-        defense: 8000, height: 2.1, 
+> var poke = {name: "Testemon", attack: 8000,
+        defense: 8000, height: 2.1,
         description: "Pokemon de teste"}
 > db.pokemons.save(poke);
 > var query = {name: /testemon/i}
@@ -55,7 +52,7 @@ Vamos inserir um objeto para modificarmos
 <p><strong class="cabecalho">Info 2</strong>
 Na variável <span class="kd-s">query</span> passamos o name, porém usamos a barra entre o nome, isso é uma <strong>REGEX</strong>, o <strong>i</strong> informa que não importa se é maiúsculo ou minúsculo. Assim fazendo uma busca Case insensitive</p>
 </blockquote>
-Me retornou: 
+Me retornou:
 
 {% highlight json %}
 {
@@ -92,7 +89,7 @@ Agora agora faça uma busca
 {% endhighlight %}
 
 
-## Ué cadê meus outros campos ? 
+## Ué cadê meus outros campos ?
 <img src="{{ "/assets/img/mongodb-update/i-have-no-idea.gif"}}">
 
 hahaha fiz de propósito, essa forma é incorreta, para isso precisamos saber alguns operadores de modificação. <del>Concerte a merda </del>Adicione os valores de volta para continuarmos.
@@ -104,8 +101,8 @@ hahaha fiz de propósito, essa forma é incorreta, para isso precisamos saber al
 {% highlight javascript %}
 > var mod = {$set:
          {
-           name:'Testemon', attack: 8000, 
-           defense: 8000, height: 2.1, 
+           name:'Testemon', attack: 8000,
+           defense: 8000, height: 2.1,
            description: "Pokemon de teste"
          }
      }
@@ -115,7 +112,7 @@ hahaha fiz de propósito, essa forma é incorreta, para isso precisamos saber al
 
 <strong>$unset</strong>: remove campos.
 {% highlight javascript %}
-> var mod = {$unset: {height: 1}} 
+> var mod = {$unset: {height: 1}}
 > db.pokemons.update(query,mod)
 
 {% endhighlight %}
@@ -127,7 +124,7 @@ Informe 1 (<span class="nf-s">true</span>) nos campos desejável, assim removend
 
 <strong>$inc</strong>: para incrementar um valor e caso o campo não exista, ele irá criar o campo e setar o valor, e para decrementar, passe o valor negativo.
 {% highlight javascript %}
-> var mod = {$inc:{attack:1}} 
+> var mod = {$inc:{attack:1}}
  //-1 para decrementar
 > db.pokemons.update(query,mod)
 
@@ -164,8 +161,8 @@ Nos documentos também temos arrays, e se agora queremos também trabalhar com e
 {% highlight javascript %}
 > var query = {name: /pokemon de teste/i}
 > var attacks =[
-                 'choque do trovão', 
-                 'ataque rapido', 
+                 'choque do trovão',
+                 'ataque rapido',
                  'bola elétrica'
                ]
 > var mod = {$pushAll: {moves: attacks}}
@@ -212,7 +209,7 @@ Nos documentos também temos arrays, e se agora queremos também trabalhar com e
 
 **$pullAll**: inverso do <strong>$pushAll</strong>, retira todos os valores passado por um array.
 {% highlight javascript %}
-> var attacks = [ 
+> var attacks = [
                "choque do trovão",
                "ataque rapido"
                 ]
@@ -239,7 +236,7 @@ Nos documentos também temos arrays, e se agora queremos também trabalhar com e
 
 ### Parâmetro OPTIONS do UPDATE
 
-Lembra daquele último parâmetro que falei que não era obrigatório ? 
+Lembra daquele último parâmetro que falei que não era obrigatório ?
 {% highlight javascript %}
 > db.colecao.update(query, modificador, options);
 
@@ -286,7 +283,7 @@ WriteResult({
   "nMatched": 0, //não encontrou
   "nUpserted": 1 //porém fez um upsert
   "nModified": 0,
-  "_id": ObjectId("567df96b8c9d5a59c75d1501") 
+  "_id": ObjectId("567df96b8c9d5a59c75d1501")
   //objeto que foi inserido
 })
 {% endhighlight %}
@@ -312,13 +309,13 @@ Percebeu que ele criou um novo documento ? =) <br>
 Vamos fazer um exemplo que seta os valores comuns para nosso objeto caso ele não seja encontrado no nosso update.
 {% highlight javascript %}
 > var query= {name : 'naoexiste'}
-> var mod  = {$push: 
+> var mod  = {$push:
                 {moves: 'campo de água'},
                 $setOnInsert:{
                  attack: null,
                  defense: null,
-                 height: null, 
-                 description: "Sem informações" 
+                 height: null,
+                 description: "Sem informações"
                 }
              }
 > var options = {upsert: true}
@@ -376,7 +373,7 @@ Agora se você for verificar, vai ver que todos os documentos estão com uma act
 Ele descreve a garantia de que o MongoDB fornece ao relatar o sucesso de uma operação de escrita. Se você quer isso rápido, ele pode ter uma preocupação fraca, cajo queira uma preocupação forte, ele retorna mais demorado. Porém com a preocupação mais fraca, pode ocorrer de não persistir os dados, e não vai saber sobre aquele erro que pode ter acontecido após alguma coisa, agora com a preocupação mais demorada, ele espera o MongoDB confirmar a alteração de escrita pra você, então a garantia é maior.
 Mais sobre o assunto: <a href="https://docs.mongodb.org/v3.0/reference/write-concern/">Clique aqui</a>
 
-## Buscas em arrays ? 
+## Buscas em arrays ?
 
 Agora vamos aprimorar nossas buscas, aprendendo fazer buscas em arrays, mas para isso vamos inserir arrays em todos os nossos objetos. (Opa em todos ? Já sabemos fazer isso.)
 
@@ -453,9 +450,9 @@ Vai retornar todos os objetos que não tem no seu array moves o valor 'folha nav
 
 **$all**: Ele é semelhante o **$and**, pois só vai retornar se todos os valores passado por parâmetro do array se forem encontrado no objeto.
 {% highlight javascript %}
-> var query = {moves: {$all: 
+> var query = {moves: {$all:
                             [
-                            'folha navalha', 
+                            'folha navalha',
                             'investida'
                             ]
                        }
@@ -474,7 +471,7 @@ Vai retornar todos os objetos que não tem no seu array moves o valor 'folha nav
 
 {% endhighlight %}
 
-E então vai retornar os diversos objetos que não tem o tipo grama. Bem simples. =) 
+E então vai retornar os diversos objetos que não tem o tipo grama. Bem simples. =)
 <blockquote class="trivia">
 <p><strong class="cabecalho">Info 4</strong>
 <span class="err-s">Cuidado</span> ele não aceita <strong>REGEX</strong>. Você não pode passar uma regex usando esse operador, ocorrerá em um erro.
@@ -514,6 +511,6 @@ Se você der um remove sem nada na query, ele apagará tudo. =(<br>
 
 ## Concluindo
 
-E é isso, agora se divirta treinando modificando seus dados usando todos os operadores, tenta criar atualizações de vários dados simultâneos com javascript, abuse dos laços de repetições e condições, até a próxima, bye! 
+E é isso, agora se divirta treinando modificando seus dados usando todos os operadores, tenta criar atualizações de vários dados simultâneos com javascript, abuse dos laços de repetições e condições, até a próxima, bye!
 
 <img src="{{ "/assets/img/mongodb123/bye.gif"}}">

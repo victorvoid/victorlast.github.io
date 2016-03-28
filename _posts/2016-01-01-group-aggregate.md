@@ -1,26 +1,23 @@
 ---
 layout: post
-title:  "Aggregate e Groups no MongoDB #5"
-date:   2016-01-01 00:14:31 -0400
+title:  "Como fazer Aggregate e Groups no MongoDB"
+date:   2016-01-01 00:15:31
 tags: mongobemean
-image: '/assets/img/mongodb-post.png'
-categories:
-- Aprendendo o MongoDB
-subtitle: Conceitos vistos na aula 05 no bemean, descobrindo a quantidade de elementos, limitando, ordenando e distinguindo valores de uma collection, agrupando...
 ---
+Descobrindo a quantidade de elementos, limitando, ordenando e distinguindo valores de uma collection, agrupando.
 
-# MongoDB - Aggregate e Groups
+## MongoDB - Aggregate e Groups
 
-LOL Vamos continuar essa série pra ficar mais <del>hard core agora</del> legal com esses operadores. 
+LOL Vamos continuar essa série pra ficar mais <del>hard core agora</del> legal com esses operadores.
 
-<img src="{{ "/assets/img/group-aggregate/hc.gif"}}">
+<img src="{{ "/images/group-aggregate/hc.gif"}}">
 
 
 Antes de fatos aprendermos sobre Agreggate e Groups, vamos ver alguns tópicos importantes.
 Para seguir os primeiros exemplos vamos usar a collection <span class="nc-s">restaurantes</span>
-use o [restaurantes.json](https://raw.githubusercontent.com/Webschool-io/be-mean-instagram/master/Apostila/module-mongodb/src/data/restaurantes.json) para importar.【ツ】<br> 
+use o [restaurantes.json](https://raw.githubusercontent.com/Webschool-io/be-mean-instagram/master/Apostila/module-mongodb/src/data/restaurantes.json) para importar.【ツ】<br>
 
-## Como saber a quantidade de documentos que eu tenho? 
+## Como saber a quantidade de documentos que eu tenho?
 
 Podemos usar a função length:
 {% highlight javascript %}
@@ -31,7 +28,7 @@ Podemos usar a função length:
 Porém dessa forma o resultado é 'lento', para isso temos uma função própria que é muito mais rápida que o <span class="nf-s">length( )</span>
 {% highlight javascript %}
  > db.restaurantes.count()
- 
+
 {% endhighlight %}
 
 Resultado:
@@ -128,14 +125,14 @@ Ora se ele retorna um array, e usamos JavaScript, podemos usar um <span class="n
 
 {% endhighlight %}
 
-Resultado: 
+Resultado:
 
 {% highlight javascript %}
 > 6
 
 {% endhighlight %}
 
-## Tem como trazer o resultado ordenado ? 
+## Tem como trazer o resultado ordenado ?
 
 Quem ae já estudou os algoritmos de ordenação, <del>sabe que dá muita raiva</del> sabe que existe vários algoritmos de ordenação e com vários casos cada um. Poxa e agora ? <del>se lascou, vai ter que implementar uma função para isso</del>
 HEYY!!! Lembre, se estamos usando JavaScript, podemos usar a função <span class="nf-s">sort( )</span> para isso! e para os curiosos, ele usa o algorimo MergeSort, veja o código [aqui](http://mxr.mozilla.org/seamonkey/source/js/src/jsarray.c).
@@ -237,9 +234,9 @@ Resultado:
   "dragon"
 ]
 {% endhighlight %}
- 
-## Agrupamento 
-<img src="{{ "/assets/img/group-aggregate/elements-2.png"}}">
+
+## Agrupamento
+<img src="{{ "/images/group-aggregate/elements-2.png"}}">
 
 Podemos agrupar cada tipo de pokemons e poder mandar contar quantos pokemons tem aquele valor por exemplo, tudo isso usando a função <span class="nf-s">group( )</span>.
 
@@ -377,19 +374,19 @@ Usamos o <span class="kd-s">finalize</span> para sabermos a média de <span clas
 ## Aggregate
 Temos 3 abordagens para agregações, cada uma com sua característica e propósitos para cada situação, veremos a <em>aggregation pipeline.</em>
 
-#### Aggregation Pipeline ? 
-<img src="{{ "/assets/img/group-aggregate/dog-mordida.gif"}}">
+#### Aggregation Pipeline ?
+<img src="{{ "/images/group-aggregate/dog-mordida.gif"}}">
 
 Ele é basicamente um framework para executar uma série de transformações de dados em um documento. Existe 10 tipos de transformações que podem ser utilizados.
 
 1. [$geoNear](https://docs.mongodb.org/v3.0/reference/operator/aggregation/geoNear/)
-2. [$match](https://docs.mongodb.org/v3.0/reference/operator/aggregation/match/) 
+2. [$match](https://docs.mongodb.org/v3.0/reference/operator/aggregation/match/)
 3. [$project](https://docs.mongodb.org/v3.0/reference/operator/aggregation/project/)
-4. [$redact](https://docs.mongodb.org/manual/reference/operator/aggregation/redact/) 
+4. [$redact](https://docs.mongodb.org/manual/reference/operator/aggregation/redact/)
 5. [$unwind](https://docs.mongodb.org/v3.0/reference/operator/aggregation/unwind/)
-6. [$group](https://docs.mongodb.org/manual/reference/operator/aggregation/group/) 
+6. [$group](https://docs.mongodb.org/manual/reference/operator/aggregation/group/)
 7. [$limit](https://docs.mongodb.org/manual/reference/operator/aggregation/limit/)
-8. [$skip](https://docs.mongodb.org/v3.0/reference/operator/aggregation/skip/) 
+8. [$skip](https://docs.mongodb.org/v3.0/reference/operator/aggregation/skip/)
 9. [$sort](https://docs.mongodb.org/manual/reference/operator/aggregation/sort/)
 10. [$out](https://docs.mongodb.org/v3.0/reference/operator/aggregation/out/)
 
@@ -417,7 +414,7 @@ Resultado:
   "result": [
     {
       "_id": {
-        
+
       },
       "media_defense": 71.55322580645161,
       "media_atack": 75.84193548387097,
@@ -471,7 +468,7 @@ Resultado:
   "result": [
     {
       "_id": {
-        
+
       },
       "media_defense": 67.20754716981132,
       "media_atack": 78.88679245283019,
@@ -483,12 +480,12 @@ Resultado:
   "ok": 1
 }
 {% endhighlight %}
- 
+
 <strong>Group</strong> e <strong>Aggregate</strong> são conceitos muitos importantes e usados. Na [documentação](https://docs.mongodb.org/manual/) você pode encontrar mais exemplos.
 
 ## Concluindo
 
-Aproveite para ler: 
+Aproveite para ler:
 
 <a href="https://docs.mongodb.org/master/MongoDB-aggregation-guide-master.pdf">MongoDB Aggregation and Data Processing</a>
 
@@ -496,4 +493,4 @@ Aproveite para ler:
 
 E é isso, pratique e pratique, até a próxima.
 
-<img src="{{ "/assets/img/mongodb123/bye.gif"}}">
+<img src="{{ "/images/mongodb123/bye.gif"}}">
