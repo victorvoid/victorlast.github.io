@@ -5,8 +5,8 @@
     <description>Gosta de JavaScript ? Sim ? Então já podemos ser amigos.</description>
     <link>http://victorvoid///</link>
     <atom:link href="http://victorvoid///feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 28 Mar 2016 02:04:57 -0400</pubDate>
-    <lastBuildDate>Mon, 28 Mar 2016 02:04:57 -0400</lastBuildDate>
+    <pubDate>Wed, 30 Mar 2016 00:10:50 -0400</pubDate>
+    <lastBuildDate>Wed, 30 Mar 2016 00:10:50 -0400</lastBuildDate>
     <generator>Jekyll v3.0.2</generator>
     
       <item>
@@ -20,7 +20,7 @@ Não pera, eu não vou falar sobre carnaval aqui lol, sim, como o título diz, �
 
 &lt;h1 id=&quot;sharding--pra-qu-&quot;&gt;Sharding ? Pra quê ?&lt;/h1&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/o-que-e-meanstack/o-que-e-meanstack.jpg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/sharding-gerenciamento-usuarios/servers.gif&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;O sharding é aquele processo de armazenar os dados em várias máquinas. Tá, mas pra quê isso ? Simples, lembra que o mongodb joga os dados da collection para a memória RAM, por isso ele é extremamente rápido, porém se os dados dessa collection forem maior que sua RAM, ele vai precisar fazer paginação, e claro isso afeta o desempenho, CONTUDO, entretanto, porém, todaviaaaa o sharding está ae pra resolver.&lt;/p&gt;
 
@@ -1760,7 +1760,7 @@ completo com uma linguagem apenas ?&lt;/p&gt;
       </item>
     
       <item>
-        <title>Hoisting e o tal do Closure</title>
+        <title>Closure e o tal do Hoisting</title>
         <description>&lt;p&gt;Closure ? Hoisting ? Instanciação usando uma IIFE? WTF ?&lt;/p&gt;
 
 &lt;h2 id=&quot;hoisting&quot;&gt;Hoisting&lt;/h2&gt;

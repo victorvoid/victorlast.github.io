@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Garbage Collector no JavaScript"
+image: '/images/garbage-collector/simpson-lixeira.jpg'
 date:   2016-01-02 00:07:31
 tags: [javascript]
 description: Coletor de lixo ? preciso me preocupar com isso ? como funciona ?

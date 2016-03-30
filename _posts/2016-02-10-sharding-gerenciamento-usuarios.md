@@ -1,9 +1,10 @@
 ---
 layout: post
-title:  "Aprenda de uma vez o que é Sharding no MongoDB"
+title:  "Aprenda de uma vez o que é o Sharding no MongoDB"
+image: '/images/sharding-gerenciamento-usuarios/carrega-sozinho.jpg'
 date:   2016-02-10 00:06:31
 tags: mongodb
-description: Sharding, o porquê do uso dele e como gerenciar usuários.
+description: Sharding, o porquê de usá-lo e como gerenciar usuários.
 ---
 Sharding, o porquê do uso dele e como gerenciar usuários.
 
@@ -14,7 +15,7 @@ Então vamos logo entender que diabos é esse **sharding**.
 
 # Sharding ? Pra quê ?
 
-<img src="{{ "/images/o-que-e-meanstack/o-que-e-meanstack.jpg"}}">
+<img src="{{ "/images/sharding-gerenciamento-usuarios/servers.gif"}}">
 
 O sharding é aquele processo de armazenar os dados em várias máquinas. Tá, mas pra quê isso ? Simples, lembra que o mongodb joga os dados da collection para a memória RAM, por isso ele é extremamente rápido, porém se os dados dessa collection forem maior que sua RAM, ele vai precisar fazer paginação, e claro isso afeta o desempenho, CONTUDO, entretanto, porém, todaviaaaa o sharding está ae pra resolver.
 

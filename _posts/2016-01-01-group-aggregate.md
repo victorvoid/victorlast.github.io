@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Como fazer Aggregate e Groups no MongoDB"
+image: '/images/group-aggregate/elements-2.png'
 date:   2016-01-01 00:15:31
 tags: mongobemean
 description: O group tem no total 6 propriedades que podemos utilizar e fazer a festa com eles, aliás usar aggregate é só para os fortes.

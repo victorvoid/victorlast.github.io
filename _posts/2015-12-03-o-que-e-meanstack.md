@@ -1,6 +1,6 @@
 ---
 title:  "Full-Stack em JavaScript ?"
-image: '/assets/img/o-que-e-meanstack/o-que-e-meanstack.jpg'
+image: 'images/o-que-e-meanstack/o-que-e-meanstack.jpg'
 date:   2015-12-03 00:12:31
 tags: [javascript, mean]
 description: Criar grandes sistemas apenas com JavaScript ? Sério ?

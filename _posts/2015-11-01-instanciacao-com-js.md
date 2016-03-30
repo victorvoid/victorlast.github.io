@@ -1,9 +1,10 @@
 ---
 layout: post
-title:  "Hoisting e o tal do Closure"
+title:  "Closure e o tal do Hoisting"
 date:   2015-11-25 00:07:31
 tags: [javascript]
 description: Closure ? Hoisting ? Instanciação usando uma IIFE? WTF ?
+image: '/images/outros/question.jpg'
 ---
 Closure ? Hoisting ? Instanciação usando uma IIFE? WTF ?
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Relacionamento no MongoDB ? Explain e Replicas ? WTF"
+image: '/images/outros/question.jpg'
 date:   2016-01-09 00:06:31
 tags: mongodb
 description: Tem como fazer relacionamentos sim! E se reclamar vai ter tabelas lol sqn.
