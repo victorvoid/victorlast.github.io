@@ -19,7 +19,7 @@ Nos banco relacionais é de fato o uso de <span class="">joins</span> pra relaci
 ## Relacionamento Manual
 
 Salve o **_id** de uma coleção em outra, por exemplo:
-1º vamos pegar 3 _id de pokemons da nossa collection <span class="nc-s">pokemons</span> que já havíamos trabalho (caso ainda não tenha a collection pokemons use o [pokemons.json](https://raw.githubusercontent.com/Webschool-io/be-mean-instagram/master/Apostila/module-mongodb/src/data/pokemons.json) para importar)
+1º vamos pegar 3 _id de pokemons da nossa collection <span class="nc-s">pokemons</span> que já havíamos trabalho (caso ainda não tenha a collection pokemons use o [pokemons.json](https://raw.githubusercontent.com/Webschool-io/MongoDb-ebook/6e4007d73d5b25b7218ef0b9c4f8eb700bb5f104/src/data/pokemons.json)
 {% highlight javascript %}
 > db.pokemons.find().limit(3)
 
