@@ -454,6 +454,5 @@ Dessa forma aprendemos vários conceitos, todos eles são importantes, e alguns 
 ## Bibliografia
 
 - [Mozilla - Closures](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures)
-- [W3School - Function Invocation](http://www.w3schools.com/js/js_function_invocation.asp)
 - [Eloquente - JavaScript](https://github.com/braziljs/eloquente-javascript)
 - [Learning Advanced JS](http://ejohn.org/apps/learn/)
