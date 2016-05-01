@@ -6,12 +6,7 @@ date:   2016-02-10 00:06:31
 tags: mongodb
 description: Sharding, o porquê de usá-lo e como gerenciar usuários.
 ---
-Sharding, o porquê do uso dele e como gerenciar usuários.
-
-Eita que demorei um pouco pra postar. =( Acabei me atrasando com algumas coisas, mas então vamos lá, aliás está em época de carnaval. <del>Que mostra claramente o que o brasileiro é, mesmo o país na pior, sempre sorrindo.</del> :D  <br>
-Não pera, eu não vou falar sobre carnaval aqui lol, sim, como o título diz, é mongoDB, uma coisa muito mais divertida, não é ?
-
-Então vamos logo entender que diabos é esse **sharding**.
+Sharding, o porquê do uso dele e como gerenciar seus usuários.
 
 # Sharding ? Pra quê ?
 
