@@ -1,32 +1,31 @@
 ---
 layout: post
-title:  "Aprenda de uma vez o que é o Sharding no MongoDB"
+title:  "Sharding no MongoDB"
 image: '/images/sharding-gerenciamento-usuarios/carrega-sozinho.jpg'
 date:   2016-02-10 00:06:31
 tags: mongodb
 description: Sharding, o porquê de usá-lo e como gerenciar usuários.
 ---
-Sharding, o porquê do uso dele e como gerenciar seus usuários.
 
-# Sharding ? Pra quê ?
+<p class="music-read"><a href="spotify:track:4DAZ8UYNpWVIV46aLkN2Qp">Musiquinha para leitura(spotify)</a></p>
 
-<img src="{{ "/images/sharding-gerenciamento-usuarios/servers.gif"}}">
+<img src="{{ "/assets/img/sharding-gerenciamento-usuarios/servers.gif"}}">
 
-O sharding é aquele processo de armazenar os dados em várias máquinas. Tá, mas pra quê isso ? Simples, lembra que o mongodb joga os dados da collection para a memória RAM, por isso ele é extremamente rápido, porém se os dados dessa collection forem maior que sua RAM, ele vai precisar fazer paginação, e claro isso afeta o desempenho, CONTUDO, entretanto, porém, todaviaaaa o sharding está ae pra resolver.
+## Sharding ? Pra quê ?
 
-<img src="{{ "/images/sharding-gerenciamento-usuarios/happy-scooby.gif"}}" alt="">
+O sharding é aquele processo de armazenar os dados em várias máquinas. Tá, mas pra quê isso ? Simples, lembra que o mongodb joga os dados da collection para a memória RAM, por isso ele é extremamente rápido, porém se os dados dessa collection forem maior que sua RAM, ele vai precisar fazer paginação, e claro isso afeta o desempenho, CONTUDO, entretanto, porém, todavia o sharding está ae pra resolver.
 
 Com ele você joga os dados pra outras máquinas, assim o desempenho não é afetado porque outras máquinas estão ali pra ajudar, é como se fosse os amigo ajudando outro amigo a carregar os sacos de areia.
 
 <figure class="foto-legenda">
-	<img src="{{ "/images/sharding-gerenciamento-usuarios/ajudando-carregar.jpg"}}" alt="">
+	<img src="{{ "/assets/img/sharding-gerenciamento-usuarios/ajudando-carregar.jpg"}}" alt="">
 	<figcaption> <p>Os voluntários formam uma corrente humana, pois ajudam carregar sacos de areia. Terça-feira, 29 de dezembro de 2015</p>
 	</figcaption>
 </figure>
 
 E por esse motivo ele é escalável horizontalmente, diferente de alguns outros bancos que possui escabilidade vertical, e no lugar de ter outro amiguinho ajudando com o peso, o rapaz tenta carregar tudo sozinho, porém com mais força, e pra isso, precisa de mais memória e força de processamento no mesmo servidor.
 
-<img src="{{ "/images/sharding-gerenciamento-usuarios/carrega-sozinho.jpg"}}" alt="">
+<img src="{{ "/assets/img/sharding-gerenciamento-usuarios/carrega-sozinho.jpg"}}" alt="">
 
 ## Quando eu posso usar sharding ?
 
@@ -120,12 +119,4 @@ db.auth("bonitao","2016bonitao")
 
 LOOOL Agora você sabe o que é sharding, como usar e como gerenciar usuários!!!
 
-<img src="{{ "/images/sharding-gerenciamento-usuarios/daca-animada.gif"}}" alt="">
-
-## Concluindo
-
-Pro último post dessa série ficar legal, vou trazer uma modelagem e quem sabe um projeto, pra praticar todos esses conhecimentos adquiridos até aqui. =)
-
-Então é isso, beijoca e até a próxima.
-
-<img src="{{ "/images/mongodb123/bye.gif"}}">
+<img src="{{ "/assets/img/sharding-gerenciamento-usuarios/daca-animada.gif"}}" alt="">

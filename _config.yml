@@ -1,32 +1,23 @@
 # Site settings
-title: Victor Igor
-description: 'Gosta de JavaScript ? Sim ? Então já podemos ser amigos.'
-url: 'http://victorvoid/'
-baseurl: '/'
-# google_analytics: 'UA-XXXXXX-X'
-disqus_shortname: victorvoid
+title: Victor Igor - Desenvolvedor Web
+description: "Um blog sobre desenvolvimento web"
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "http://victorvoid/"
 
-author:
-  name: 'Victor Igor'
-  email: victor.0w3@hotmail.com
-  twitter_username: victorvoid_
-  facebook_username: victorcalangu
-  github_username:  victorvoid
-
-defaults:
-  -
-    scope:
-      path: ''
-      type: 'posts'
-    values:
-        layout: 'post'
+# User settings
+username: victor igor
+user_title: Victor Igor - FrontEnd
+email: victor.0w3@hotmail.com
+twitter_username: victorvoid_
+github_username:  victorvoid
+gplus_username:  victor0w3
+disqus_username: victorvoid
 
 # Build settings
-destination: _site
-paginate: 10
-permalink: /:title/
 markdown: kramdown
 highlighter: rouge
+permalink: /:title/
+
 
 # html minify
 compress_html:
@@ -35,11 +26,26 @@ compress_html:
   endings: []
   profile: false
 
-kramdown:
-  # use Github Flavored Markdown
-  input: GFM
-  # do not replace newlines by <br>s
-  hard_wrap: false
-
-gems: ['jekyll-paginate']
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
+# Links to include in menu navigation
+# For external links add external: true
+links:
+  - title: home
+    url: /
+  - title: meus posts
+    url: /posts
+  - title: series
+    url: /series
+  - title: tags
+    url: /tags
+  - title: sobre mim
+    url: /about
+# projects in header index
+projects:
+  - name: asciilang
+    url: https://github.com/victorvoid/asciilang
+  - name: vim-frontend
+    url: https://github.com/victorvoid/vim-frontend
+  - name: generator-capybara
+    url: https://github.com/victorvoid/generator-capybara 
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']

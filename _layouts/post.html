@@ -1,17 +1,23 @@
----
-layout: default
----
-<article class="post-container post-container--single">
-  <header class="post-header">
-    <div class="post-meta">
-      <time datetime="{{ page.date | date: "%-d %b %Y" }}" class="post-meta__date date">{{ page.date | date: "%-d %b %Y" }}</time> &#8226; <span class="post-meta__tags">on {% for tag in page.tags %}<a href="{{ site.baseurl }}tags/#{{ tag }}">{{ tag }}</a> {% endfor %}</span>
-    </div>
-    <h1 class="post-title">{{ page.title }}</h1>
-  </header>
+<!DOCTYPE html>
+<html lang="pt-br">
+    {% include head.html %}
+    <body>
+        {% include svg-icons.html %}
+        {% include header-post.html %}
+        <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            {% if page.date %}
+                <div class="time"><time itemprop="datePublished" datetime="{{ page.date }}">{{ page.date | date_to_string }}</time></div>
+            {% endif %}
+            <h1 class="post-title" itemprop="name">{{ page.title }}</h1>
 
-  <section class="post">
-    {{ content }}
-  </section>
-  {% if page.comments != false and site.disqus_shortname %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %}
-</article>
-{% if page.comments != false %}{% include disqus.html %}{% endif %}
+            <article role="article" id="scroll" class="post-content" itemprop="articleBody">
+                {{ content }}
+            </article>
+
+            {% include share.html %}
+            {% include comments.html %}
+            {% include footer.html %}
+            {% include scripts.html %}
+        </section>
+    </body>
+</html>

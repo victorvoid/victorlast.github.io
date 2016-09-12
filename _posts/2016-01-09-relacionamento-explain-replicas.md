@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Relacionamento no MongoDB ? Explain e Replicas ? WTF"
+title:  "Relacionamento no MongoDB ? WTF"
 image: '/images/outros/question.jpg'
 date:   2016-01-09 00:06:31
 tags: mongodb
@@ -10,7 +10,7 @@ description: Tem como fazer relacionamentos sim! E se reclamar vai ter tabelas l
 
 ## Relacionamento ?
 
-<img src="{{ "/images/relacionamento-explain-replicas/relacao-gato.gif"}}">
+<img src="{{ "/assets/img/relacionamento-explain-replicas/relacao-gato.gif"}}">
 
 Não! Não é esse tipo de relacionamento, e sim de banco de dados. =(
 
@@ -280,7 +280,7 @@ Aprenda na prática com:
 É basicamente um espalhamento dos seus dados em outro servidor, e no MongoDb uma **ReplicaSet** pode ter 50 replicas. <del>oloco :0</del>
 
 **Diagrama:**
-<img src="{{ "/images/relacionamento-explain-replicas/replica-set-read-write-operations-primary.png"}}">
+<img src="{{ "/assets/img/relacionamento-explain-replicas/replica-set-read-write-operations-primary.png"}}">
 
 As 2 estapas que ocorrem na replicação são:
 
@@ -356,15 +356,6 @@ E claro não deixe de ler: <br>
 <a href="https://docs.mongodb.org/manual/applications/data-models-relationships/">Model Relationships Between Documents</a>
 
 E é isso, até a próxima, bye! =)
-
-<img src="{{ "/images/mongodb123/bye.gif"}}">
-
-
-
-
-
-
-
 
 
 

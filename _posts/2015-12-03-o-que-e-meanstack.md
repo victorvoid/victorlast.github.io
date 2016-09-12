@@ -11,7 +11,7 @@ Criar grandes sistemas apenas com JavaScript ? Sério ?
 
 Acooooooooorda!!!!!!! :o
 
-<img src="{{ "/images/o-que-e-meanstack/dog-assustado.gif"}}">
+<img src="{{ "/assets/img/o-que-e-meanstack/dog-assustado.gif"}}">
 
 Pesquisando rapidinho sobre 'MEAN full stack' no google você encontra que é uma abreviação de 4 tecnologias, e que todas elas usam JavaScript. LOL
 
