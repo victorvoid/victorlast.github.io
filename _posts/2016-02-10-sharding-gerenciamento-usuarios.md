@@ -4,6 +4,8 @@ title:  "Sharding no MongoDB"
 image: '/images/sharding-gerenciamento-usuarios/carrega-sozinho.jpg'
 date:   2016-02-10 00:06:31
 tags: mongodb
+categories: 
+- Introdução ao mongodb
 description: Sharding, o porquê de usá-lo e como gerenciar usuários.
 ---
 

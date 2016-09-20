@@ -3,6 +3,8 @@ layout: post
 title:  "Como atualizar e remover no MongoDB ?"
 image: '/images/outros/question.jpg'
 date:   2015-12-26 00:06:31
+categories: 
+- Introdução ao mongodb
 tags: mongodb
 description: Atualizando e removendo objetos, operadores de array, operadores de buscas em arrays e operadores de negação.
 ---
