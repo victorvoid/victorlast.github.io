@@ -2,7 +2,7 @@
 title: Victor Igor - Desenvolvedor Web
 description: "Um blog sobre desenvolvimento web"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" #http://localhost:3000
+url: "http://victorvoid.github.io" #http://localhost:3000
 
 # User settings
 username: victor igor
