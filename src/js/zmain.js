@@ -13,7 +13,7 @@
     $("#search").show();
     $("#close").hide();
   });
-  console.log('fff');
+  // console.log('fff');
   //Remove space scroll
   window.onkeydown = function(e) {
     if(e.keyCode == 32 && e.target == document.body) {
@@ -23,12 +23,11 @@
   };
   //Keys
   $(document).keydown(function(e){
-    console.log(e.code);
+    // console.log(e.code);
     if(! $('.search-form').hasClass('active')){
       switch(e.code) {
         case "Space":
           $('a#slide').trigger('click');
-          $('')
           break;
         case "Escape":
           $('#fade').trigger('click');
@@ -72,7 +71,7 @@
           break;
       }
     }
-  })
+  });
   // Search
   var bs = {
     close: $(".icon-remove-sign"),

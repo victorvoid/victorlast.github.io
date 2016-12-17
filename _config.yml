@@ -2,7 +2,7 @@
 title: Victor Igor - Desenvolvedor Web
 description: "Um blog sobre desenvolvimento web"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://victorvoid.github.io" #http://localhost:3000
+url: "" #http://localhost:3000
 
 # User settings
 username: victor igor
@@ -41,8 +41,8 @@ links:
     url: /about
 # projects in header index
 projects:
-  - name: asciilang
-    url: https://github.com/victorvoid/asciilang
+  - name: fluany
+    url: https://github.com/fluany
   - name: vim-frontend
     url: https://github.com/victorvoid/vim-frontend
   - name: generator-capybara
