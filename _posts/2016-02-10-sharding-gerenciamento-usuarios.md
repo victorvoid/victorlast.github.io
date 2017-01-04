@@ -11,7 +11,7 @@ description: Sharding, o porquê de usá-lo e como gerenciar usuários.
 
 <p class="music-read"><a href="spotify:track:4DAZ8UYNpWVIV46aLkN2Qp">Musiquinha para leitura(spotify)</a></p>
 
-<img src="{{ "/assets/img/sharding-gerenciamento-usuarios/servers.gif"}}">
+<img src="{{ "/assets/img/sharding-gerenciamento-usuarios/servers.gif"}}" alt="Jogador de futebol americano quebrando um servidor com o capacete">
 
 ## Sharding ? Pra quê ?
 
@@ -20,14 +20,14 @@ O sharding é aquele processo de armazenar os dados em várias máquinas. Tá, m
 Com ele você joga os dados pra outras máquinas, assim o desempenho não é afetado porque outras máquinas estão ali pra ajudar, é como se fosse os amigo ajudando outro amigo a carregar os sacos de areia.
 
 <figure class="foto-legenda">
-	<img src="{{ "/assets/img/sharding-gerenciamento-usuarios/ajudando-carregar.jpg"}}" alt="">
+	<img src="{{ "/assets/img/sharding-gerenciamento-usuarios/ajudando-carregar.jpg"}}" alt="Grupo de pessoas ajudando a colocar sacos cheios dentro do caminhão">
 	<figcaption> <p>Os voluntários formam uma corrente humana, pois ajudam carregar sacos de areia. Terça-feira, 29 de dezembro de 2015</p>
 	</figcaption>
 </figure>
 
 E por esse motivo ele é escalável horizontalmente, diferente de alguns outros bancos que possui escabilidade vertical, e no lugar de ter outro amiguinho ajudando com o peso, o rapaz tenta carregar tudo sozinho, porém com mais força, e pra isso, precisa de mais memória e força de processamento no mesmo servidor.
 
-<img src="{{ "/assets/img/sharding-gerenciamento-usuarios/carrega-sozinho.jpg"}}" alt="">
+<img src="{{ "/assets/img/sharding-gerenciamento-usuarios/carrega-sozinho.jpg"}}" alt="Um homem em uma bicicleta se esforçando demais levando uma pilha de sacos sozinho">
 
 ## Quando eu posso usar sharding ?
 
@@ -119,6 +119,4 @@ mongo --port 27017 -u "bonitao" -p "2016bonitao" -- authenticationDatabase "admi
 db.auth("bonitao","2016bonitao")
 {% endhighlight %}
 
-LOOOL Agora você sabe o que é sharding, como usar e como gerenciar usuários!!!
-
-<img src="{{ "/assets/img/sharding-gerenciamento-usuarios/daca-animada.gif"}}" alt="">
+LOL Agora você sabe o que é sharding, como usar e como gerenciar usuários!!!

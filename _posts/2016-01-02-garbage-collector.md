@@ -21,7 +21,7 @@ Na linguagem **C** por exemplo, por termos muitos usos de ponteiros e alocação
 
 ## Como funciona o Garbage Collector no JavaScript ?
 
-<img src="{{ "/assets/img/garbage-collector/simpson-lixeira.jpg"}}">
+<img src="{{ "/assets/img/garbage-collector/simpson-lixeira.jpg"}}" alt="Homer Simpson como lixeiro">
 
 Nós temos muita sorte de não precisar fazer o gerenciamento de memória manualmente como na **linguagem C**. O JavaScript possui o seu coletor de lixo, e não importa o que está alocado na memória, pode ser de strings, objetos ou arrays. Ele tem uma magia tão boa que consegue determinar quando é seguro recuperar aquela memória ou não, percebendo sempre quando o espaço está sendo inutilizável.
 
@@ -50,7 +50,7 @@ latido = null;
 
 ## Devo me preocupar com ele ?
 
-<img src="{{ "/assets/img/garbage-collector/simpson-game.gif"}}">
+<img src="{{ "/assets/img/garbage-collector/simpson-game.gif"}}" alt="Homer Simpson jogando fiperama e comendo pizza ao mesmo tempo">
 
 Claro, aliás ele é um dos maiores obstáculos para quem cria games com **HTML5** por exemplo, pois um bom game precisa ter uma boa perfomace para o jogador ter uma ótima experiência, porém os objetos nos jogos são criados de forma gradual, e se seu código cria muitos lixos, você vai ter problemas com isso. Por exemplo, um jogo que roda 60ps tem 16ms para redenrizar cada quadro e a coleta pode ser feita em 100ms ou mais, causando em uma pausa. Tem muitos motores de jogos como o [Construct 2](https://www.scirra.com/construct2) que faz com o uso de JavaScript, e tenta minimizar esse problema, e não chega a ser perceptível.
 
@@ -59,7 +59,7 @@ Claro, aliás ele é um dos maiores obstáculos para quem cria games com **HTML5
 <img src="https://d3ansictanv2wj.cloudfront.net/fig_1_gc_metrics-8fc33de8fa2c8186f2c0be2e1e1d4334.png" alt="" class="img-responsive">
 
 Sempre é ótimo saber o que realmente acontece por baixo dos panos não é ? Princípios da computação são muitos importantes, porém
-cheio de mágicas haha. ٩(●̮̮̃•̃)۶
+cheio de mágicas. ٩(●̮̮̃•̃)۶
 
 ## Bibliografia
 

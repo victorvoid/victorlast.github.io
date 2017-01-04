@@ -12,7 +12,7 @@ description: Tem como fazer relacionamentos sim! E se reclamar vai ter tabelas l
 
 ## Relacionamento ?
 
-<img src="{{ "/assets/img/relacionamento-explain-replicas/relacao-gato.gif"}}">
+<img src="{{ "/assets/img/relacionamento-explain-replicas/relacao-gato.gif"}}" alt="Um gato massageando outro gato">
 
 Não! Não é esse tipo de relacionamento, e sim de banco de dados. =(
 
@@ -282,7 +282,7 @@ Aprenda na prática com:
 É basicamente um espalhamento dos seus dados em outro servidor, e no MongoDb uma **ReplicaSet** pode ter 50 replicas. <del>oloco :0</del>
 
 **Diagrama:**
-<img src="{{ "/assets/img/relacionamento-explain-replicas/replica-set-read-write-operations-primary.png"}}">
+<img src="{{ "/assets/img/relacionamento-explain-replicas/replica-set-read-write-operations-primary.png"}}" alt="Diagrama das 2 etapas que ocorrem na replicação">
 
 As 2 estapas que ocorrem na replicação são:
 
@@ -356,11 +356,6 @@ E claro não deixe de ler: <br>
 <a href="http://nomadev.com.br/mongodb-como-mudar-seu-jeito-relacional-de-pensar-parte-2/" target="_blank">Como mudar seu jeito relacional de pensar - Parte 2</a>
 
 <a href="https://docs.mongodb.org/manual/applications/data-models-relationships/">Model Relationships Between Documents</a>
-
-E é isso, até a próxima, bye! =)
-
-
-
 
 
 

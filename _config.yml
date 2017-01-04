@@ -6,8 +6,10 @@ url: "http://victorvoid.github.io" #http://localhost:3000
 
 # User settings
 username: victor igor
-user_title: Victor Igor - FrontEnd
+user_title: Victor Igor - Desenvolvedor FrontEnd
 email: victor.0w3@hotmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Um blog pessoal que compartilha conhecimentos sobre Desenvolvimento web com foco em JavaScript.
 twitter_username: victorvoid_
 github_username:  victorvoid
 gplus_username:  victorigor0w3

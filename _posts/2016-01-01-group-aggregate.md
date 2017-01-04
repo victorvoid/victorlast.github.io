@@ -14,7 +14,7 @@ Descobrindo a quantidade de elementos, limitando, ordenando e distinguindo valor
 
 LOL Vamos continuar essa série pra ficar mais <del>hard core agora</del> legal com esses operadores.
 
-<img src="{{ "/assets/img/group-aggregate/hc.gif"}}">
+<img src="{{ "/assets/img/group-aggregate/hc.gif"}}" alt="cachorro pegando vento forte no carro">
 
 
 Antes de fatos aprendermos sobre Agreggate e Groups, vamos ver alguns tópicos importantes.
@@ -240,7 +240,7 @@ Resultado:
 {% endhighlight %}
 
 ## Agrupamento
-<img src="{{ "/assets/img/group-aggregate/elements-2.png"}}">
+<img alt="Agrupamento de items" src="{{ "/assets/img/group-aggregate/elements-2.png"}}">
 
 Podemos agrupar cada tipo de pokemons e poder mandar contar quantos pokemons tem aquele valor por exemplo, tudo isso usando a função <span class="nf-s">group( )</span>.
 
@@ -379,7 +379,7 @@ Usamos o <span class="kd-s">finalize</span> para sabermos a média de <span clas
 Temos 3 abordagens para agregações, cada uma com sua característica e propósitos para cada situação, veremos a <em>aggregation pipeline.</em>
 
 #### Aggregation Pipeline ?
-<img src="{{ "/assets/img/group-aggregate/dog-mordida.gif"}}">
+<img alt="cachorro rosnando para outro cachorro" src="{{ "/assets/img/group-aggregate/dog-mordida.gif"}}">
 
 Ele é basicamente um framework para executar uma série de transformações de dados em um documento. Existe 10 tipos de transformações que podem ser utilizados.
 
@@ -494,5 +494,3 @@ Aproveite para ler:
 <a href="https://docs.mongodb.org/master/MongoDB-aggregation-guide-master.pdf">MongoDB Aggregation and Data Processing</a>
 
 <a href="http://www.amazon.com/MongoDB-Aggregation-Framework-Principles-Examples-ebook/dp/B00DGKGWE4/ref=pd_sim_351_9?ie=UTF8&dpID=41Tand%2B2p1L&dpSrc=sims&preST=_UX300_PJku-sticker-v3%2CTopRight%2C0%2C-44_AC_UL160_SR100%2C160_&refRID=082JMA3FA2NDBN7B7EXK" target="_blank">MongoDB Aggregation Framework Principles and Examples</a>
-
-E é isso, pratique e pratique, até a próxima.
