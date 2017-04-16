@@ -21,32 +21,32 @@
             <a title="Veja meus projetos open source" aria-label="Meu Github" target="_blank" href="https://github.com/{{site.github_username}}">
                 <svg class="icon icon-github-alt"><use xlink:href="#icon-github-alt"></use></svg>
             </a>
-            <a title="Use o RSS para receber atualizações" aria-label="Use o RSS para receber atualizações" target="_blank" href="{{ "/feed.xml" | prepend: site.baseurl }}">
-                <svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg>
-            </a>
         </div>
 
         <ul class="recent">
             <p>Posts recentes:</p>
-             {% for post in site.posts limit:3%}
             <li>
-                <a title="Leia um dos meus posts recentes" href="{{ post.url | prepend: site.baseurl }}">
-                    <h2 class="post-title" itemprop="name">{{ post.title }}</h2>
-                </a>
+                <a target="_blank" href="https://medium.com/@victorvoid/macros-no-javascript-cdabe63ba35c"><h2 className="post-title" itemprop="name">Macros no JavaScript</h2></a>
             </li>
-              {% endfor %}
+
+            <li>
+                <a target="_blank" href="https://medium.com/@victorvoid/6-tipos-de-polimorfismo-7787080e8857"><h2 className="post-title" itemprop="name">Conheça 6 tipos de polimorfismo</h2></a>
+            </li>
+
+            <li>
+                <a target="_blank" href="https://medium.com/@victorvoid/acessibilidade-na-web-n%C3%A3o-%C3%A9-uma-escolha-%C3%A9-um-dever-nosso-9806764e2420"><h2 className="post-title" itemprop="name">Acessibilidade na web não é uma escolha, é um dever nosso</h2></a>
+            </li>
         </ul>
 
         <ul class="recent">
             <p>Projetos recentes:</p>
              {% for project in site.projects limit:3%}
             <li>
-                <a title="Veja um dos meus projetos recentes" href="{{ project.url}}">
+                <a target="_blank" title="Veja um dos meus projetos recentes" href="{{ project.url}}">
                     <h2 class="post-title" itemprop="name">{{ project.name }}</h2>
                 </a>
             </li>
               {% endfor %}
         </ul>
     </div>
-    {% include menu-search.html %}
 </header>
