@@ -1,52 +1,20 @@
 <header class="header-site" role="banner">
-    <div class="content">
-        <div class="person">
-            <img alt="Foto do Victor Igor" src="/assets/img/blog-author.jpg">
-        </div>
+    <div class="container">
+        <a href="/" class="logo">victor<span class="logo-void">void</span></a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#articles">articles</a>
+                </li>
 
-        <h1>
-            <span class="site-title">[{{site.username}}]</span>
-        </h1>
+                <li>
+                    <a href="#projects">projects</a>
+                </li>
 
-        <div class="icons-home">
-            <a title="Envie e-mail para mim" aria-label="Send email" href="mailto:{{site.email}}">
-                <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg>
-            </a>
-            <a title="Vamos trocar uma ideia no Twitter" aria-label="Meu Twitter" target="_blank" href="https://twitter.com/{{site.twitter_username}}">
-                <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
-            </a>
-            <a title="Dê uma olha no meu Google+" aria-label="Meu Google+" target="_blank" href="https://plus.google.com/u/0/+{{site.gplus_username}}/posts">
-                <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
-            </a>
-            <a title="Veja meus projetos open source" aria-label="Meu Github" target="_blank" href="https://github.com/{{site.github_username}}">
-                <svg class="icon icon-github-alt"><use xlink:href="#icon-github-alt"></use></svg>
-            </a>
-        </div>
-
-        <ul class="recent">
-            <p>Posts recentes:</p>
-            <li>
-                <a target="_blank" href="https://medium.com/@victorvoid/macros-no-javascript-cdabe63ba35c"><h2 className="post-title" itemprop="name">Macros no JavaScript</h2></a>
-            </li>
-
-            <li>
-                <a target="_blank" href="https://medium.com/@victorvoid/6-tipos-de-polimorfismo-7787080e8857"><h2 className="post-title" itemprop="name">Conheça 6 tipos de polimorfismo</h2></a>
-            </li>
-
-            <li>
-                <a target="_blank" href="https://medium.com/@victorvoid/acessibilidade-na-web-n%C3%A3o-%C3%A9-uma-escolha-%C3%A9-um-dever-nosso-9806764e2420"><h2 className="post-title" itemprop="name">Acessibilidade na web não é uma escolha, é um dever nosso</h2></a>
-            </li>
-        </ul>
-
-        <ul class="recent">
-            <p>Projetos recentes:</p>
-             {% for project in site.projects limit:3%}
-            <li>
-                <a target="_blank" title="Veja um dos meus projetos recentes" href="{{ project.url}}">
-                    <h2 class="post-title" itemprop="name">{{ project.name }}</h2>
-                </a>
-            </li>
-              {% endfor %}
-        </ul>
+                <li>
+                    <a href="#talks">talks</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </header>
