@@ -1,5 +1,5 @@
 # Site settings
-title: Victor Igor - Desenvolvedor Web
+title: Victor Igor - Front-end Engineer
 description: "Um blog sobre desenvolvimento web"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://victorvoid.github.io" #http://localhost:3000
@@ -28,13 +28,16 @@ compress_html:
   endings: []
   profile: false
 
-# Links to include in menu navigation
-# For external links add external: true
-links:
-  - title: meus posts
-    url: https://medium.com/@victorvoid
-
-# projects in header index
+articles:
+  - name: Productivity in Learning with fluany
+    date: 2017/09/29
+    url: https://medium.com/@victorvoid/productivity-in-learning-with-fluany-fd808e1b6edc
+  - name: Macros no JavaScript
+    date: 2017/02/8
+    url: https://medium.com/@victorvoid/macros-no-javascript-cdabe63ba35c
+  - name: Conheça 6 tipos de polimorfismo
+    date: 2017/01/16
+    url: https://medium.com/@victorvoid/6-tipos-de-polimorfismo-7787080e8857
 projects:
   - name: fluany
     url: https://github.com/victorvoid/fluany

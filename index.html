@@ -1,3 +1,33 @@
 ---
 layout: default
 ---
+
+<article itemscope itemtype="http://schema.org/Person" class="content">
+    <div class="apresentation">
+        <p class="apresentation-name"> I'm <em itemprop="name">Victor Igor</em>, </p>
+        <p class="apresentation-description">
+            front-end engineer from Brazil who lives in São Paulo. Currently, I'm working as a Front-end Engineer at Red Ventures.
+            I'm working on fluany, and open source enthusiastic.
+        </p>
+    </div>
+</article>
+
+<section class="articles">
+    <div class="content">
+        <h2>recent articles</h2>
+        {% for article in site.articles limit:3%}
+            <article role="article"
+                    class="post-item"
+                    itemscope="itemscope"
+                    itemtype="http://schema.org/BlogPosting"
+                    itemprop="blogPost">
+                    <a href="{{article.url}}">
+                        <h3 class="post-title" itemprop="name"> {{article.name}} </h3>
+                        <meta itemprop="datePublished" content="2017-01-06 18:30:00 +0000">
+                        <time datetime="2017-01-06T18:30:00+00:00">{{article.date}}</time>
+                        <svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg>
+                    </a>
+            </article>
+        {% endfor %}
+    </div>
+</section>
