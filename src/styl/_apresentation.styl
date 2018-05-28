@@ -1,8 +1,9 @@
 .apresentation
-  margin 30px auto 214px auto
-  +above(cut)
-    margin 30px 0 214px auto
-    max-width 500px
+  &-panel
+    margin 30px auto 32px auto
+    +above(cut)
+      margin 30px 0 61px auto
+      max-width 500px
   &-name
     font-size 40px
     color #FFF
@@ -19,3 +20,14 @@
     font-size 24px
     margin 16px 0 0
     line-height 32px
+  .mouse-down
+    display flex
+    align-items center
+    cursor pointer
+    +above(cut)
+      margin-left 77px
+    label
+      color sec
+      font-size 14px
+      font-weight 300
+      margin-left 6px

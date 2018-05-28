@@ -2,24 +2,30 @@
 layout: default
 ---
 
-<article itemscope itemtype="http://schema.org/Person" class="container">
-    <div class="apresentation">
-        <p class="apresentation-name"> I'm <em itemprop="name">Victor Igor</em>, </p>
-        <p class="apresentation-description">
-            front-end engineer from Brazil who lives in São Paulo. Currently, I'm working as a Front-end Engineer at Red Ventures.
-            I'm working on fluany, and open source enthusiastic.
-        </p>
-    </div>
-</article>
+<div class="container">
+    <section class="apresentation">
+        <article itemscope itemtype="http://schema.org/Person" class="apresentation-panel">
+            <p class="apresentation-name"> I'm <em itemprop="name">Victor Igor</em>, </p>
+            <p class="apresentation-description">
+                front-end engineer from Brazil who lives in São Paulo. Currently, I'm working as a Front-end Engineer at Red Ventures.
+                I'm working on fluany, and open source enthusiastic.
+            </p>
+        </article>
+        <div class="mouse-down">
+            <svg class="icon icon-mouse-down" aria-label="scroll me to my projects">
+                <use xlink:href="#icon-mouse-down"></use>
+            </svg>
+            <label>projects</label>
+        </div>
+    </section>
 
-<section class="articles">
-    <div class="container">
+    <section class="articles">
         <h2>recent articles</h2>
         {% for article in site.articles limit:3%}
             <article role="article"
-                     itemscope="itemscope"
-                     itemtype="http://schema.org/BlogPosting"
-                     itemprop="blogPost">
+                    itemscope="itemscope"
+                    itemtype="http://schema.org/BlogPosting"
+                    itemprop="blogPost">
                     <a href="{{article.url}}" class="article-item" target="_blank">
                         <h3 class="post-title" itemprop="name"> {{article.name}} </h3>
                         <meta itemprop="datePublished" content="2017-01-06 18:30:00 +0000">
@@ -34,5 +40,5 @@ layout: default
                 <span class="effect-bottom"></span>
             </a>
         </div>
-    </div>
-</section>
+    </section>
+</div>
