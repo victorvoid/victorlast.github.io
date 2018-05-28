@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="container">
-    <section class="apresentation">
+    <section class="apresentation" id="apresentation">
         <article itemscope itemtype="http://schema.org/Person" class="apresentation-panel">
             <p class="apresentation-name"> I'm <em itemprop="name">Victor Igor</em>, </p>
             <p class="apresentation-description">
@@ -19,7 +19,7 @@ layout: default
         </div>
     </section>
 
-    <section class="articles">
+    <section class="articles" id="articles">
         <h2>recent articles</h2>
         {% for article in site.articles limit:3%}
             <article role="article"
@@ -41,7 +41,7 @@ layout: default
             </a>
         </div>
     </section>
-    <section class="open-source">
+    <section class="open-source" id="projects">
         <h2>open source</h2>
         <ul>
         {% for project in site.projects limit:3%}
@@ -60,7 +60,7 @@ layout: default
             </a>
         </div>
     </section>
-    <section class="talks">
+    <section class="talks" id="talks">
         <h2>talks</h2>
         <ul>
         {% for talk in site.talks limit:3%}
