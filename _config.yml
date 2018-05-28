@@ -39,11 +39,18 @@ articles:
     date: 2017/01/16
     url: https://medium.com/@victorvoid/6-tipos-de-polimorfismo-7787080e8857
 projects:
-  - name: fluany
-    url: https://github.com/victorvoid/fluany
   - name: placeload.js
+    description: The best way to create a placeholder layout effect. 🐨 Like Facebook, Slack, Medium, etc
     url: https://github.com/victorvoid/placeload.js
   - name: vim-frontend
+    description: Vim Frontend is a Vim configured for Front-end Developers.
     url: https://github.com/victorvoid/vim-frontend
+  - name: space-jekyll-template
+    description: A simple spacemacs template on jekyll. 
+    url: https://github.com/victorvoid/space-jekyll-template
+talks:
+  - name: Everything is Composable
+    description: Coders on Beer - 2018 - São Paulo
+    url: https://github.com/victorvoid
 # exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules']

@@ -1,0 +1,37 @@
+.open-source
+  h2
+    text-align right
+  ul
+    display flex
+    flex-wrap wrap
+    li
+      margin 0 105px 80px 0
+      +below(cut)
+        margin-right 0
+      a
+        display block
+        text-decoration none
+        cursor pointer
+        transition all .2s
+        outline none
+        width 100%
+        +above(cut)
+          max-width 375px
+        h3
+          font-size 32px
+          color #FFF
+          margin 0
+          +above(cut)
+            font-size 40px
+        p
+          color #FFF
+          font-weight 100
+          margin-top 8px
+        &:hover, &:focus
+          background sec
+          padding 25px
+          +below(cut)
+            padding 8px
+            transform translateX(-8px)
+   .effect-label
+     right -5px

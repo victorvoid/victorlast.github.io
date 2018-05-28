@@ -1,0 +1,41 @@
+.talks
+  display flex
+  align-items center
+  justify-content space-between
+  +below(1024px)
+    flex-wrap wrap
+  ul
+    width 630px
+    li
+      a
+        position relative
+        text-decoration none
+        display block
+        transition .2s ease-in
+        padding 32px 0
+        h3
+          color #FFF
+          font-size 24px
+          font-weight 700
+          margin 0
+          +above(cut)
+            font-size 40px
+        p
+          color #FFF
+          font-weight 100
+          font-size 16px
+          margin-top 8px
+        .icon-arrow-right
+          position absolute
+          right 15px
+          bottom 50px
+          transition all .3s
+          +below(cut)
+            transform scale(.8)
+        &:hover, &:focus
+          background sec
+          padding 32px 10px
+          border-color sec
+          .icon-arrow-right
+            fill #FFF
+            transform translateX(5px)

@@ -41,4 +41,37 @@ layout: default
             </a>
         </div>
     </section>
+    <section class="open-source">
+        <h2>open source</h2>
+        <ul>
+        {% for project in site.projects limit:3%}
+            <li>
+                <a href="{{project.link}}" target="_blank">
+                    <h3>{{project.name}}</h3>
+                    <p> {{project.description }}</p>
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+        <div class="article-action">
+            <a href="https://medium.com/@victorvoid" target="_blank" class="link-effect">
+                <span class="effect-label">view all projects</span>
+                <span class="effect-bottom"></span>
+            </a>
+        </div>
+    </section>
+    <section class="talks">
+        <h2>talks</h2>
+        <ul>
+        {% for talk in site.talks limit:3%}
+            <li>
+                <a href="{{talk.url}}" target="_blank">
+                    <h3>{{talk.name}}</h3>
+                    <p datetime="{{talk.description}}">{{talk.description}}</p>
+                    <svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg>
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    </section>
 </div>
