@@ -21,6 +21,8 @@ header
       opacity .24
       +below(cut)
         display none
+    h1
+      margin 0
     nav
       margin-top 30px
       width 25px
@@ -37,9 +39,39 @@ header
             display block
           +above(cut)
             display block
-        a
+          &:nth-child(2)
+            a
+              &:hover, &:focus
+                &:after
+                  width 80px
+          &:nth-child(3)
+            a
+              &:hover, &:focus
+                &:after
+                  width 51px
+        a.effect
           color: #FFF;
           text-decoration: none;
           font-weight: 300;
           letter-spacing: 2.33px;
           font-size 14px
+          position relative
+          &:hover, &:focus
+            &:after
+              content ""
+              position absolute
+              width 75px
+              height 8px
+              background sec
+              top 2px
+              left -7px
+          span
+            position absolute
+            z-index 2
+            top -8px
+        a svg
+          position absolute
+          bottom -11px
+          right 0
+          +below(cut)
+            bottom 2px
