@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<article itemscope itemtype="http://schema.org/Person" class="content">
+<article itemscope itemtype="http://schema.org/Person" class="container">
     <div class="apresentation">
         <p class="apresentation-name"> I'm <em itemprop="name">Victor Igor</em>, </p>
         <p class="apresentation-description">
@@ -13,15 +13,14 @@ layout: default
 </article>
 
 <section class="articles">
-    <div class="content">
+    <div class="container">
         <h2>recent articles</h2>
         {% for article in site.articles limit:3%}
             <article role="article"
-                    class="post-item"
-                    itemscope="itemscope"
-                    itemtype="http://schema.org/BlogPosting"
-                    itemprop="blogPost">
-                    <a href="{{article.url}}">
+                     itemscope="itemscope"
+                     itemtype="http://schema.org/BlogPosting"
+                     itemprop="blogPost">
+                    <a href="{{article.url}}" class="article-item" target="_blank">
                         <h3 class="post-title" itemprop="name"> {{article.name}} </h3>
                         <meta itemprop="datePublished" content="2017-01-06 18:30:00 +0000">
                         <time datetime="2017-01-06T18:30:00+00:00">{{article.date}}</time>
@@ -29,5 +28,11 @@ layout: default
                     </a>
             </article>
         {% endfor %}
+        <div class="article-action">
+            <a href="https://medium.com/@victorvoid" target="_blank" class="link-effect">
+                <span class="effect-label">view all articles</span>
+                <span class="effect-bottom"></span>
+            </a>
+        </div>
     </div>
 </section>

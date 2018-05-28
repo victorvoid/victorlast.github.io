@@ -11,9 +11,34 @@ ul
     color sec
 
 .container
-  max-width 1020px
+  width 85%
   margin 0 auto
+  +above(cut)
+    max-width 1020px
+    
 
-.content
-  max-width 1020px
-  margin 0 auto
+.link-effect
+  color #FFF
+  position relative
+  text-decoration none
+  width 140px
+  display inline-block
+  .effect-label
+    position absolute
+    bottom 0
+    right 9px
+    width 100%
+    z-index 2
+    font-weight 300
+    font-size 18px
+  .effect-bottom
+    position absolute
+    bottom 0
+    right 0
+    height 8px
+    width 100%
+    background sec
+    transition all .3s
+  &:hover
+    .effect-bottom
+      height 30px

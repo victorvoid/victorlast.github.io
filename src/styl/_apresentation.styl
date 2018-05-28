@@ -1,11 +1,15 @@
 .apresentation
-  margin 30px 0 0 auto
-  max-width 500px
+  margin 30px auto 214px auto
+  +above(cut)
+    margin 30px 0 214px auto
+    max-width 500px
   &-name
-    font-size 48px
+    font-size 40px
     color #FFF
     font-weight 700
     margin 0
+    +above(cut)
+      font-size 48px
     em
       color sec
       font-style normal
