@@ -1,6 +1,9 @@
 .open-source
   h2
     text-align right
+    +above(cut)
+      br
+        display none
   ul
     display flex
     flex-wrap wrap
@@ -13,11 +16,11 @@
         cursor pointer
         transition all .2s
         outline none
-        padding 20px
+        padding 20px 0
         width 100%
         box-sizing border-box
         +above(cut)
-          max-width 443px
+          width 443px
         h3
           font-size 32px
           color #FFF
@@ -28,10 +31,24 @@
           color #FFF
           font-weight 100
           margin-top 8px
+        .project-info
+          display flex
+          &--item
+            display flex
+            margin-right 24px
+            svg
+              margin-top -1px
+              margin-right 8px
+          .language-icon
+            width 16px
+            height 16px
+            border-radius 100%
+            background sec
+            margin-right 8px
         &:hover, &:focus
           background sec
-          padding 25px
+          padding 20px
           +below(cut)
-            padding 22px
+            padding-left 10px
    .effect-label
      right -5px
