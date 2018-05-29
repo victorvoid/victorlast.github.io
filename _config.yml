@@ -60,6 +60,6 @@ projects:
 talks:
   - name: Everything is Composable
     description: Coders on Beer - 2018 - São Paulo
-    url: https://github.com/victorvoid
+    url: https://www.slideshare.net/VictorCalangu/everything-is-composable
 # exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules']
