@@ -1,15 +1,13 @@
 # Site settings
 title: Victor Igor - Front-end Engineer
-description: "Um blog sobre desenvolvimento web"
+description: "My name is Victor Igor, a front-end engineer from Brazil who lives in São Paulo."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://victorvoid.github.io" #http://localhost:3000
 
 # User settings
-username: victor igor
-user_title: Victor Igor - Desenvolvedor FrontEnd
-email: victor.0w3@hotmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Um blog pessoal que compartilha conhecimentos sobre Desenvolvimento web com foco em JavaScript.
+username: victorvoid
+user_title: Victor Igor - Front-end Engineer
+email: victor.0w3@gmail.com
 twitter_username: victorvoid_
 github_username:  victorvoid
 gplus_username:  victorigor0w3

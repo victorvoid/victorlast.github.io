@@ -1,3 +1,2 @@
-(function( $, window, undefined ) {
-
-})( Zepto, window );
+(function() {
+})();
