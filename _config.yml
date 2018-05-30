@@ -40,12 +40,12 @@ projects:
   - name: placeload.js
     description: The best way to create a placeholder layout effect. 🐨 Like Facebook, Slack, Medium, etc
     url: https://github.com/victorvoid/placeload.js
-    star: 143
+    star: 144
     fork: 15
   - name: vim-frontend
     description: Vim Frontend is a Vim configured for Front-end Developers.⭐️
     url: https://github.com/victorvoid/vim-frontend
-    star: 190
+    star: 191
     fork: 12
   - name: space-jekyll-template
     description: A simple spacemacs template on jekyll. 
