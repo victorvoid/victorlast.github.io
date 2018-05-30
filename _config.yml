@@ -38,25 +38,29 @@ articles:
     url: https://medium.com/@victorvoid/6-tipos-de-polimorfismo-7787080e8857
 projects:
   - name: placeload.js
-    description: The best way to create a placeholder layout effect. 🐨 Like Facebook, Slack, Medium, etc
+    description: The best way to create a placeholder layout effect. 🐨 
     url: https://github.com/victorvoid/placeload.js
     star: 144
     fork: 15
+    language: JavaScript
   - name: vim-frontend
-    description: Vim Frontend is a Vim configured for Front-end Developers.⭐️
+    description: A vim configured for Front-end Developers.⭐🔌
     url: https://github.com/victorvoid/vim-frontend
     star: 191
     fork: 12
+    language: VimL
   - name: space-jekyll-template
     description: A simple spacemacs template on jekyll. 
     url: https://github.com/victorvoid/space-jekyll-template
     star: 222
     fork: 222
+    language: CSS
   - name: react-button-loaders
     description: A collection of loading buttons easily customizable. 
     url: https://github.com/victorvoid/react-button-loaders
     star: 1
     fork: 1
+    language: JavaScript
 talks:
   - name: Everything is Composable
     description: Coders on Beer - 2018 - São Paulo
