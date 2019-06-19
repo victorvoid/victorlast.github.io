@@ -1,12 +1,12 @@
 # Site settings
-title: Victor Igor - Front-end Engineer
-description: "My name is Victor Igor, a front-end engineer from Brazil who lives in São Paulo."
+title: Victor Igor - Front-end
+description: "My name is Victor Igor, a front-end from Brazil who lives in São Paulo."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://victorvoid.github.io" #http://localhost:3000
 
 # User settings
 username: victorvoid
-user_title: Victor Igor - Front-end Engineer
+user_title: Victor Igor - Front-end
 email: victor.0w3@gmail.com
 twitter_username: victorvoid_
 github_username:  victorvoid
