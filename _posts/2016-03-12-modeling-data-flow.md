@@ -200,5 +200,5 @@ There are many others concepts in category theory because it’s a vast subject.
 - <a href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/" target="_blank">Category theory for programmers</a>.
 - <a target="_blank" href="https://github.com/adkelley/javascript-to-purescript">Make the Leap from Javascript to PureScript</a>
 - <a target="_blank" href="https://www.youtube.com/watch?v=SfWR3dKnFIo">Oh, Composable World!</a>
-- <a target="_blank" href="https://www.slideshare.net/VictorCalangu/everything-is-composable" Everything is composable</a>
+- <a target="_blank" href="https://www.slideshare.net/VictorCalangu/everything-is-composable"> Everything is composable</a>
 - <a target="_blank" href="https://www.quora.com/How-useful-is-category-theory-to-programmers"> How useful is category theory to programmers?</a>
