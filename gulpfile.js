@@ -3,6 +3,7 @@ var gulp        = require('gulp'),
 	browserSync = require('browser-sync'),
 	stylus      = require('gulp-stylus'),
 	uglify      = require('gulp-uglify'),
+	babel       = require('gulp-babel'),
 	concat      = require('gulp-concat'),
 	jeet        = require('jeet'),
 	rupture     = require('rupture'),
@@ -65,7 +66,10 @@ gulp.task('stylus', function(){
 gulp.task('js', function(){
 	return gulp.src('src/js/**/*.js')
 		.pipe(plumber())
-		.pipe(concat('main.js'))
+		.pipe(concat('github.js'))
+		.pipe(babel({
+			presets: ['@babel/preset-env']
+		}))
 		.pipe(uglify())
 		.pipe(gulp.dest('assets/js/'))
 		.pipe(browserSync.reload({stream:true}))
