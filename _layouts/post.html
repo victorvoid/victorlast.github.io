@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% include head.html %}
+  <body>
+  {% include svg-icons.html %}
+  {% include header-default.html %}
+  <section class="post container" itemscope itemtype="http://schema.org/BlogPosting">
+    <h1 class="post-title" itemprop="name">{{ page.title }}</h1>
+    <div class="post-meta">
+      {% if page.date %}
+      <div class="time">
+        <time itemprop="datePublished" datetime="{{ page.date }}">{{ page.date | date: '%Y-%m-%d' }}</time>
+      </div>
+      {% endif %}
+    </div>
+
+    <p class="post-description">{{ page.description }}</p>
+
+    <article role="article" id="scroll" class="post-content" itemprop="articleBody">
+      {{ content }}
+    </article>
+
+    {% include footer.html %}
+    {% include scripts.html %}
+  </section>
+  </body>
+</html>
