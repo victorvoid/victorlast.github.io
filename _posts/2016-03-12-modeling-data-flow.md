@@ -3,12 +3,10 @@ layout: post
 title:  "An approach to dealing with the data flow"
 image: ''
 date:   2016-03-12 00:06:31
-description: ''
+description: 'How category theory can give you a new perspective on modeling the flow of your software.'
 ---
 
-# Hello
-
-How category theory can give you a new perspective on modeling the flow of your software.
+# Intro
 
 Let's talk about:
 

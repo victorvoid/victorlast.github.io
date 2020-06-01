@@ -4,15 +4,20 @@
   <body>
   {% include svg-icons.html %}
   {% include header-default.html %}
-  <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <section class="post container" itemscope itemtype="http://schema.org/BlogPosting">
     <h1 class="post-title" itemprop="name">{{ page.title }}</h1>
-    {% if page.date %}
-    <div class="time">
-      <time itemprop="datePublished" datetime="{{ page.date }}">{{ page.date | date_to_string }}</time>
+    <div class="post-meta">
+      <a class="author" rel="author" href="https://github.io/victorvoid">Victor Igor</a>,&nbsp;
+      {% if page.date %}
+      <div class="time">
+        <time itemprop="datePublished" datetime="{{ page.date }}">{{ page.date | date_to_string }}</time>
+      </div>
+      {% endif %}
     </div>
-    {% endif %}
 
-    <article role="article" id="scroll" class="post-content container" itemprop="articleBody">
+    <p class="post-description">{{ page.description }}</p>
+
+    <article role="article" id="scroll" class="post-content" itemprop="articleBody">
       {{ content }}
     </article>
 
