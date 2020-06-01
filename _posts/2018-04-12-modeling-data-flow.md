@@ -1,9 +1,8 @@
 ---
 layout: post
 title:  "An approach to dealing with the data flow"
-image: ''
-date:   2016-03-12 00:06:31
-description: 'How category theory can give you a new perspective on modeling the flow of your software.'
+date:   2018-04-12 00:00:00
+description: "How category theory can give you a new perspective on modeling the flow of your software."
 ---
 
 <figure class="image">

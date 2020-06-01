@@ -20,15 +20,15 @@ layout: home
 
     <section class="articles" id="articles">
         <h2>recent articles</h2>
-        {% for article in site.articles limit:3%}
+        {% for article in site.posts limit:3%}
             <article role="article"
                     itemscope="itemscope"
                     itemtype="http://schema.org/BlogPosting"
                     itemprop="blogPost">
                     <a href="{{article.url}}" class="article-item" target="_blank">
-                        <h3 class="post-title" itemprop="name"> {{article.name}} </h3>
-                        <meta itemprop="datePublished" content="2017-01-06 18:30:00 +0000">
-                        <time datetime="2017-01-06T18:30:00+00:00">{{article.date}}</time>
+                        <h3 class="post-title" itemprop="name"> {{article.title}} </h3>
+                        <meta itemprop="datePublished" content="{{article.date}}">
+                        <time datetime="{{ article.date }}">{{article.date | date: '%Y-%m-%d'}}</time>
                         <svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg>
                     </a>
             </article>
