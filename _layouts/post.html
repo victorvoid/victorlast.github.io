@@ -7,10 +7,9 @@
   <section class="post container" itemscope itemtype="http://schema.org/BlogPosting">
     <h1 class="post-title" itemprop="name">{{ page.title }}</h1>
     <div class="post-meta">
-      <a class="author" rel="author" href="https://github.io/victorvoid">Victor Igor</a>,&nbsp;
       {% if page.date %}
       <div class="time">
-        <time itemprop="datePublished" datetime="{{ page.date }}">{{ page.date | date_to_string }}</time>
+        <time itemprop="datePublished" datetime="{{ page.date }}">{{ page.date | date: '%Y-%m-%d' }}</time>
       </div>
       {% endif %}
     </div>

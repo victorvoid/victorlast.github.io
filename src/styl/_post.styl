@@ -1,11 +1,15 @@
 .post
   color #c9cacc
   max-width 700px
+  text-align justify
+  hyphens auto
+  line-height 1.725
   &-title
     color sec
     margin 10px 0
   &-description
     font-style italic
+    margin 34px 0
   &-meta
     display flex
   .author
@@ -15,3 +19,27 @@
     padding-left: 20px
     list-style disc
     line-height 1.725
+  h2, h3
+    color #eee
+  h1
+    font-size 35px
+  h2
+    font-size 19px
+    letter-spacing 0
+    position relative
+    margin 32px 0 8px
+    &:before
+      content "#"
+      position absolute
+      left -1rem
+      top -4px
+      font-size 1.2rem
+      font-weight bold
+  h3
+    font-size 17px
+  img
+    width 100%
+    height 100%
+  a
+    color sec
+    text-decoration underline
