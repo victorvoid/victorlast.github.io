@@ -1,7 +1,7 @@
 function GitHub({ repositories, username }) {
   const GITHUB_API = 'https://api.github.com';
   const Repository = ({ name, description, stargazers_count: stars, forks, language, html_url: url }) => `
-    <a href=${url}" target="_blank">
+    <a href="${url}" target="_blank">
         <h3>${name}</h3>
         <p> ${description}</p>
         <p class="project-info">
