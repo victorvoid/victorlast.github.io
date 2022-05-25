@@ -22,7 +22,7 @@
     "@babel/preset-env": "^7.10.2",
     "autoprefixer-stylus": "^0.4.0",
     "browser-sync": "^1.9.0",
-    "grunt": "^0.4.5",
+    "grunt": "^1.5.3",
     "gulp": "^3.8.10",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.4.3",
