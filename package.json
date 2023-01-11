@@ -21,7 +21,7 @@
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
     "autoprefixer-stylus": "^0.4.0",
-    "browser-sync": "^1.9.0",
+    "browser-sync": "^2.27.11",
     "grunt": "^0.4.5",
     "gulp": "^3.8.10",
     "gulp-babel": "^8.0.0",
